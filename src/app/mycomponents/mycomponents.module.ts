@@ -8,6 +8,9 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { BranchesComponent } from './branches/branches.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
+import { TopbarComponent } from './topbar/topbar.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -21,13 +24,17 @@ import { LoginComponent } from './login/login.component';
     BranchesComponent,
     ComplaintsComponent,
     LoginComponent,
+    LayoutComponent,
+    TopbarComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
   ],
 
   exports: [
-    SidebarComponent // This line is crucial!
+    SidebarComponent, // This line is crucial!
+    TopbarComponent
   ]
 })
 export class MycomponentsModule { }
