@@ -1,9 +1,10 @@
-<!-- layout.component.html -->
-<div class="d-flex vh-100" >
-    <app-sidebar class="flex-shrink-0"></app-sidebar>
-    <div class="flex-grow-1 d-flex flex-column">
+<div>
+    <app-sidebar></app-sidebar>
+  
+    <div class="main-wrapper">
       <app-topbar></app-topbar>
-      <div class="flex-grow-1 p-4" style="background-color: #f6f6f6;">
+  
+      <div class="main-content">
         <router-outlet></router-outlet>
       </div>
     </div>

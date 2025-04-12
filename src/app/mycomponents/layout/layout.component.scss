@@ -1,0 +1,16 @@
+/* layout.component.css */
+
+.main-wrapper {
+    margin-left: 240px; /* same as sidebar width */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  

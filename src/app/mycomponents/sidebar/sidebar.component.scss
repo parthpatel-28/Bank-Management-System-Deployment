@@ -24,4 +24,15 @@
     background-color: #1b263b;
     text-decoration: none;
   }
+  :host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 240px;
+    background-color: #001845;
+    color: white;
+    overflow-y: auto;
+    z-index: 1000;
+  }
   
