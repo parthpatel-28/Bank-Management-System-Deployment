@@ -11,6 +11,11 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { ButtonModule } from 'primeng/button';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { FormsModule } from '@angular/forms';
+import { MultiSelectItem } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
@@ -26,10 +31,16 @@ import { AppRoutingModule } from '../app-routing.module';
     LoginComponent,
     LayoutComponent,
     TopbarComponent,
+    
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    ButtonModule,
+    MultiSelectModule,
+    FormsModule,
+    DropdownModule
+    
   ],
 
   exports: [

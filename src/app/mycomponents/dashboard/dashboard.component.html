@@ -1,7 +1,16 @@
-<div class="container">
- 
 
+
+<div class="row">
+<div class="col-11 container">
+    <p>dashboard works!</p>
+    <p-button label="Click me"></p-button>
+    <p-multiSelect
+  [options]="cities"
+  [(ngModel)]="selectedCities"
+  optionLabel="name"
+  placeholder="Select Cities"
+  display="chip">
+</p-multiSelect>
 
 </div>
-
-<p>dashboard works!</p>
+</div>
