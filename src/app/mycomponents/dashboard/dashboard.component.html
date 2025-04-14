@@ -4,13 +4,28 @@
 <div class="col-11 container">
     <p>dashboard works!</p>
     <p-button label="Click me"></p-button>
-    <p-multiSelect
-  [options]="cities"
-  [(ngModel)]="selectedCities"
-  optionLabel="name"
-  placeholder="Select Cities"
-  display="chip">
-</p-multiSelect>
+    <div class="container py-5">
 
+        <p-dropdown
+          [options]="cities"
+          [(ngModel)]="selectedCity"
+          optionLabel="name"
+          placeholder="Select a City"
+          [filter]="true"
+         >
+        </p-dropdown>
+      
+        <p-multiSelect
+          class="mt-4"
+          [options]="cities"
+          [(ngModel)]="selectedCities"
+          optionLabel="name"
+          placeholder="Select Cities"
+          display="chip"
+          [filter]="true">
+        </p-multiSelect>
+      
+      </div>
+      
 </div>
 </div>

@@ -16,6 +16,11 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { FormsModule } from '@angular/forms';
 import { MultiSelectItem } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 
 
@@ -39,7 +44,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ButtonModule,
     MultiSelectModule,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    BrowserAnimationsModule,
     
   ],
 
