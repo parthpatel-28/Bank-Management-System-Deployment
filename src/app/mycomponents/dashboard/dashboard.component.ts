@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
       labels: ['CSBS', 'Civil', 'Mechanical'],
       datasets: [
         {
-          data: [4, 3, 3], // just sample counts
+          data: [4, 2,2], // just sample counts
           backgroundColor: ['#42A5F5', '#66BB6A', '#FFA726'],
           hoverBackgroundColor: ['#64B5F6', '#81C784', '#FFB74D']
         }
