@@ -1,13 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 .container{
-
-   
     background-color: white;
     border-radius: 2%;
     min-height: 90vh;
-padding: 5vh;
+    padding: 5vh;
+}
 
- 
-    
+.filters-container{
+
+    display: flex;
+    justify-content: start;
+    flex-wrap:wrap ;
+    gap: 3%;
 
 }
