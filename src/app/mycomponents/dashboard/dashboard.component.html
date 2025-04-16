@@ -1,39 +1,103 @@
 <div class="row">
   <div class="col-11 container">
 
-    <div class="card">
-      <div class="card-body">
-        <div class="col-12  filters-container">
-          <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Select a City"
-            [filter]="true">
-          </p-dropdown>
 
-          <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select Cities"
-            display="chip" [filter]="true">
-          </p-multiSelect>
+  <div class="mt-5">
+    <div class="row">
+      <div class="d-flex flex-row justify-content-between w-100">
+  
+        <!-- Line Chart on the Left -->
+        <div class="col-md-7">
+          <p-card>
+            <p-chart type="line" [data]="lineChartData"></p-chart>
+          </p-card>
         </div>
-      </div>
-    </div>
+  
+        <!-- Cards on the Right -->
+        <div class="col-md-5 py-4 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 mx-4">
+         
 
+           <div class="col-5">
+            <p-card>
+              <p>Card=1</p>
+            </p-card>
+           </div>
 
-
-    <div class="card mt-5">
-      <div class="card-body">
-        <div class="row">
-
-          <div class="d-flex justify-content-around">
-            <div class="col-md-6">
-              <p-chart type="line" [data]="lineChartData"></p-chart>
+           <div class="col-5">
+            <p-card>
+              <p>Card=1</p>
+            </p-card>
+           </div>
+     
+           <div class="col-5">
+            <p-card>
+              <p>Card=1</p>
+            </p-card>
             </div>
 
-            <div class="col-md-3">
-              <p-chart type="doughnut" [data]="pieChartData"></p-chart>
+            <div class="col-5">
+              <p-card>
+                <p>Card=1</p>
+              </p-card>
             </div>
-          </div>
 
+            <div class="col-5">
+              <p-card>
+                <p>Card=1</p>
+              </p-card>
+              </div>
+  
+              <div class="col-5">
+                <p-card>
+               <p>Card=1</p>
+                </p-card>
+              </div>
+            
+
+          
         </div>
+  
       </div>
     </div>
+  </div>
+  
+
+
+  <div class=" col-12 mt-5">
+  <div class="row">
+    <div class="d-flex justify-content-end ">
+
+    <div class="col-md-4 p-4 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 ">
+      
+      <div class="col-10">
+        <p-card><p>Card=1</p></p-card>
+      </div>
+      <div class="col-10">
+        <p-card><p>Card=1</p></p-card>
+      </div>
+      <div class="col-10">
+        <p-card><p>Card=1</p></p-card>
+      </div>
+     
+    </div>
+
+     <div class="col-md-4 p-4">
+      <p-card>
+        <p-chart type="doughnut" [data]="pieChartData"></p-chart>
+      </p-card>
+       </div>
+
+       <div class="col-md-4 p-4">
+        <p-card>
+          <p-chart type="doughnut" [data]="pieChartData"></p-chart>
+        </p-card>
+         </div>
+
+    </div>
+  </div>
+</div>
+
+ 
 
 
 

@@ -20,6 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
 import { ChartModule } from 'primeng/chart';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -46,7 +47,8 @@ import { ChartModule } from 'primeng/chart';
     DropdownModule,
     BrowserAnimationsModule,
     TableModule,
-    ChartModule
+    ChartModule,
+    CardModule
     
   ],
 

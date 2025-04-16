@@ -4,6 +4,8 @@
     border-radius: 2%;
     min-height: 90vh;
     padding: 5vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .filters-container{
@@ -14,3 +16,13 @@
     gap: 3%;
 
 }
+
+::ng-deep .p-card {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important; /* or 0 to remove completely */
+  }
+  
+  ::ng-deep .p-card-body {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
