@@ -21,6 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
 import { ChartModule } from 'primeng/chart';
 import { CardModule } from 'primeng/card';
+import { AccountsComponent } from './accounts/accounts.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -36,6 +39,7 @@ import { CardModule } from 'primeng/card';
     LoginComponent,
     LayoutComponent,
     TopbarComponent,
+    AccountsComponent,
     
   ],
   imports: [
@@ -48,7 +52,9 @@ import { CardModule } from 'primeng/card';
     BrowserAnimationsModule,
     TableModule,
     ChartModule,
-    CardModule
+    CardModule,
+    PaginatorModule,
+    DialogModule
     
   ],
 

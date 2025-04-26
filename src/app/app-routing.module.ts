@@ -10,6 +10,8 @@ import { TransactionsComponent } from './mycomponents/transactions/transactions.
 import { LoginComponent } from './mycomponents/login/login.component';
 import { MycomponentsModule } from './mycomponents/mycomponents.module';
 import { LayoutComponent } from './mycomponents/layout/layout.component';
+import { AccountsComponent } from './mycomponents/accounts/accounts.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +25,7 @@ const routes: Routes = [
       { path: 'complaints', component: ComplaintsComponent },
       { path: 'transactions', component: TransactionsComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'accounts', component: AccountsComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' }// add other routes here
         ]
   }

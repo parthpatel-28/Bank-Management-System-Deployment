@@ -1,44 +1,36 @@
-<div class="row">
-    <div class="col-11 container">
-        <p>funds</p>
+<div class="col-12">
+  <div class="title py-2">
+     <h4>Funds</h4>
+  </div>
+</div>
 
-        
-    <p-card>
-        <div class="col-12  filters-container">
-          <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Select a City"
+<div class="row">
+  <div class="col-12 ">
+      <div class="filters-container">      
+          <p-dropdown class="filters" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Select a City"
             [filter]="true">
           </p-dropdown>
+  
+          <p-multiSelect class="filters" [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select Cities"
+          display="chip" [filter]="true">
+        </p-multiSelect>
 
-          <p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select Cities"
-            display="chip" [filter]="true">
-          </p-multiSelect>
-        </div>
-  </p-card>
+        <button class="btn btn-success btn-light-success waves-effect waves-light">
+          <i class="pi pi-search" style="font-size: 0.8rem"></i>
+        </button>
 
-
-  <div class="col-12 mt-5">
-    <div class="card">
-      <p-table [value]="data" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'">
-        <ng-template pTemplate="header">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Roll No</th>
-            <th>Branch</th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData>
-          <tr>
-            <td>{{ rowData.id }}</td>
-            <td>{{ rowData.name }}</td>
-            <td>{{ rowData.rollNo }}</td>
-            <td>{{ rowData.branch }}</td>
-          </tr>
-        </ng-template>
-      </p-table>
-    </div>
+        <button class="btn btn-secondary waves-effect ml-1">
+          <i class="pi pi-replay" style="font-size: 0.8rem"></i>
+        </button>
+      </div>
   </div>
-
-
-    </div>
 </div>
+
+
+
+
+
+
+
+
+    

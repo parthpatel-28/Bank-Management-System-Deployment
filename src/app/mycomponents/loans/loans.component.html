@@ -1,7 +1,27 @@
+<div class="col-12">
+    <div class="title py-2">
+       <h4>Loans</h4>
+    </div>
+</div>
+
 
 <div class="row">
-    <div class="col-11 container">
-        <p>loans works!</p>
-    
+    <div class="col-12 ">
+        <div class="filters-container">      
+          <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
+          [filter]="true">
+        </p-dropdown>
+
+        <p-dropdown  [options]="status" [(ngModel)]="statusName" optionLabel="name" placeholder="Select a Status"
+        [filter]="true">
+        </p-dropdown>
+          <button class="btn btn-success btn-light-success waves-effect waves-light">
+            <i class="pi pi-search" style="font-size: 0.8rem"></i>
+          </button>
+  
+          <button class="btn btn-secondary waves-effect ml-1">
+            <i class="pi pi-replay" style="font-size: 0.8rem"></i>
+          </button>
+        </div>
     </div>
-    </div>
+  </div>

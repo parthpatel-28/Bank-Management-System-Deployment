@@ -1,38 +1,37 @@
 .sidebar {
-    height: 100vh;
-    background-color: #0d1b2a;
-    color: white;
-    padding: 20px;
-    position: fixed;
-    width: 16.66666667%; /* ✅ This is exactly 2/12 columns (col-2) */
-  }
-  
-  .sidebar-title {
-    margin-bottom: 30px;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .nav-link {
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .nav-link:hover {
-    background-color: #1b263b;
-    text-decoration: none;
-  }
-  :host {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 240px;
-    background-color: #001845;
-    color: white;
-    overflow-y: auto;
-    z-index: 1000;
-  }
-  
+  height: 100vh;
+  background-color: #001845;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  width: 16.66666667%; /* ✅ This is exactly 2/12 columns (col-2) */
+}
+
+.sidebar-title {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #001845;
+  text-decoration: none;
+}
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background-color: #001845;
+  color: white;
+  overflow-y: auto;
+  z-index: 1000;
+}
