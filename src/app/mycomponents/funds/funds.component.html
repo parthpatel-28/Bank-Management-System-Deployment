@@ -5,15 +5,17 @@
 </div>
 
 <div class="row">
-  <div class="col-12 ">
+  <div class="col-12 mb-4">
       <div class="filters-container">      
-          <p-dropdown class="filters" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Select a City"
-            [filter]="true">
-          </p-dropdown>
-  
-          <p-multiSelect class="filters" [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Select Cities"
-          display="chip" [filter]="true">
-        </p-multiSelect>
+
+      <p-dropdown  [options]="FundTypeList" [(ngModel)]="FundType" optionLabel="name" placeholder="Select a Branch"
+      [filter]="true">
+      </p-dropdown>
+
+        <div *ngIf="FundType">
+          <input id="accountNumber" type="text" placeholder="Search For Fund ID" [(ngModel)]="accountNumber" class="form-control" />
+        </div>
+
 
         <button class="btn btn-success btn-light-success waves-effect waves-light">
           <i class="pi pi-search" style="font-size: 0.8rem"></i>
@@ -25,6 +27,167 @@
       </div>
   </div>
 </div>
+
+
+
+<div  class="row mt-5">
+  <div class="col-4 mb-4 ">
+    <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
+      <div class="p-card-header d-flex align-items-center">
+        <h5 class="p-card-title mb-2">
+          Bonds
+            </h5>
+          </div>
+          
+          <div class="p-card-body">
+            <div style="max-height: 500px; overflow-y: auto;">
+              <ul class="list-group">
+                <!-- Header Row -->
+                <li class="list-group-item d-flex fw-bold"
+                style="position: sticky; top: 0; background-color: white; z-index: 1;">
+              <div class="d-flex w-100">
+                <div class="text-center pr-3" style="width: 75%;">Fund Name</div>
+                <div class="d-flex align-items-end justify-content-center" style="width: 25%;">Risk</div>
+              </div>
+            </li>
+              <!--No Data-->
+              <li *ngIf="!Bonds?.length">
+                <div class="col-12 text-center align-items-center my-4">
+                <div>
+                  <strong style="font-size: 1.05rem;">No data found</strong>
+                </div>
+              </div>
+              </li>
+              <!--Content-->
+            <li  *ngFor="let item of Bonds"
+            class="list-group-item d-flex">
+          <div class="d-flex w-100">
+            <div class=" text-center d-flex align-items-center justify-content-start" style="width: 80%;">
+              <button type="button"
+                      pButton
+                      icon="pi pi-copy"
+                      class="btn btn-primary btn-sm" style="margin-right: 1rem ;"></button> 
+              {{item.fundName}}
+            </div>
+      
+            <div class=" text-end d-flex align-items-start justify-content-center" style="width: 20%;">
+              {{item.riskProfile}}
+            </div>
+          </div>
+        </li>
+              </ul>                                          
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 mb-4 ">
+        <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
+          <div class="p-card-header d-flex align-items-center">
+            <h5 class="p-card-title mb-2">
+              Mutual Funds
+                </h5>
+              </div>
+              
+              <div class="p-card-body">
+                <div style="max-height: 500px; overflow-y: auto;">
+                  <ul class="list-group">
+                    <!-- Header Row -->
+                    <li class="list-group-item d-flex fw-bold"
+                    style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <div class="d-flex w-100">
+                    <div class="text-center pr-3" style="width: 75%;">Fund Name</div>
+                    <div class="d-flex align-items-end justify-content-center" style="width: 25%;">Risk</div>
+                  </div>
+                </li>
+                  <!--No Data-->
+                  <li *ngIf="!mutualFunds?.length">
+                    <div class="col-12 text-center align-items-center my-4">
+                    <div>
+                      <strong style="font-size: 1.05rem;">No data found</strong>
+                    </div>
+                  </div>
+                  </li>
+                  <!--Content-->
+                <li  *ngFor="let item of mutualFunds"
+                class="list-group-item d-flex">
+              <div class="d-flex w-100">
+                <div class=" text-center d-flex align-items-center justify-content-start" style="width: 80%;">
+                  <button type="button"
+                          pButton
+                          icon="pi pi-copy"
+                          class="btn btn-primary btn-sm" style="margin-right: 1rem ;"></button> 
+                  {{item.fundName}}
+                </div>
+          
+                <div class=" text-end d-flex align-items-start justify-content-center" style="width: 20%;">
+                  {{item.riskProfile}}
+                </div>
+              </div>
+            </li>
+                  </ul>                                          
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col-4 mb-4 ">
+            <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
+              <div class="p-card-header d-flex align-items-center">
+                <h5 class="p-card-title mb-2">
+                  SIP Funds
+                    </h5>
+                  </div>
+                  
+                  <div class="p-card-body">
+                    <div style="max-height: 500px; overflow-y: auto;">
+                      <ul class="list-group">
+                        <!-- Header Row -->
+                        <li class="list-group-item d-flex fw-bold"
+                        style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                      <div class="d-flex w-100">
+                        <div class="text-center pr-3" style="width: 75%;">Fund Name</div>
+                        <div class="d-flex align-items-end justify-content-center" style="width: 25%;">Risk</div>
+                      </div>
+                    </li>
+                    
+                    <!--No Data-->
+                    <li *ngIf="!SipFunds?.length">
+                      <div class="col-12 text-center align-items-center my-4">
+                      <div>
+                        <strong style="font-size: 1.05rem;">No data found</strong>
+                      </div>
+                    </div>
+                    </li>
+                      <!--Content-->
+                    <li  *ngFor="let item of SipFunds"
+                    class="list-group-item d-flex">
+                  <div class="d-flex w-100">
+                    <div class=" text-center d-flex align-items-center justify-content-start" style="width: 80%;">
+                      <button type="button"
+                              pButton
+                              icon="pi pi-copy"
+                              class="btn btn-primary btn-sm" style="margin-right: 1rem ;"></button> 
+                      {{item.fundName}}
+                    </div>
+              
+                    <div class=" text-end d-flex align-items-start justify-content-center" style="width: 20%;">
+                      {{item.riskProfile}}
+                    </div>
+                  </div>
+                </li>
+                      </ul>                                          
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+
+
+      
+      </div>
+
 
 
 

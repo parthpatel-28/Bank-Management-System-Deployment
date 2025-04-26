@@ -24,7 +24,8 @@ import { CardModule } from 'primeng/card';
 import { AccountsComponent } from './accounts/accounts.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { DialogModule } from 'primeng/dialog';
-
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -54,7 +55,9 @@ import { DialogModule } from 'primeng/dialog';
     ChartModule,
     CardModule,
     PaginatorModule,
-    DialogModule
+    DialogModule,
+    InputSwitchModule,
+    InputTextModule
     
   ],
 

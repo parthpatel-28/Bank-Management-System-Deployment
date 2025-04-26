@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-loans',
@@ -16,6 +18,11 @@ export class LoansComponent implements OnInit {
   selectedBranch :any;
   status : any[]
   statusName : any;
+  dialogFields : any[];
+  display: boolean = false;
+  account: any = {};
+  cards2 = ['card', 'card', 'card', 'card', ]; 
+  stats :any[];
 
   constructor() { 
     this.cities = [
@@ -34,6 +41,16 @@ export class LoansComponent implements OnInit {
       { branchId: 'BR006', branchName: 'Hyderabad Branch', location: 'Hyderabad', region: 'Southern' }
     ];
 
+    this.dialogFields = [
+      { name: "id" , label: "Customer ID"},
+      { name: "openingDate" ,label: "OpeningDate"},
+      { name: "accountNo" ,label: "AccountNo"},
+      { name: "accountType" ,label: "AccountType" },
+      { name: "branch"  ,label: "Branch"},
+      { name: "status"  ,label: "Status"},
+      { name: "balance" , label: "Balance"}
+      ]
+  
     this.status =[
       {name: "Approved"},
       {name: "Pending"},
@@ -339,6 +356,23 @@ export class LoansComponent implements OnInit {
       }
     ];
     
+    const loanStatusCount = this.loanData.reduce((acc, loan) => {
+      const status = loan.status;
+      acc[status] = (acc[status] || 0) + 1;
+      return acc;
+    }, {} as { [key: string]: number });
+    
+    // Transforming into desired structure
+    const statusArray = Object.entries(loanStatusCount).map(([status, count]) => ({
+      name: status,
+      value: count
+    }));
+    
+    console.log(statusArray);
+    this.stats = statusArray;
+    
+    console.log(loanStatusCount);
+    
 
   }
  
@@ -351,5 +385,52 @@ export class LoansComponent implements OnInit {
   
 
   }
+
+  saveAccount() {
+    console.log('Account Saved', this.account);
+    this.display = false;
+  }
+
+  displayDialog(){
+    this.display = true;
+  }
+
+   exportToExcel(): void {
+      const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.loanData);
+      const workbook: XLSX.WorkBook = {
+        Sheets: { 'Account Data': worksheet },
+        SheetNames: ['Account Data']
+      };
+    
+      const excelBuffer: any = XLSX.write(workbook, {
+        bookType: 'xlsx',
+        type: 'array'
+      });
+    
+      const data: Blob = new Blob([excelBuffer], {
+        type:
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
+      });
+    
+      saveAs(data, 'AccountData.xlsx');
+    }
+  
+
+  getColor(status: any) {
+    switch (status) {
+      case "Approved":
+        return '#5cb89e'; // Gentle green
+      case "Pending":
+        return '#dda45a'; // Warm amber
+      case "Closed":
+        return '#a1a1a1'; // Soft neutral gray
+      case "Rejected":
+        return '#d46b6b'; // Muted red
+      default:
+        return '#cccccc'; // Fallback gray
+    }
+  }
+  
+  
 
 }

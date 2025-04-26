@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-accounts',
@@ -297,16 +300,38 @@ export class AccountsComponent implements OnInit {
     this.display = true;
   }
   
+  exportToExcel(): void {
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.accountData);
+    const workbook: XLSX.WorkBook = {
+      Sheets: { 'Account Data': worksheet },
+      SheetNames: ['Account Data']
+    };
+  
+    const excelBuffer: any = XLSX.write(workbook, {
+      bookType: 'xlsx',
+      type: 'array'
+    });
+  
+    const data: Blob = new Blob([excelBuffer], {
+      type:
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
+    });
+  
+    saveAs(data, 'AccountData.xlsx');
+  }
 
+  
   getColor(percentage: any) {
     if (percentage === "Active") {
-      return '#1e9674'; // Darker green
+      return '#5cb89e'; // Gentle green
     } else if (percentage === "Frozen") {
-      return 'rgb(204, 130, 40)'; // Darker orange
+      return '#dda45a'; // Warm orange
     } else {
-      return '#cc3f3f'; // Darker red
+      return '#d46b6b'; // Muted red
     }
   }
+  
+  
   
 
 

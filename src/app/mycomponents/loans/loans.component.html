@@ -1,27 +1,151 @@
 <div class="col-12">
-    <div class="title py-2">
-       <h4>Loans</h4>
-    </div>
+  <div class="title py-2">
+     <h4>Loans</h4>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-12 ">
-        <div class="filters-container">      
-          <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
-          [filter]="true">
-        </p-dropdown>
-
-        <p-dropdown  [options]="status" [(ngModel)]="statusName" optionLabel="name" placeholder="Select a Status"
+  <div class="col-12 ">
+      <div class="filters-container">      
+        <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
         [filter]="true">
-        </p-dropdown>
-          <button class="btn btn-success btn-light-success waves-effect waves-light">
-            <i class="pi pi-search" style="font-size: 0.8rem"></i>
-          </button>
-  
-          <button class="btn btn-secondary waves-effect ml-1">
-            <i class="pi pi-replay" style="font-size: 0.8rem"></i>
-          </button>
-        </div>
-    </div>
+      </p-dropdown>
+
+      <p-dropdown  [options]="status" [(ngModel)]="statusName" optionLabel="name" placeholder="Select a Status"
+      [filter]="true">
+      </p-dropdown>
+        <button class="btn btn-success btn-light-success waves-effect waves-light">
+          <i class="pi pi-search" style="font-size: 0.8rem"></i>
+        </button>
+
+        <button class="btn btn-secondary waves-effect ml-1">
+          <i class="pi pi-replay" style="font-size: 0.8rem"></i>
+        </button>
+      </div>
   </div>
+</div>
+
+<div class="row col-12 mt-5">
+
+  <div *ngFor="let card of stats" class="col-3 ">
+    <div class="p-card ">
+    <div class="p-card-body box-style">
+     <h5 style="color: #001845; text-align: center;">Loans {{card.name}} : <span style="font-weight: 600;">{{card.value}}</span></h5>
+  </div>
+</div>
+ </div>
+
+</div>
+    
+
+
+
+
+
+<div class="row mt-4 mb-1">
+  <div class="col-12 d-flex justify-content-start gap-2">
+    <button class="excel-btn" (click)='exportToExcel()'  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+      <i class="pi pi-file-excel"></i>
+      <span>EXCEL</span>
+    </button>
+  </div>
+</div>
+
+
+
+
+
+<div class="col-12 mt-1">
+  <div class="card">
+  <p-table [value]="loanData" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'">
+  <ng-template pTemplate="header" styleClass="p-datatable-striped" class="p-table-striped">
+    <tr>
+ 
+      <th>Loan ID</th>
+      <th>Loan Type</th>
+      <th>Amount</th>
+      <th>Interest Rate (%)</th>
+      <th>Tenure (Years)</th>
+      <th>Branch</th>
+      <th>Disbursed Date</th>
+      <th>Status</th>
+      <th>Processed</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData>
+    <tr class="ml-5">
+   
+      <td>{{ rowData.loanId }}</td>
+      <td>{{ rowData.loanType }}</td>
+      <td>₹{{ rowData.amount | number }}</td>
+      <td>{{ rowData.interestRate }}%</td>
+      <td>{{ rowData.tenureYears }}</td>
+      <td>{{ rowData.branch }}</td>
+      <td>{{ rowData.disbursedDate || 'N/A' }}</td>
+      <td>
+        <span 
+          class="status-pill"
+          [ngStyle]="{
+            'background-color': getColor(rowData.status ?? 0)
+          }">
+          {{ rowData.status }}
+        </span>
+      </td>
+
+      <td>
+        <p-inputSwitch [(ngModel)]="rowData.processed"></p-inputSwitch>
+      </td>
+      
+    </tr>
+  </ng-template>
+  </p-table>
+  </div>
+  </div>
+
+
+
+  <p-dialog 
+header="Add New Account" 
+[(visible)]="display" 
+[modal]="true" 
+[style]="{width: '67vw'}  " 
+[contentStyle]="{'overflow': 'unset'}" 
+[breakpoints]="{'960px': '95vw'}"
+[closable]="true"
+>
+
+<div class="d-flex col-12 flex-wrap justify-content-start gap-5 mt-3 px-3">
+
+<div 
+*ngFor="let item of dialogFields" 
+class="d-flex flex-column mb-3 " 
+style="min-width: 200px; font-family: 'Poppins', sans-serif;"
+>
+<label 
+  class="mb-1 fw-semibold text-secondary" 
+  [for]="item.name"
+  style="font-size: 14px;"
+>
+  {{ item.label }}
+</label>
+<input 
+  [id]="item.name" 
+  type="text" 
+  pInputText 
+  [(ngModel)]="account[item.name]" 
+  [name]="item.name" 
+  class="p-inputtext-sm custom-input"
+  style="padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;"
+/>
+</div>
+
+</div>
+
+
+<div class="col-12 d-flex justify-content-center gap-3 mt-5">
+  <button pButton type="button" label="Save" class="btn btn-light-success p-mr-2" (click)="saveAccount()"></button>
+  <button pButton type="button" label="Cancel" class="p-button-danger" (click)="display = false"></button>
+</div>
+</p-dialog>
+
