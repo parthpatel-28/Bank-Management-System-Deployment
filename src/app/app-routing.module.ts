@@ -12,6 +12,7 @@ import { MycomponentsModule } from './mycomponents/mycomponents.module';
 import { LayoutComponent } from './mycomponents/layout/layout.component';
 import { AccountsComponent } from './mycomponents/accounts/accounts.component';
 import { CardsComponent } from './mycomponents/cards/cards.component';
+import { EmployeesComponent } from './mycomponents/employees/employees.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'accounts', component: AccountsComponent },
       { path: 'cards', component: CardsComponent },
+      { path: 'employees', component: EmployeesComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' }// add other routes here
         ]
   }

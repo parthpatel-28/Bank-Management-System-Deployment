@@ -27,6 +27,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardsComponent } from './cards/cards.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { CardsComponent } from './cards/cards.component';
     TopbarComponent,
     AccountsComponent,
     CardsComponent,
+    EmployeesComponent,
     
   ],
   imports: [
