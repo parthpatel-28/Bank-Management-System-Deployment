@@ -26,6 +26,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
+import { CardsComponent } from './cards/cards.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { InputTextModule } from 'primeng/inputtext';
     LayoutComponent,
     TopbarComponent,
     AccountsComponent,
+    CardsComponent,
     
   ],
   imports: [

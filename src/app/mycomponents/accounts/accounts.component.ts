@@ -61,9 +61,10 @@ export class AccountsComponent implements OnInit {
     
 
 
-     this.accountData = [
+    this.accountData = [
       {
         accountNumber: 'BA1234567890',
+        cardNumber: '4539 1488 0343 6467',
         customerId: 'CUST001',
         accountType: 'Savings',
         branch: 'Mumbai Main Branch',
@@ -75,6 +76,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA9876543210',
+        cardNumber: '4716 5210 0000 0000',
         customerId: 'CUST002',
         accountType: 'Current',
         branch: 'Delhi Branch',
@@ -86,6 +88,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA1122334455',
+        cardNumber: '4485 3647 3952 0891',
         customerId: 'CUST003',
         accountType: 'Fixed Deposit',
         branch: 'Chennai Branch',
@@ -97,6 +100,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA5566778899',
+        cardNumber: '4556 7375 8689 9855',
         customerId: 'CUST004',
         accountType: 'Savings',
         branch: 'Pune Branch',
@@ -108,6 +112,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA2233445566',
+        cardNumber: '5424 1800 1234 5678',
         customerId: 'CUST005',
         accountType: 'Current',
         branch: 'Bangalore Branch',
@@ -119,6 +124,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA9988776655',
+        cardNumber: '6011 0009 9013 9424',
         customerId: 'CUST006',
         accountType: 'Savings',
         branch: 'Hyderabad Branch',
@@ -128,9 +134,9 @@ export class AccountsComponent implements OnInit {
         createdBy: 'EMP107',
         lastUpdated: '2025-04-10T16:10:00Z'
       },
-
       {
         accountNumber: 'BA1234567890',
+        cardNumber: '3792 822463 10005',
         customerId: 'CUST007',
         accountType: 'Savings',
         branch: 'Mumbai Main Branch',
@@ -142,6 +148,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA9876543210',
+        cardNumber: '6011 1111 1111 1117',
         customerId: 'CUST008',
         accountType: 'Current',
         branch: 'Delhi Branch',
@@ -153,6 +160,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA1122334455',
+        cardNumber: '5105 1051 0510 5100',
         customerId: 'CUST009',
         accountType: 'Fixed Deposit',
         branch: 'Chennai Branch',
@@ -164,6 +172,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA5566778899',
+        cardNumber: '4111 1111 1111 1111',
         customerId: 'CUST010',
         accountType: 'Savings',
         branch: 'Pune Branch',
@@ -175,6 +184,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA2233445566',
+        cardNumber: '4000 0566 5566 5556',
         customerId: 'CUST011',
         accountType: 'Current',
         branch: 'Bangalore Branch',
@@ -186,6 +196,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA9988776655',
+        cardNumber: '6011 1234 4321 1234',
         customerId: 'CUST012',
         accountType: 'Savings',
         branch: 'Hyderabad Branch',
@@ -197,7 +208,8 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA3344556677',
-        customerId: 'CUST012',
+        cardNumber: '3700 000000 00002',
+        customerId: 'CUST013',
         accountType: 'Fixed Deposit',
         branch: 'Mumbai Main Branch',
         balance: 150000,
@@ -208,6 +220,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA4455667788',
+        cardNumber: '4111 4444 5555 6666',
         customerId: 'CUST014',
         accountType: 'Current',
         branch: 'Chennai Branch',
@@ -219,6 +232,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA5566778890',
+        cardNumber: '5500 0000 0000 0004',
         customerId: 'CUST015',
         accountType: 'Savings',
         branch: 'Delhi Branch',
@@ -230,6 +244,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA6677889900',
+        cardNumber: '6011 2222 2222 2222',
         customerId: 'CUST016',
         accountType: 'Fixed Deposit',
         branch: 'Pune Branch',
@@ -241,6 +256,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA7788990011',
+        cardNumber: '3530 1113 3330 0000',
         customerId: 'CUST017',
         accountType: 'Savings',
         branch: 'Bangalore Branch',
@@ -252,6 +268,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA8899001122',
+        cardNumber: '6011 5566 7788 9998',
         customerId: 'CUST018',
         accountType: 'Current',
         branch: 'Hyderabad Branch',
@@ -263,6 +280,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA9900112233',
+        cardNumber: '4532 1111 1111 1113',
         customerId: 'CUST019',
         accountType: 'Fixed Deposit',
         branch: 'Mumbai Main Branch',
@@ -274,6 +292,7 @@ export class AccountsComponent implements OnInit {
       },
       {
         accountNumber: 'BA1234567891',
+        cardNumber: '4485 2312 2222 2222',
         customerId: 'CUST020',
         accountType: 'Savings',
         branch: 'Delhi Branch',
