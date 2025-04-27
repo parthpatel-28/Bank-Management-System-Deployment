@@ -292,7 +292,146 @@ export class ComplaintsComponent implements OnInit {
           assignedTo: 'Support Team D',
           priority: 'Medium',
           followUpDate: '2023-05-01'
+        },
+
+        {
+          complaintId: 'CPL021',
+          customerName: 'Chloe Bennett',
+          complaintType: 'Technical Issue',
+          complaintDescription: 'App logs out frequently during transactions.',
+          complaintDate: '2023-04-29',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Support Team C',
+          priority: 'Medium',
+          followUpDate: '2023-05-02'
+        },
+        
+        {
+          complaintId: 'CPL022',
+          customerName: 'Noah Turner',
+          complaintType: 'Billing',
+          complaintDescription: 'Charged twice for a single purchase.',
+          complaintDate: '2023-04-30',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Support Team A',
+          priority: 'High',
+          followUpDate: '2023-05-03'
+        },
+        
+        {
+          complaintId: 'CPL023',
+          customerName: 'Grace Hall',
+          complaintType: 'Fraud Alert',
+          complaintDescription: 'Multiple unknown withdrawals in account history.',
+          complaintDate: '2023-05-01',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Security Team B',
+          priority: 'High',
+          followUpDate: '2023-05-04'
+        },
+        
+        {
+          complaintId: 'CPL024',
+          customerName: 'Lucas Wright',
+          complaintType: 'Account Access',
+          complaintDescription: 'MFA not working when trying to log in.',
+          complaintDate: '2023-05-01',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Support Team B',
+          priority: 'High',
+          followUpDate: '2023-05-05'
+        },
+        {
+          complaintId: 'CPL025',
+          customerName: 'Amelia Scott',
+          complaintType: 'Technical Issue',
+          complaintDescription: 'Unexpected logout and data sync issues.',
+          complaintDate: '2023-05-02',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Tech Team A',
+          priority: 'Medium',
+          followUpDate: '2023-05-06'
+        },
+        {
+          complaintId: 'CPL026',
+          customerName: 'Henry Walker',
+          complaintType: 'Card Issue',
+          complaintDescription: 'Card declined during international travel.',
+          complaintDate: '2023-05-03',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Support Team C',
+          priority: 'High',
+          followUpDate: '2023-05-06'
+        },
+        
+        {
+          complaintId: 'CPL027',
+          customerName: 'Mila Young',
+          complaintType: 'Fraud Alert',
+          complaintDescription: 'Strange activity on account during non-working hours.',
+          complaintDate: '2023-05-04',
+          complaintStatus: 'Under Investigation',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Security Team A',
+          priority: 'High',
+          followUpDate: '2023-05-07'
+        },
+        
+        {
+          complaintId: 'CPL028',
+          customerName: 'Daniel King',
+          complaintType: 'Account Access',
+          complaintDescription: 'Face ID not working with mobile banking app.',
+          complaintDate: '2023-05-04',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Support Team B',
+          priority: 'Medium',
+          followUpDate: '2023-05-07'
+        },
+        
+        {
+          complaintId: 'CPL029',
+          customerName: 'Aria Nelson',
+          complaintType: 'Billing',
+          complaintDescription: 'Late fee applied despite timely payment.',
+          complaintDate: '2023-05-05',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Support Team D',
+          priority: 'Medium',
+          followUpDate: '2023-05-08'
+        },
+        
+        {
+          complaintId: 'CPL030',
+          customerName: 'Logan Perez',
+          complaintType: 'Technical Issue',
+          complaintDescription: 'Transactions are not showing in the app.',
+          complaintDate: '2023-05-06',
+          complaintStatus: 'Pending',
+          resolutionDetails: null,
+          resolutionDate: null,
+          assignedTo: 'Tech Team A',
+          priority: 'High',
+          followUpDate: '2023-05-09'
         }
+
       ];
 
 

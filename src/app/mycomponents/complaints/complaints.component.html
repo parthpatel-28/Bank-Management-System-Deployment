@@ -26,7 +26,177 @@
   </div>
 </div>
 
+<div  class="row mt-5">
+  <div class="col-4 mb-4 ">
+    <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
+      <div class="p-card-header d-flex align-items-center">
+        <h5 class="p-card-title mb-2">
+          Pending Complaints
+            </h5>
+          </div>
+          
+          <div class="p-card-body">
+            <div style="max-height: 500px; overflow-y: auto;">
+              <ul class="list-group">
+                <!-- Header Row -->
+                <li class="list-group-item d-flex fw-bold"
+                style="position: sticky; top: 0; background-color: white; z-index: 1;">
+              <div class="d-flex w-100">
+                <div class="text-end pr-3" style="width: 30%;">ComplaintID</div>
+                <div class="text-center pr-3" style="width: 55%;">Customer Name</div>
+                <div class="d-flex align-items-end justify-content-center" style="width: 15%;">Priority</div>
+              </div>
+            </li>
+              <!--No Data-->
+              <li *ngIf="!complaintsData?.length">
+                <div class="col-12 text-center align-items-center my-4">
+                <div>
+                  <strong style="font-size: 1.05rem;">No data found</strong>
+                </div>
+              </div>
+              </li>
+              <!--Content-->
+              <ng-container *ngFor="let item of complaintsData">
+                <li *ngIf="item.complaintStatus === 'Pending'" class="list-group-item d-flex">
+                  <div class="d-flex w-100">
+                    <div class="text-center d-flex align-items-center justify-content-start" style="width: 30%;">
+                      <button type="button"
+                              pButton
+                              icon="pi pi-eye"
+                              class="btn btn-primary btn-sm" style="margin-right: 0.8rem;"></button> 
+                      {{item.complaintId}}
+                    </div>
+                    <div class="text-end d-flex align-items-start justify-content-center" style="width: 55%;">
+                      {{item.customerName}}
+                    </div>
+                    <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;">
+                      {{item.priority}}
+                    </div>
+                  </div>
+                </li>
+              </ng-container>
+              
+          
+              </ul>                                          
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-4 mb-4 ">
+        <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
+          <div class="p-card-header d-flex align-items-center">
+            <h5 class="p-card-title mb-2">
+              Under Investigation Complaints
+                </h5>
+              </div>
+              
+              <div class="p-card-body">
+                <div style="max-height: 500px; overflow-y: auto;">
+                  <ul class="list-group">
+                    <!-- Header Row -->
+                    <li class="list-group-item d-flex fw-bold"
+                    style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <div class="d-flex w-100">
+                    <div class="text-end pr-3" style="width: 30%;">ComplaintID</div>
+                    <div class="text-center pr-3" style="width: 55%;">Customer Name</div>
+                    <div class="d-flex align-items-end justify-content-center" style="width: 15%;">Priority</div>
+                  </div>
+                </li>
+                  <!--No Data-->
+                  <li *ngIf="!complaintsData?.length">
+                    <div class="col-12 text-center align-items-center my-4">
+                    <div>
+                      <strong style="font-size: 1.05rem;">No data found</strong>
+                    </div>
+                  </div>
+                  </li>
+                  <!--Content-->
+                  <ng-container *ngFor="let item of complaintsData">
+                    <li *ngIf="item.complaintStatus === 'Under Investigation'" class="list-group-item d-flex">
+                      <div class="d-flex w-100">
+                        <div class="text-center d-flex align-items-center justify-content-start" style="width: 30%;">
+                          <button type="button"
+                                  pButton
+                                  icon="pi pi-eye"
+                                  class="btn btn-primary btn-sm" style="margin-right: 0.8rem;"></button> 
+                          {{item.complaintId}}
+                        </div>
+                        <div class="text-end d-flex align-items-start justify-content-center" style="width: 55%;">
+                          {{item.customerName}}
+                        </div>
+                        <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;">
+                          {{item.priority}}
+                        </div>
+                      </div>
+                    </li>
+                  </ng-container>
+                  
+              
+                  </ul>                                          
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 mb-4 ">
+            <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
+              <div class="p-card-header d-flex align-items-center">
+                <h5 class="p-card-title mb-2">
+                  Resolved Complaints
+                    </h5>
+                  </div>
+                  
+                  <div class="p-card-body">
+                    <div style="max-height: 500px; overflow-y: auto;">
+                      <ul class="list-group">
+                        <!-- Header Row -->
+                        <li class="list-group-item d-flex fw-bold"
+                        style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                      <div class="d-flex w-100">
+                        <div class="text-end pr-3" style="width: 30%;">ComplaintID</div>
+                        <div class="text-center pr-3" style="width: 55%;">Customer Name</div>
+                        <div class="d-flex align-items-end justify-content-center" style="width: 15%;">Priority</div>
+                      </div>
+                    </li>
+                      <!--No Data-->
+                      <li *ngIf="!complaintsData?.length">
+                        <div class="col-12 text-center align-items-center my-4">
+                        <div>
+                          <strong style="font-size: 1.05rem;">No data found</strong>
+                        </div>
+                      </div>
+                      </li>
+                      <!--Content-->
+                      <ng-container *ngFor="let item of complaintsData">
+                        <li *ngIf="item.complaintStatus === 'Resolved'" class="list-group-item d-flex">
+                          <div class="d-flex w-100">
+                            <div class="text-center d-flex align-items-center justify-content-start" style="width: 30%;">
+                              <button type="button"
+                                      pButton
+                                      icon="pi pi-eye"
+                                      class="btn btn-primary btn-sm" style="margin-right: 0.8rem;"></button> 
+                              {{item.complaintId}}
+                            </div>
+                            <div class="text-end d-flex align-items-start justify-content-center" style="width: 55%;">
+                              {{item.customerName}}
+                            </div>
+                            <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;">
+                              {{item.priority}}
+                            </div>
+                          </div>
+                        </li>
+                      </ng-container>
+                      
+                  
+                      </ul>                                          
+                    </div>
+                  </div>
+                </div>
+              </div>     
+
+      
+      </div>
 
 
 
