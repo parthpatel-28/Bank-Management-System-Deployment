@@ -398,8 +398,8 @@ export class LoansComponent implements OnInit {
    exportToExcel(): void {
       const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.loanData);
       const workbook: XLSX.WorkBook = {
-        Sheets: { 'Account Data': worksheet },
-        SheetNames: ['Account Data']
+        Sheets: { 'Loans Data': worksheet },
+        SheetNames: ['Loans Data']
       };
     
       const excelBuffer: any = XLSX.write(workbook, {

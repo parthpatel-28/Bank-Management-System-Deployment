@@ -25,7 +25,7 @@
 
 
 
-<div class="row mt-5 d-flex justify-content-around border-bottom">
+<div class="row mt-2 d-flex justify-content-around border-bottom">
   <!-- First Chart -->
   <div class="col-md-4 p-4">
     <div class="p-4 p-card">
@@ -72,5 +72,51 @@
       <i class="pi pi-file-excel"></i>
       <span>EXCEL</span>
     </button>
+  </div>
+</div>
+
+
+<div class="col-12 mt-1">
+  <div class="card">
+    <p-table [value]="transactionData" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'">
+      <ng-template pTemplate="header" styleClass="p-datatable-striped" class="p-table-striped">
+        <tr>
+          <th></th>
+          <th>Transaction ID</th>
+          <th>Status</th>
+          <th>Transaction Date</th>
+          <th>Amount</th>
+          <th>Transaction Type</th>
+          <th>Region</th>
+          <th>Branch</th>
+          <th>Transaction Mode</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr class="ml-5">
+          <th>
+            <button class="btn btn-primary " style="margin-left: 20%;">
+              <i class="pi pi-copy" style="font-size: 0.8rem"></i>
+            </button>
+          </th>
+          <td>{{ rowData.transactionId }}</td>
+          <td>
+            <span 
+              class="status-pill"
+              [ngStyle]="{
+                'background-color': getColor(rowData.transactionStatus)
+              }">
+              {{ rowData.transactionStatus }}
+            </span>
+          </td>
+          <td>{{ rowData.transactionDate }}</td>
+          <td>₹{{ rowData.transactionAmount | number }}</td>
+          <td>{{ rowData.transactionType }}</td>
+          <td>{{ rowData.region }}</td>
+          <td>{{ rowData.branch }}</td>
+          <td>{{ rowData.transactionMode }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
   </div>
 </div>

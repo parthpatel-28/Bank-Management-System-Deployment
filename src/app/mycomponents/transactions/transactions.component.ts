@@ -418,8 +418,8 @@ export class TransactionsComponent implements OnInit {
      exportToExcel(): void {
         const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.transactionData);
         const workbook: XLSX.WorkBook = {
-          Sheets: { 'Account Data': worksheet },
-          SheetNames: ['Account Data']
+          Sheets: { 'Transactions Data': worksheet },
+          SheetNames: ['Transactions Data']
         };
       
         const excelBuffer: any = XLSX.write(workbook, {
@@ -436,7 +436,20 @@ export class TransactionsComponent implements OnInit {
       }
 
 
-
+      getColor(status: any) {
+        switch (status) {
+          case "Completed":
+            return '#5cb89e'; // Gentle green
+          case "Pending":
+            return '#dda45a'; // Warm amber
+          case "Closed":
+            return '#a1a1a1'; // Soft neutral gray
+          case "Failed":
+            return '#d46b6b'; // Muted red
+          default:
+            return '#cccccc'; // Fallback gray
+        }
+    }
 
 
 
