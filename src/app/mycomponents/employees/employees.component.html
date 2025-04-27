@@ -4,7 +4,7 @@
     </div>
   </div>
   
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-12 ">
         <div class="filters-container">      
             <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
@@ -25,3 +25,42 @@
         </div>
     </div>
   </div>
+
+  <div class="col-12 mt-5 ml-5 border-bottom">
+    <div class="title py-2 "  style="margin-left: 1rem;">
+       <h5 style="font-weight: 600;">Employees List</h5>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="d-flex justify-content-around flex-wrap">
+    
+      <ng-container *ngFor="let item of employeesData">
+      <div *ngIf="!item.blocked"  class="p-card shadow rounded-3 p-4 mb-5" style="min-width :450px;;  max-width: 600px;">
+        <div class="d-flex align-items-center mb-3">
+          
+          <!-- Avatar -->
+          <div class="me-3">
+            <i class="pi pi-user fs-1"></i>
+          </div>
+      
+          <!-- Basic Info -->
+          <div>
+            <h5 class="mb-1 fw-bold">{{item.name}}</h5>
+            <p class="mb-0 fw-semibold">{{item.position}}</p>
+            <small>{{item.email}}</small>
+          </div>
+        </div>
+      
+        <!-- Action Buttons -->
+        <div class="d-flex gap-3 mt-3">
+          <button pButton type="button" label="Block" class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
+          <button pButton type="button" label="Details" class="p-button w-50 primary " ></button>
+        </div>
+      </div>
+    </ng-container>
+
+    </div>
+  </div>
+  
+  

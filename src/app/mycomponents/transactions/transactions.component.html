@@ -21,3 +21,56 @@
       </div>
   </div>
 </div>
+
+
+
+
+<div class="row mt-5 d-flex justify-content-around border-bottom">
+  <!-- First Chart -->
+  <div class="col-md-4 p-4">
+    <div class="p-4 p-card">
+      <h5 style="text-align: center; font-weight: 600;">Transaction Regions</h5>
+      <div class="p-card-body">
+        <p-chart type="doughnut" [data]="regionData" [options]="{responsive: true, plugins: {legend: {position: 'top'}}}"></p-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 ">  
+    <div *ngFor="let card of cards2" class="col-12 p-card">
+      <div class="p-card-body box-style">
+       <h5 style="color: #001845; text-align: center;">{{ card }}</h5>
+    </div>
+   </div>
+  </div>
+
+  <!-- Second Chart -->
+  <div class="col-md-4 p-4">
+    <div class="p-4 p-card">
+      <h5 style="text-align: center; font-weight: 600;">Transaction Mode</h5>
+      <div class="p-card-body">
+        <p-chart type="doughnut" [data]="transactionModeData" [options]="{responsive: true, plugins: {legend: {position: 'top'}}}"></p-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 ">  
+    <div *ngFor="let card of cards2" class="col-12 p-card">
+      <div class="p-card-body box-style">
+       <h5 style="color: #001845; text-align: center;">{{ card }}</h5>
+    </div>
+   </div>
+  </div>
+  
+</div>
+
+
+
+<div class="row mt-4 mb-1 ">
+  <div class="col-12 d-flex justify-content-start gap-2">
+    <button class="excel-btn" (click)='exportToExcel()'  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+      <i class="pi pi-file-excel"></i>
+      <span>EXCEL</span>
+    </button>
+  </div>
+</div>

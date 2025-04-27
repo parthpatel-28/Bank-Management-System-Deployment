@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-transactions',
@@ -14,7 +16,9 @@ export class TransactionsComponent implements OnInit {
   lineChartData : any;
   transactionData : any[];
   branches : any [];
-  
+  regionData: any;
+  transactionModeData: any;
+  cards2 = ['Card 1', 'Card 2',  'Card 3' ];
 
   constructor() { 
     this.branches = [
@@ -100,8 +104,8 @@ export class TransactionsComponent implements OnInit {
           transactionAmount: 700,
           transactionStatus: 'Completed',
           transactionType: 'Withdrawal',
-          region: 'Western',
-          branch: 'Pune Branch',
+          region: 'Southern',
+          branch: 'Hyderabad Branch',
           transactionMode: 'In-Branch',
           description: 'Cash Withdrawal'
       },
@@ -366,7 +370,76 @@ export class TransactionsComponent implements OnInit {
 
   
   ngOnInit(): void {
-  
-
+    this.processRegionData();
+    this.processTransactionModeData();
   }
+
+
+  processRegionData() {
+    const regionCounts = this.transactionData.reduce((acc, curr) => {
+      acc[curr.region] = (acc[curr.region] || 0) + 1;
+      return acc;
+    }, {});
+    console.log("regionCounts: ",regionCounts);
+
+    this.regionData = {
+      labels: Object.keys(regionCounts),
+      datasets: [
+        {
+          data: Object.values(regionCounts),
+          backgroundColor: ['#E07A5F', '#F4F1BB', '#81B29A', '#D9BF77'], // Warm muted reds, yellows, and greens
+          hoverBackgroundColor: ['#F2A98C', '#D7D6A1', '#A7C6B5', '#E8D06B'] // Hover colors
+        }
+      ]
+    };
+  }
+
+  processTransactionModeData() {
+    const modeCounts = this.transactionData.reduce((acc, curr) => {
+      acc[curr.transactionMode] = (acc[curr.transactionMode] || 0) + 1;
+      return acc;
+    }, {});
+
+    console.log("modeCounts",modeCounts);
+
+    this.transactionModeData = {
+      labels: Object.keys(modeCounts),
+      datasets: [
+        {
+          data: Object.values(modeCounts),
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#F2A65A'], // Muted blues, beige, and warm tones
+          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#E39D3B'] // Hover colors
+        }
+      ]
+    };
+  }
+
+
+     exportToExcel(): void {
+        const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.transactionData);
+        const workbook: XLSX.WorkBook = {
+          Sheets: { 'Account Data': worksheet },
+          SheetNames: ['Account Data']
+        };
+      
+        const excelBuffer: any = XLSX.write(workbook, {
+          bookType: 'xlsx',
+          type: 'array'
+        });
+      
+        const data: Blob = new Blob([excelBuffer], {
+          type:
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
+        });
+      
+        saveAs(data, 'AccountData.xlsx');
+      }
+
+
+
+
+
+
+
+
 }

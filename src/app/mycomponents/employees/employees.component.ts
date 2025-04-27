@@ -32,7 +32,8 @@ export class EmployeesComponent implements OnInit {
         email: 'amit.sharma@bank.com',
         branch: 'Mumbai Main Branch',
         employmentStatus: 'Active',
-        salary: '₹12,50,000'
+        salary: '₹12,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP002',
@@ -44,7 +45,8 @@ export class EmployeesComponent implements OnInit {
         email: 'priya.gupta@bank.com',
         branch: 'Delhi Branch',
         employmentStatus: 'Active',
-        salary: '₹7,50,000'
+        salary: '₹7,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP003',
@@ -56,7 +58,8 @@ export class EmployeesComponent implements OnInit {
         email: 'rajesh.kumar@bank.com',
         branch: 'Bangalore Branch',
         employmentStatus: 'Active',
-        salary: '₹9,00,000'
+        salary: '₹9,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP004',
@@ -68,7 +71,8 @@ export class EmployeesComponent implements OnInit {
         email: 'anjali.verma@bank.com',
         branch: 'Chennai Branch',
         employmentStatus: 'Active',
-        salary: '₹10,50,000'
+        salary: '₹10,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP005',
@@ -80,7 +84,8 @@ export class EmployeesComponent implements OnInit {
         email: 'vikram.singh@bank.com',
         branch: 'Hyderabad Branch',
         employmentStatus: 'Active',
-        salary: '₹8,00,000'
+        salary: '₹8,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP006',
@@ -92,7 +97,8 @@ export class EmployeesComponent implements OnInit {
         email: 'sonal.mehta@bank.com',
         branch: 'Pune Branch',
         employmentStatus: 'Active',
-        salary: '₹6,50,000'
+        salary: '₹6,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP007',
@@ -104,7 +110,8 @@ export class EmployeesComponent implements OnInit {
         email: 'karan.patel@bank.com',
         branch: 'Mumbai Main Branch',
         employmentStatus: 'Active',
-        salary: '₹4,00,000'
+        salary: '₹4,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP008',
@@ -116,7 +123,8 @@ export class EmployeesComponent implements OnInit {
         email: 'ravi.joshi@bank.com',
         branch: 'Delhi Branch',
         employmentStatus: 'Active',
-        salary: '₹6,00,000'
+        salary: '₹6,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP009',
@@ -128,7 +136,8 @@ export class EmployeesComponent implements OnInit {
         email: 'nisha.reddy@bank.com',
         branch: 'Bangalore Branch',
         employmentStatus: 'Active',
-        salary: '₹11,00,000'
+        salary: '₹11,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP010',
@@ -140,7 +149,8 @@ export class EmployeesComponent implements OnInit {
         email: 'manoj.agarwal@bank.com',
         branch: 'Mumbai Main Branch',
         employmentStatus: 'Active',
-        salary: '₹14,00,000'
+        salary: '₹14,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP011',
@@ -152,7 +162,8 @@ export class EmployeesComponent implements OnInit {
         email: 'shweta.singh@bank.com',
         branch: 'Hyderabad Branch',
         employmentStatus: 'Active',
-        salary: '₹7,00,000'
+        salary: '₹7,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP012',
@@ -164,7 +175,8 @@ export class EmployeesComponent implements OnInit {
         email: 'sunil.bhatia@bank.com',
         branch: 'Pune Branch',
         employmentStatus: 'Active',
-        salary: '₹8,50,000'
+        salary: '₹8,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP013',
@@ -176,7 +188,8 @@ export class EmployeesComponent implements OnInit {
         email: 'rita.kapoor@bank.com',
         branch: 'Mumbai Main Branch',
         employmentStatus: 'Active',
-        salary: '₹20,00,000'
+        salary: '₹20,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP014',
@@ -188,7 +201,8 @@ export class EmployeesComponent implements OnInit {
         email: 'vikram.chauhan@bank.com',
         branch: 'Chennai Branch',
         employmentStatus: 'Active',
-        salary: '₹5,50,000'
+        salary: '₹5,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP015',
@@ -200,7 +214,8 @@ export class EmployeesComponent implements OnInit {
         email: 'neha.agarwal@bank.com',
         branch: 'Delhi Branch',
         employmentStatus: 'Active',
-        salary: '₹9,50,000'
+        salary: '₹9,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP016',
@@ -212,7 +227,8 @@ export class EmployeesComponent implements OnInit {
         email: 'jatin.verma@bank.com',
         branch: 'Bangalore Branch',
         employmentStatus: 'Active',
-        salary: '₹3,50,000'
+        salary: '₹3,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP017',
@@ -224,7 +240,8 @@ export class EmployeesComponent implements OnInit {
         email: 'ishita.thakur@bank.com',
         branch: 'Mumbai Main Branch',
         employmentStatus: 'Active',
-        salary: '₹11,50,000'
+        salary: '₹11,50,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP018',
@@ -236,7 +253,8 @@ export class EmployeesComponent implements OnInit {
         email: 'arvind.singh@bank.com',
         branch: 'Pune Branch',
         employmentStatus: 'Active',
-        salary: '₹7,00,000'
+        salary: '₹7,00,000',
+        blocked: false,
       },
       {
         employeeId: 'EMP019',
@@ -248,7 +266,8 @@ export class EmployeesComponent implements OnInit {
         email: 'pooja.joshi@bank.com',
         branch: 'Hyderabad Branch',
         employmentStatus: 'Active',
-        salary: '₹4,50,000'
+        salary: '₹4,50,000',
+        blocked: true,
       },
       {
         employeeId: 'EMP020',
@@ -260,7 +279,8 @@ export class EmployeesComponent implements OnInit {
         email: 'kavita.mehta@bank.com',
         branch: 'Delhi Branch',
         employmentStatus: 'Active',
-        salary: '₹6,00,000'
+        salary: '₹6,00,000',
+        blocked: true,
       }
     ];
     
