@@ -15,6 +15,32 @@ body {
   overflow: hidden;
 }
 
+label.form-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #4e5358;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.blue-focus-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+
+  &:focus {
+    border-color: #2196F3 !important;
+    box-shadow: 0 0 4px 1px rgba(33, 150, 243, 0.4);
+    outline: none;
+  }
+}
+
+
+
 .filters-container{
 
     display: flex;
@@ -46,16 +72,25 @@ body {
   height: 5px;
   width: 100%;
   color: #001845;
-  background: linear-gradient(to right, #001845, rgba(0, 24, 69, 0.1));
+  background: linear-gradient(to left, #001845, rgba(0, 24, 69, 0.1));
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   pointer-events: none;
 }
 
 
+.p-tabview-nav-link {
+  box-shadow: none !important;
+  background-color: #f8f9fa !important;
+}
 
+.p-tabview .p-tabview-panels{
+  background-color: #f8f9fa !important;
+}
 
-
+.p-tabview .p-tabview-nav{
+  background-color: #f8f9fa !important;
+}
 
 /* Targets the main dropdown */
 .p-dropdown {
@@ -78,8 +113,10 @@ body {
 
 
 
+:host ::ng-deep .p-tabview-nav-link {
+  box-shadow: none !important;
 
-
+}
 
 
 ::ng-deep .p-card {
@@ -116,7 +153,10 @@ body {
 
 
 
-
+h6{
+  font-size: 1rem;
+  color: #0d1763;
+}
 
 
   h4{
@@ -127,6 +167,14 @@ body {
   a {
     text-decoration: none;
   }
+
+  label {
+    margin-bottom: 0.25rem; // equivalent to Bootstrap's mb-1
+    font-weight: 600;       // equivalent to fw-semibold
+    color: #6c757d;          // equivalent to text-secondary (Bootstrap)
+    font-size: 14px;
+  }
+  
   
 
   .excel-btn {
@@ -149,6 +197,7 @@ body {
     background-color: #16a085; // slightly darker on hover
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
+  
   
 
 

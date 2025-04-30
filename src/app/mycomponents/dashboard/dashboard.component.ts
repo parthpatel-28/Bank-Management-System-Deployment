@@ -7,68 +7,90 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  cities: any[];
+
   selectedCity: any;
   selectedCities: any[] = [];
   data: any[] =[];
   pieChartData :any;
   pieChartData2 :any;
   lineChartData : any;
+  transactionStatusChart :any;
+  transactionTypeData : any;
   lineChartOptions : any;
-  cards1 = ['Card 1', 'Card 2', 'Card 3', 'Card 4', 'Card 4', 'Card 4', 'Card 4', 'Card 4'];
-  cards2 = ['Card 1', 'Card 2',  'Card 3' ];
+  topEmployees :any[];
+  cards1 = ['Card 1', 'Card 2',];
+  stats = [
+    {name : "Card" , value : 90 },
+    {name : "Card" , value : 90 },
+    {name : "Card" , value : 90 },
+    {name : "Card" , value : 90 },
+
+  ];
 
   constructor() { 
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' }
+
+  
+    this.transactionTypeData = {
+      labels: ['UPI', 'NEFT', 'RTGS', 'IMPS', 'Cash'],
+      datasets: [
+        {
+          data: [460, 320, 180, 250, 90],
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#678D99', '#3B6978'],
+          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#4C6B74', '#2A4D56']
+        }
+      ]
+    };
+    
+
+     this.topEmployees = [
+      {
+        employeeId: 'E001',
+        name: 'Amit Sharma',
+        position: 'Branch Manager',
+        performanceRating: 92,
+        branch: 'Mumbai Main Branch',
+        region: 'Western'
+      },
+      {
+        employeeId: 'E021',
+        name: 'Ritika Chopra',
+        position: 'Senior Manager',
+        performanceRating: 94,
+        branch: 'Delhi Branch',
+        region: 'Northern'
+      },
+      {
+        employeeId: 'E045',
+        name: 'Ananya Krishnan',
+        position: 'Branch Manager',
+        performanceRating: 95,
+        branch: 'Chennai Branch',
+        region: 'Southern'
+      },
+      {
+        employeeId: 'E060',
+        name: 'Vikas Kulkarni',
+        position: 'Senior Manager',
+        branch: 'Pune Branch',
+        performanceRating: 92
+      },
+      {
+        employeeId: 'E075',
+        name: 'Ravi Chandrasekhar',
+        position: 'Branch Manager',
+        branch: 'Bangalore Branch',
+        performanceRating: 97
+      },
+      {
+        employeeId: 'E090',
+        name: 'Shravan Kumar',
+        position: 'Senior Manager',
+        branch: 'Hyderabad Branch',
+        performanceRating: 95
+      }
     ];
-
-
-    this.data = [
-      {name: 'Parth' , rollNo: 23, id:342 , branch:'CSBS'},
-      {name: 'Bhaktil' , rollNo: 43, id:452 , branch:'Civil'},
-      {name: 'Yash' , rollNo: 45, id:765 , branch:'Mechanical'},
-      {name: 'Parth' , rollNo: 23, id:342 , branch:'CSBS'},
-      {name: 'Bhaktil' , rollNo: 43, id:452 , branch:'Civil'},
-      {name: 'Yash' , rollNo: 45, id:765 , branch:'Mechanical'},
-      {name: 'Parth' , rollNo: 23, id:342 , branch:'CSBS'},
-      {name: 'Bhaktil' , rollNo: 43, id:452 , branch:'Civil'},
-      {name: 'Yash' , rollNo: 45, id:765 , branch:'Mechanical'},
-      {name: 'Parth' , rollNo: 23, id:342 , branch:'CSBS'},
-      {name: 'Bhaktil' , rollNo: 43, id:452 , branch:'Civil'},
-      {name: 'Yash' , rollNo: 45, id:765 , branch:'Mechanical'},
-      {name: 'Parth' , rollNo: 23, id:342 , branch:'CSBS'},
-      {name: 'Bhaktil' , rollNo: 43, id:452 , branch:'Civil'},
-      {name: 'Yash' , rollNo: 45, id:765 , branch:'Mechanical'},
-    
-    ]
-
-    this.pieChartData = {
-      labels: ['Savings', 'NRI', 'Current', 'Fixed'],
-      datasets: [
-        {
-          data: [420000, 280000, 310000, 150000],
-          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#F2A65A'], // muted blues, beige, and warm tones
-          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#E39D3B']
-        }
-      ]
-    };
     
     
-    this.pieChartData2 = {
-      labels: ['Revenue', 'Profit', 'Expenses', 'Net Income'],
-      datasets: [
-        {
-          data: [420000, 280000, 310000, 150000],
-          backgroundColor: ['#E07A5F', '#F4F1BB', '#81B29A', '#D9BF77'], // warm muted reds, yellows, and greens
-          hoverBackgroundColor: ['#F2A98C', '#D7D6A1', '#A7C6B5', '#E8D06B']
-        }
-      ]
-    };
     
     
     
@@ -84,52 +106,52 @@ export class DashboardComponent implements OnInit {
       labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
         {
-          label: 'Account Growth',
-          data: [120, 135, 150, 170, 180, 185, 175, 190, 190, 190, 170, 150],
+          label: 'Monthly Transactions',
+          data: [10200, 11850, 12500, 11300, 14000, 13850, 14500, 14900, 13500, 14200, 10000, 6800],
           fill: false,
-          borderColor: '#42A5F5',
-          tension: 0.4
-        },
-        {
-          label: 'Deposit Growth',
-          data: [80, 90, 110, 130, 150, 160, 170, 180, 200, 210, 220, 230],
-          fill: false,
-          borderColor: '#66BB6A',
-          tension: 0.4
-        },
-        {
-          label: 'Loan Approvals',
-          data: [200, 210, 220, 240, 230, 220, 200, 200, 170, 165, 150, 120],
-          fill: false,
-          borderColor: '#FF7043',
-          tension: 0.4
-        },
-        {
-          label: 'Revenue Growth',
-          data: [50, 100, 170, 130, 110, 130, 150, 170, 160, 165, 180, 195],
-          fill: false,
-          borderColor: '#FFEB3B',
+          borderColor: '#3B6978',
           tension: 0.4
         }
       ]
     };
-
+    
     this.lineChartOptions = {
+      responsive: true,
       plugins: {
-        title: {
-          display: true,
-          text: 'Bank Performance Overview (2024)',
-          font: {
-            size: 15
-          }
-        },
         legend: {
           position: 'top'
+        },
+        title: {
+          display: true,
+          text: 'Monthly Transaction Volume'
         }
       },
-    
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
     };
     
+
+
+    this.transactionStatusChart = {
+      labels: ['Completed', 'Failed', 'Pending'],
+      datasets: [
+        {
+          label: 'Transaction Count',
+          data: [150000, 30000, 9000], // Example transaction counts
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6']
+        }
+      ],
+      options: {
+        plugins: {
+          legend: {
+            display: false   // ← hide the legend
+          }
+        }
+      }
+    };
     
 
   }

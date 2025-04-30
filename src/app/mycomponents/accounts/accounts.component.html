@@ -11,11 +11,11 @@
             [filter]="true">
           </p-dropdown>
 
-          <p-dropdown  [options]="status" [(ngModel)]="statusName" optionLabel="name" placeholder="Select Account Status"
+          <p-dropdown  [options]="status" [(ngModel)]="statusName" optionLabel="name" placeholder="Select a Status"
           [filter]="true">
           </p-dropdown>
 
-          <p-dropdown  [options]="accountTypeList" [(ngModel)]="accountType" optionLabel="name" placeholder="Select Account Type "
+          <p-dropdown  [options]="accountTypeList" [(ngModel)]="accountType" optionLabel="name" placeholder="Select a Account Type"
           [filter]="true">
           </p-dropdown>
         <button class="btn btn-success btn-light-success waves-effect waves-light">
@@ -77,21 +77,21 @@
     </button>
   </th>
   <td>{{ rowData.customerId }}</td>
-  <td>{{ rowData.openingDate }}</td>
-  <td>{{ rowData.accountNumber }}</td>
-  <td>{{ rowData.accountType }}</td>
+  <td>{{ rowData.accountData.openingDate }}</td>
+  <td>{{ rowData.accountData.accountNumber }}</td>
+  <td>{{ rowData.accountData.accountType }}</td>
   <td>{{ rowData.branch }}</td>
   <td>
     <span 
       class="status-pill"
       [ngStyle]="{
-        'background-color': getColor(rowData.status ?? 0)
+        'background-color': getColor(rowData.accountData.status ?? 0)
       }">
-      {{ rowData.status }}
+      {{ rowData.accountData.status }}
     </span>
   </td>
   
-  <td>₹{{ rowData.balance }}</td>
+  <td>₹{{ rowData.accountData.balance }}</td>
 </tr>
 </ng-template>
 </p-table>
@@ -103,44 +103,74 @@
 header="Add New Account" 
 [(visible)]="display" 
 [modal]="true" 
-[style]="{width: '67vw'}  " 
-[contentStyle]="{'overflow': 'unset'}" 
+[style]="{width: '85vw'}  " 
+[contentStyle]="{'overflow': 'scroll'}" 
 [breakpoints]="{'960px': '95vw'}"
 [closable]="true"
 >
 
-<div class="d-flex col-12 flex-wrap justify-content-start gap-5 mt-3 px-3">
+<div class="col-12 px-3">
 
-<div 
-*ngFor="let item of dialogFields" 
-class="d-flex flex-column mb-3 " 
-style="min-width: 200px; font-family: 'Poppins', sans-serif;"
->
-<label 
-  class="mb-1 fw-semibold text-secondary" 
-  [for]="item.name"
-  style="font-size: 14px;"
->
-  {{ item.label }}
-</label>
-<input 
-  [id]="item.name" 
-  type="text" 
-  pInputText 
-  [(ngModel)]="account[item.name]" 
-  [name]="item.name" 
-  class="p-inputtext-sm custom-input"
-  style="padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;"
-/>
+<div class="mt-2 border-bottom">
+    <h5>Account Assignment</h5>
+</div>
+<div class="row mb-5 mt-2 ">
+
+    <div  class="col-12 col-sm-4">
+          <label class="form-label">Networks</label>
+          <p-dropdown placeholder="Choose Your Network" style="width: 100%;"
+            appendTo="body" [resetFilterOnHide]="true" [filter]="true"> </p-dropdown>
+    </div>
 </div>
 
+<div class="mt-5 border-bottom">
+    <h5>Account Information</h5>
+</div>
+<div class="row mb-5 mt-2">
+    <div  class="col-12 col-sm-4">
+          <label>Company profile</label>
+          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+    <div  class="col-12 col-sm-4">
+            <label>Company website</label>
+            <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+    <div  class="col-12 col-sm-4">
+            <label>Country</label>
+            <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+</div>
+<div class="row mb-5 mt-2">
+    <div  class="col-12 col-sm-4">
+          <label>Account Name</label>
+          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
 </div>
 
+
+<div class="mt-5 border-bottom">
+    <h5>Ad account User invitation</h5>
+</div>
+<div class="row mb-5 mt-2">
+    <div  class="col-12 col-sm-4">
+          <label>Invitation E-mail</label>
+          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+</div>
+
+
+
+
+ 
+
+</div>
 
 <div class="col-12 d-flex justify-content-center gap-3 mt-5">
-  <button pButton type="button" label="Save" class="btn btn-light-success p-mr-2" (click)="saveAccount()"></button>
-  <button pButton type="button" label="Cancel" class="p-button-danger" (click)="display = false"></button>
+<button pButton type="button" label="Save" class="col-2 btn btn-light-success p-mr-2" (click)="saveAccount()"></button>
+<button pButton type="button" label="Cancel" class="col-2 p-button-danger" (click)="display = false"></button>
 </div>
+
+
 </p-dialog>
 
 

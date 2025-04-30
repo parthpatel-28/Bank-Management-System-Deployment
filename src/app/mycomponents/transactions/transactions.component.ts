@@ -16,11 +16,20 @@ export class TransactionsComponent implements OnInit {
   lineChartData : any;
   transactionData : any[];
   branches : any [];
+  status : any[];
+  statusName : any;
   regionData: any;
   transactionModeData: any;
   cards2 = ['Card 1', 'Card 2',  'Card 3' ];
 
   constructor() { 
+
+    this.status = [
+      {name: "Completed" , value : "Completed"},
+      {name: "Pending" , value : "Pending"},
+      {name: "Failed" , value : "Failed"},
+    ]
+
     this.branches = [
       { branchId: 'BR001', branchName: 'Mumbai Main Branch', location: 'Mumbai', region: 'Western' },
       { branchId: 'BR002', branchName: 'Delhi Branch', location: 'Delhi', region: 'Northern' },

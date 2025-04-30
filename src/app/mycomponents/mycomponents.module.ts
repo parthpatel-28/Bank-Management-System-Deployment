@@ -28,6 +28,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardsComponent } from './cards/cards.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { TabViewModule } from 'primeng/tabview';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { EmployeesComponent } from './employees/employees.component';
     PaginatorModule,
     DialogModule,
     InputSwitchModule,
-    InputTextModule
+    InputTextModule,
+    TabViewModule
     
   ],
 

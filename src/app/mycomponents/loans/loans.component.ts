@@ -9,7 +9,7 @@ import { saveAs } from 'file-saver';
 })
 export class LoansComponent implements OnInit {
 
-  cities: any[];
+
   selectedCity: any;
   selectedCities: any[] = [];
   data: any[] =[];
@@ -25,13 +25,7 @@ export class LoansComponent implements OnInit {
   stats :any[];
 
   constructor() { 
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' }
-    ];
+ 
     this.branches = [
       { branchId: 'BR001', branchName: 'Mumbai Main Branch', location: 'Mumbai', region: 'Western' },
       { branchId: 'BR002', branchName: 'Delhi Branch', location: 'Delhi', region: 'Northern' },
@@ -52,9 +46,9 @@ export class LoansComponent implements OnInit {
       ]
   
     this.status =[
-      {name: "Approved"},
-      {name: "Pending"},
-      {name: "Rejected"},
+      {name: "Approved",   value : "Approved"},
+      {name: "Pending",    value : "Pending"},
+      {name: "Rejected",   value : "Rejected"},
 
     ]
 
@@ -412,7 +406,7 @@ export class LoansComponent implements OnInit {
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
       });
     
-      saveAs(data, 'AccountData.xlsx');
+      saveAs(data, 'Loans Data.xlsx');
     }
   
 

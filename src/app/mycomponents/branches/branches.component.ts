@@ -6,22 +6,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./branches.component.scss']
 })
 export class BranchesComponent implements OnInit {
-  branches: any[];
-  selectedCity: any;
-  selectedCities: any[] = [];
-  data: any[] =[];
-  pieChartData :any;
-  lineChartData : any;
+  branchesData: any[];
   branch : any ;
+  selectedBranch : any = 0;
+  employeesList :any[] =[];
+  yearlyPerformanceChartData: any;  
+  yearlyPerformanceChartOptions: any;  
+
+  loanRepaymentStatusChartData: any;
+  loanTypeDistributionChartData: any;
+  transactionChartData: any;
+  transactionCategoryChartData: any;
+
+  loanRepaymentStatusChartOptions: any;
+  loanTypeDistributionChartOptions: any;
+  transactionChartOptions: any;
+  transactionCategoryChartOptions: any;
+
+
+  cards2 = ['Card 1', 'Card 2',  'Card 3' ];
+  cityTabs = [
+    { label: 'Mumbai', value: 1 },
+    { label: 'Delhi', value: 2 },
+    { label: 'Chennai', value: 3 },
+    { label: 'Pune', value: 4 },
+    { label: 'Banglore', value: 5 },
+    {label : 'Hyderabad' , value :6}
+  ];
+
   constructor() { 
 
-    this.branches = [
+    this.branchesData = [
       {
         branchId: 'BR001',
         branchName: 'Mumbai Main Branch',
         location: 'Mumbai',
         region: 'Western',
-        yearlyPerformance: [75, 78, 80, 82, 85, 88, 90, 92, 95, 97, 98, 100],
+        yearlyPerformance: [30, 42, 43, 39, 40, 36, 35, 32, 43, 50, 67, 65],
         transactionCategoryDistribution: {
           deposits: 40,
           withdrawals: 30,
@@ -85,7 +106,7 @@ export class BranchesComponent implements OnInit {
         branchName: 'Delhi Branch',
         location: 'Delhi',
         region: 'Northern',
-        yearlyPerformance: [68, 70, 72, 74, 77, 80, 83, 85, 88, 90, 92, 95],
+        yearlyPerformance: [42, 50, 60, 65, 65, 70, 53, 65, 54, 40, 30, 35],
         transactionCategoryDistribution: {
           deposits: 50,
           withdrawals: 25,
@@ -148,7 +169,7 @@ export class BranchesComponent implements OnInit {
         branchName: 'Chennai Branch',
         location: 'Chennai',
         region: 'Southern',
-        yearlyPerformance: [70, 72, 75, 77, 80, 83, 85, 87, 90, 92, 93, 95],
+        yearlyPerformance: [20, 32, 45, 57, 60, 63, 65, 77, 80, 82, 93, 95],
         transactionCategoryDistribution: {
           deposits: 45,
           withdrawals: 25,
@@ -211,7 +232,7 @@ export class BranchesComponent implements OnInit {
         branchName: 'Pune Branch',
         location: 'Pune',
         region: 'Western',
-        yearlyPerformance: [65, 67, 70, 72, 74, 77, 79, 81, 84, 86, 88, 90],
+        yearlyPerformance: [65, 67, 50, 43, 32, 35, 36, 40, 39, 43, 42, 30],
         transactionCategoryDistribution: {
           deposits: 40,
           withdrawals: 30,
@@ -337,7 +358,7 @@ export class BranchesComponent implements OnInit {
         branchName: 'Hyderabad Branch',
         location: 'Hyderabad',
         region: 'Southern',
-        yearlyPerformance: [70, 73, 75, 77, 80, 83, 85, 87, 89, 91, 93, 95],
+        yearlyPerformance: [40, 78, 80, 50, 90, 94, 55, 34, 45, 60, 50, 40],
         transactionCategoryDistribution: {
           deposits: 50,
           withdrawals: 20,
@@ -397,9 +418,10 @@ export class BranchesComponent implements OnInit {
       }
     ];
     
-    this.branch = this.branches[0];
-    console.log(this.branches);
+    this.branch = this.branchesData[0];
+    console.log(this.branch);
     
+    this.employeesList = this.branchesData[0].employees;
 
 
   }
@@ -407,8 +429,114 @@ export class BranchesComponent implements OnInit {
 
   
   ngOnInit(): void {
-  console.log(this.branches)
+
+  console.log("branch",this.branch);
+  this.prepareYearlyPerformanceChart();
+  this.prepareCharts();
 
   }
 
+  prepareYearlyPerformanceChart() {
+    this.yearlyPerformanceChartData = {
+      labels: [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ],
+      datasets: [
+        {
+          label: 'Yearly Performance',
+          data: this.branch.yearlyPerformance,
+          fill: false,
+          borderColor: '#42A5F5',
+          tension: 0.4
+        }
+      ]
+    };
+
+    this.yearlyPerformanceChartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+  }
+
+  prepareCharts() {
+    // Loan Repayment Status Pie Chart
+    this.loanRepaymentStatusChartData = {
+      labels: ['Fully Paid', 'Overdue', 'Pending', 'Defaulted'],
+      datasets: [
+        {
+          data: [
+            this.branch.loanRepaymentStatus.fullyPaid,
+            this.branch.loanRepaymentStatus.overdue,
+            this.branch.loanRepaymentStatus.pending,
+            this.branch.loanRepaymentStatus.defaulted
+          ],
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#678D99'],
+          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#4C6B74'],
+
+        }
+      ]
+    };
+
+    // Loan Type Distribution Pie Chart
+    this.loanTypeDistributionChartData = {
+      labels: ['Home Loans', 'Personal Loans', 'Auto Loans', 'Business Loans', 'Others'],
+      datasets: [
+        {
+          data: [
+            this.branch.loanTypeDistribution.homeLoans,
+            this.branch.loanTypeDistribution.personalLoans,
+            this.branch.loanTypeDistribution.autoLoans,
+            this.branch.loanTypeDistribution.businessLoans,
+            this.branch.loanTypeDistribution.others
+          ],
+          backgroundColor: ['#4F6B6F', '#2E4D56', '#A9C1B7', '#5C7F7A', '#4F6B6F'],
+          hoverBackgroundColor: ['#3A4C50', '#1D2F3E', '#A9C1B7', '#4C6E6A', '#3A4C50'],
+          
+        }
+      ]
+    };
+
+
+    // You can define options if necessary for each chart
+    this.loanRepaymentStatusChartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+          display: true
+        }
+      }
+    };
+
+    this.loanTypeDistributionChartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+          display: true
+        }
+      }
+    };
+
+
+  }
+
+  onTabChange(event: any) {
+  const index = event.index;
+  this.branch = this.branchesData[index];
+  this.prepareYearlyPerformanceChart();
+  this.prepareCharts();
+  
+  }
 }

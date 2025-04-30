@@ -9,8 +9,15 @@ export class EmployeesComponent implements OnInit {
 
   employeesData : any[];
   branches : any[];
+  block : any;
   selectedBranch : any;
   accountNumber : any;
+  cityTabs = [
+    { label: 'Employees', value: 1 },
+    { label: 'Blocked Employees', value: 2 }
+  ];
+
+
   constructor() {
     this.branches = [
       { branchId: 'BR001', branchName: 'Mumbai Main Branch', location: 'Mumbai', region: 'Western' },
@@ -281,6 +288,19 @@ export class EmployeesComponent implements OnInit {
         employmentStatus: 'Active',
         salary: '₹6,00,000',
         blocked: true,
+      },
+      {
+        employeeId: 'EMP020',
+        name: 'Arvind Mehta',
+        position: 'Legal Advisor',
+        department: 'Legal',
+        dateOfJoining: '2017-09-22',
+        contactNumber: '9876689087',
+        email: 'Arvind.mehta@bank.com',
+        branch: 'Hyderabad Branch',
+        employmentStatus: 'Active',
+        salary: '₹9,00,000',
+        blocked: true,
       }
     ];
     
@@ -291,5 +311,8 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+onTabChange(value :any){
+  console.log(value);
+  this.block = value.index
+}
 }
