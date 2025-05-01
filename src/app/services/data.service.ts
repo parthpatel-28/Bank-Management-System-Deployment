@@ -2020,10 +2020,11 @@ export class DataService {
           { id: 20,fundName: 'Income Opportunities Bond', overallGrowth: 13.0, riskProfile: 'Moderate', returns: { oneYear: 6.5, threeYear: 18.0, fiveYear: 32.5 }, fundManager: 'Noah Lewis', launchDate: '2016-04-25', AUM: '₹500 Cr', fundType: 'Income', growthData: [ { date: '2024-01', value: 110 }, { date: '2024-02', value: 112 }, { date: '2024-03', value: 114 }, { date: '2024-04', value: 116 }, { date: '2024-05', value: 118 } ] }
         ]
       },
-      priorityList : [
-        {name: "High" , value : "high"},
-        {name: "Moderate" , value : "moderate"},
-        {name: "Low" , value : "low"},
+      riskList : [
+        {name: "All" , value : "All"},
+        {name: "High" , value : "High"},
+        {name: "Moderate" , value : "Moderate"},
+        {name: "Low" , value : "Low"},
       ],
       FundTypeList : [ 
         { name: "Mutual Funds" , value: "mutualFunds"},

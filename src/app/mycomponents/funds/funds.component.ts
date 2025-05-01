@@ -17,12 +17,16 @@ export class FundsComponent implements OnInit {
   mutualFunds : any[];
   SipFunds : any[];
   Bonds : any[];
-  priorityList : any[];
-  priority : any;
+  mutualFundsMain : any[];
+  SipFundsMain : any[];
+  BondsMain : any[];
+  riskList : any[];
+  risk : any = 1;
   FundTypeList : any[];
   FundType: any;
+  Fundname : any;
 
-  
+
   constructor(
     private DataService :DataService,
   ) { 
@@ -33,11 +37,16 @@ export class FundsComponent implements OnInit {
       { name: 'Istanbul', code: 'IST' },
       { name: 'Paris', code: 'PRS' }
     ];
-    this.priorityList = DataService.funds.priorityList;
+    this.riskList = DataService.funds.riskList;
     this.mutualFunds = DataService.funds.fundsData.mutualFunds;
     this.SipFunds = DataService.funds.fundsData.SipFunds;
     this.Bonds =  DataService.funds.fundsData.Bonds;
     this.FundTypeList = DataService.funds.FundTypeList
+
+
+    this.mutualFundsMain = this.mutualFunds;
+    this.SipFundsMain = this.SipFunds;
+    this.BondsMain =  this.Bonds;
   
   }
 
@@ -54,7 +63,23 @@ export class FundsComponent implements OnInit {
         }
       ]
     };
+  }
 
 
+  Click_Search(value : any){
+    this.Bonds = this.BondsMain;
+    this.mutualFunds =this.mutualFundsMain;
+    this.SipFunds = this.SipFundsMain;
+
+    console.log(this.risk);
+    if(this.risk.value != "All" && this.risk != 1){
+      this.Bonds  = this.Bonds.filter(account => account.riskProfile === this.risk.value);
+    }
+    if(this.risk.value != "All" && this.risk != 1){
+      this.mutualFunds  = this.mutualFunds.filter(account => account.riskProfile === this.risk.value);
+    }
+    if(this.risk.value != "All" && this.risk != 1){
+      this.SipFunds  = this.SipFunds.filter(account => account.riskProfile === this.risk.value);
+    }
   }
 }
