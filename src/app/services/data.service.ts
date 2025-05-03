@@ -1634,16 +1634,18 @@ export class DataService {
       ],
 
       priorityList : [
-        { name: 'High', code: 'High' },
-        { name: 'Low', code: 'Low' },
-        { name: 'Medium', code: 'Medium' },
+        { name: 'All', value: 'All' },
+        { name: 'High', value: 'High' },
+        { name: 'Low', value: 'Low' },
+        { name: 'Medium', value: 'Medium' },
       ],
 
       supportTeamList : [
-        { name: 'Support Team A', code: 'Support Team A' },
-        { name: 'Support Team B', code: 'Support Team B' },
-        { name: 'Support Team C', code: 'Support Team C' },
-        { name: 'Support Team D', code: 'Support Team D' },
+        { name: 'All', value: 'All' },
+        { name: 'Support Team A', value: 'Support Team A' },
+        { name: 'Support Team B', value: 'Support Team B' },
+        { name: 'Support Team C', value: 'Support Team C' },
+        { name: 'Support Team D', value: 'Support Team D' },
       ]
     }
 
@@ -2673,8 +2675,15 @@ export class DataService {
             transactionMode: 'In-Branch',
             description: 'Transfer to Account'
         }
+    ],
+
+    status : [
+      { name: 'All', value: 'All' },
+      {name: "Completed" , value : "Completed"},
+      {name: "Pending" , value : "Pending"},
+      {name: "Failed" , value : "Failed"},
     ]
-    
+
     }
   }
 }

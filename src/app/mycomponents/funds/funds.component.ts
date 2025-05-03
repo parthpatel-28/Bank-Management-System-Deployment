@@ -82,4 +82,14 @@ export class FundsComponent implements OnInit {
       this.SipFunds  = this.SipFunds.filter(account => account.riskProfile === this.risk.value);
     }
   }
+
+
+  Click_Reset(){
+    this.Bonds = this.BondsMain;
+    this.mutualFunds =this.mutualFundsMain;
+    this.SipFunds = this.SipFundsMain;
+    this.risk = 1;
+  }
+
 }
+

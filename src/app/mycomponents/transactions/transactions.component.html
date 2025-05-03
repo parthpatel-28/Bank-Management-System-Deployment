@@ -7,7 +7,7 @@
 <div class="row">
   <div class="col-12 ">
       <div class="filters-container">      
-          <p-dropdown  [options]="branches" [(ngModel)]="selectedCity" optionLabel="location" placeholder="Select a Branch"
+          <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
             [filter]="true">
           </p-dropdown>
           
@@ -16,11 +16,11 @@
           </p-dropdown>
 
 
-        <button class="btn btn-success btn-light-success waves-effect waves-light">
+        <button class="btn btn-success btn-light-success waves-effect waves-light" (click)="Click_Search($event)">
           <i class="pi pi-search" style="font-size: 0.8rem"></i>
         </button>
 
-        <button class="btn btn-secondary waves-effect ml-1">
+        <button class="btn btn-secondary waves-effect ml-1" (click)="Click_Reset()">
           <i class="pi pi-replay" style="font-size: 0.8rem"></i>
         </button>
       </div>

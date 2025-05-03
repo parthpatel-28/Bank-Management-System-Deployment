@@ -8,7 +8,7 @@
   <div class="col-12 mb-4">
       <div class="filters-container">      
 
-      <p-dropdown  [options]="riskList" [(ngModel)]="risk" optionLabel="name" placeholder="Select Fund Type"
+      <p-dropdown  [options]="riskList" [(ngModel)]="risk" optionLabel="name" placeholder="Select Fund Risk Level"
       [filter]="true">
       </p-dropdown>
 
@@ -21,7 +21,7 @@
           <i class="pi pi-search" style="font-size: 0.8rem"></i>
         </button>
 
-        <button class="btn btn-secondary waves-effect ml-1">
+        <button class="btn btn-secondary waves-effect ml-1" (click)="Click_Reset()">
           <i class="pi pi-replay" style="font-size: 0.8rem"></i>
         </button>
       </div>
