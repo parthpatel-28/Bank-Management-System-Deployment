@@ -48,7 +48,7 @@ export class TransactionsComponent implements OnInit {
 
   processRegionData() {
     const regionCounts = this.transactionData.reduce((acc, curr) => {
-      acc[curr.region] = (acc[curr.region] || 0) + 1;
+      acc[curr.transactionType] = (acc[curr.transactionType] || 0) + 1;
       return acc;
     }, {});
     console.log("regionCounts: ",regionCounts);
@@ -97,6 +97,7 @@ export class TransactionsComponent implements OnInit {
     }
 
     this.processTransactionModeData();
+    this.processRegionData();
 
   }
 
@@ -105,6 +106,7 @@ export class TransactionsComponent implements OnInit {
     this.statusName = 1;
     this.selectedBranch = 1;
     this.processTransactionModeData();
+    this.processRegionData();
   }
 
      exportToExcel(): void {
