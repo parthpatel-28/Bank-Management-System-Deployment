@@ -19,7 +19,6 @@ label.form-label {
   display: block;
   margin-bottom: 0.25rem;
   font-weight: 600;
-  color: #4e5358;
   font-size: 14px;
   font-weight: 750;
 }
@@ -149,7 +148,14 @@ label.form-label {
     background-color: #ffffff; /* White for even rows */
   }
   
+  .p-dropdown {
+    width: 100% !important;
+  }
 
+  .p-calender {
+    width: 100% !important;
+  }
+  
 
 
 
@@ -245,4 +251,3 @@ h6{
     text-transform: capitalize;
     width: 100%;
   }
- 

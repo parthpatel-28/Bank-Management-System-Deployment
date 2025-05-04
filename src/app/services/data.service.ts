@@ -27,6 +27,11 @@ export class DataService {
         { branchId: 'BR004', branchName: 'Pune Branch', location: 'Pune', region: 'Western' },
         { branchId: 'BR005', branchName: 'Bangalore Branch', location: 'Bangalore', region: 'Southern' },
         { branchId: 'BR006', branchName: 'Hyderabad Branch', location: 'Hyderabad', region: 'Southern' }
+      ],
+
+      bool : [
+        {name : "True" , value : true},
+        {name : "False" , value : false},
       ]
     }
    
@@ -44,6 +49,7 @@ export class DataService {
       {
       customerId: 'CUST001',
       branch: 'Mumbai Main Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1234567890',
         accountType: 'Savings',
@@ -70,6 +76,7 @@ export class DataService {
     {
       customerId: 'CUST002',
       branch: 'Delhi Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2234567891',
         accountType: 'Current',
@@ -96,6 +103,8 @@ export class DataService {
     {
       customerId: 'CUST003',
       branch: 'Chennai Branch',
+      cardAlloted : true,
+
       accountData: {
         accountNumber: 'BA3234567892',
         accountType: 'Savings',
@@ -122,6 +131,8 @@ export class DataService {
     {
       customerId: 'CUST004',
       branch: 'Pune Branch',
+      cardAlloted : true,
+
       accountData: {
         accountNumber: 'BA4234567893',
         accountType: 'Current',
@@ -148,6 +159,7 @@ export class DataService {
     {
       customerId: 'CUST005',
       branch: 'Hyderabad Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA5234567894',
         accountType: 'Savings',
@@ -174,6 +186,7 @@ export class DataService {
     {
       customerId: 'CUST006',
       branch: 'Pune Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA6234567895',
         accountType: 'Current',
@@ -200,6 +213,7 @@ export class DataService {
     {
       customerId: 'CUST007',
       branch: 'Bangalore Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA7234567896',
         accountType: 'Savings',
@@ -226,6 +240,7 @@ export class DataService {
     {
       customerId: 'CUST008',
       branch: 'Chennai Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA8234567897',
         accountType: 'Current',
@@ -252,6 +267,7 @@ export class DataService {
     {
       customerId: 'CUST009',
       branch: 'Mumbai Main Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA9234567898',
         accountType: 'Savings',
@@ -278,6 +294,7 @@ export class DataService {
     {
       customerId: 'CUST010',
       branch: 'Delhi Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1023456789',
         accountType: 'Current',
@@ -304,6 +321,7 @@ export class DataService {
     {
       customerId: 'CUST011',
       branch: 'Delhi Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1123456790',
         accountType: 'Savings',
@@ -330,6 +348,7 @@ export class DataService {
     {
       customerId: 'CUST012',
       branch: 'Bangalore Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1223456791',
         accountType: 'Current',
@@ -356,6 +375,7 @@ export class DataService {
     {
       customerId: 'CUST013',
       branch: 'Chennai Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1323456792',
         accountType: 'Savings',
@@ -382,6 +402,7 @@ export class DataService {
     {
       customerId: 'CUST014',
       branch: 'Delhi Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1423456793',
         accountType: 'Current',
@@ -408,6 +429,8 @@ export class DataService {
     {
       customerId: 'CUST015',
       branch: 'Mumbai Main Branch',
+      cardAlloted : true,
+
       accountData: {
         accountNumber: 'BA1523456794',
         accountType: 'Savings',
@@ -434,6 +457,7 @@ export class DataService {
     {
       customerId: 'CUST016',
       branch: 'Chennai Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1623456795',
         accountType: 'Current',
@@ -460,6 +484,7 @@ export class DataService {
     {
       customerId: 'CUST017',
       branch: 'Chennai Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1723456796',
         accountType: 'Savings',
@@ -486,6 +511,7 @@ export class DataService {
     {
       customerId: 'CUST018',
       branch: 'Pune Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1823456797',
         accountType: 'Current',
@@ -512,6 +538,7 @@ export class DataService {
     {
       customerId: 'CUST019',
       branch: 'Mumbai Main Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA1923456798',
         accountType: 'Savings',
@@ -538,6 +565,7 @@ export class DataService {
     {
       customerId: 'CUST020',
       branch: 'Hyderabad Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2023456799',
         accountType: 'Current',
@@ -564,6 +592,7 @@ export class DataService {
     {
       customerId: 'CUST021',
       branch: 'Delhi Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2123456800',
         accountType: 'Savings',
@@ -590,6 +619,7 @@ export class DataService {
     {
       customerId: 'CUST022',
       branch: 'Chennai Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2223456801',
         accountType: 'Current',
@@ -616,6 +646,7 @@ export class DataService {
     {
       customerId: 'CUST023',
       branch: 'Bangalore Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2323456802',
         accountType: 'Savings',
@@ -642,6 +673,7 @@ export class DataService {
     {
       customerId: 'CUST024',
       branch: 'Hyderabad Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2423456803',
         accountType: 'Current',
@@ -668,6 +700,7 @@ export class DataService {
     {
       customerId: 'CUST025',
       branch: 'Pune Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2523456804',
         accountType: 'Savings',
@@ -694,6 +727,7 @@ export class DataService {
     {
       customerId: 'CUST026',
       branch: 'Mumbai Main Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2623456805',
         accountType: 'Current',
@@ -720,6 +754,7 @@ export class DataService {
     {
       customerId: 'CUST027',
       branch: 'Delhi Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2723456806',
         accountType: 'Savings',
@@ -746,6 +781,7 @@ export class DataService {
     {
       customerId: 'CUST028',
       branch: 'Hyderabad Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2823456807',
         accountType: 'Current',
@@ -772,6 +808,7 @@ export class DataService {
     {
       customerId: 'CUST029',
       branch: 'Pune Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA2923456808',
         accountType: 'Savings',
@@ -798,6 +835,7 @@ export class DataService {
     {
       customerId: 'CUST030',
       branch: 'Bangalore Branch',
+      cardAlloted : true,
       accountData: {
         accountNumber: 'BA3023456809',
         accountType: 'Current',
@@ -832,15 +870,58 @@ export class DataService {
       {name: "Frozen", value : "Frozen"},
     ],
 
-    dialogFields :[
-      { name: "id" , label: "Customer ID"},
-      { name: "openingDate" ,label: "OpeningDate"},
-      { name: "accountNo" ,label: "AccountNo"},
-      { name: "accountType" ,label: "AccountType" },
-      { name: "branch"  ,label: "Branch"},
-      { name: "status"  ,label: "Status"},
-      { name: "balance" , label: "Balance"}
-      ]
+    form: {
+
+      branches : [
+       
+        { branchId: 'BR001', branchName: 'Mumbai Main Branch', location: 'Mumbai', region: 'Western' },
+        { branchId: 'BR002', branchName: 'Delhi Branch', location: 'Delhi', region: 'Northern' },
+        { branchId: 'BR003', branchName: 'Chennai Branch', location: 'Chennai', region: 'Southern' },
+        { branchId: 'BR004', branchName: 'Pune Branch', location: 'Pune', region: 'Western' },
+        { branchId: 'BR005', branchName: 'Bangalore Branch', location: 'Bangalore', region: 'Southern' },
+        { branchId: 'BR006', branchName: 'Hyderabad Branch', location: 'Hyderabad', region: 'Southern' }
+      ],
+      accountTypeList : [
+     
+        {name: "Savings" , value: "Savings" },
+        {name: "Current" , value: "Current"},
+       
+      ],
+      status : [
+        {name: "Active" , value : "Active"},
+        {name: "Closed", value : "Closed"},
+        {name: "Frozen", value : "Frozen"},
+      ],
+  
+
+      formaccount : {
+        customerId: '',
+        branch: '',
+        accountData: {
+          accountNumber: '',
+          accountType: '',
+          balance: null,
+          status: '',
+          openingDate: '',
+          createdBy: '',
+          lastUpdated: ''
+        },
+        cardData: {
+          cardNumber: '',
+          validFrom: '',
+          validTill: '',
+          dateOfIssue: '',
+          pin: '',
+          cardType: '',
+          cardLevel: '',
+          cvv: '',
+          cardStatus: '',
+          dailyLimit: null,
+          internationalUsageEnabled: false
+        }
+      },
+    }
+  
   
 
     }
@@ -2686,4 +2767,23 @@ export class DataService {
 
     }
   }
+
+
+//Functions
+
+AddNewAccount( newAccount : any){
+
+  this.accounts.accountData.push(newAccount);
+  this.accounts.accountData = [...this.accounts.accountData];
+}
+
+editAccount(index :any , Accountinfo: any){
+  this.accounts.accountData[index] = Accountinfo;
+}
+
+deleteAccount(index : any){
+  this.accounts.accountData = this.accounts.accountData.filter((account: { customerId: any; }) => account.customerId !== index);
+
+}
+
 }

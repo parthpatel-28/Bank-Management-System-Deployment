@@ -34,7 +34,7 @@
 <div class="row mt-5 mb-1">
 <div class="col-12 d-flex justify-content-start gap-2">
 
-<button (click)="displayDialog()" class="btn btn-primary waves-effect ml-1"  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+<button (click)="displayDialog2()" class="btn btn-primary waves-effect ml-1"  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
   <i class="pi pi-plus mr-2"></i> Add New Account
 </button>
 
@@ -67,15 +67,16 @@
 <ng-template pTemplate="body" let-rowData>
 <tr class="ml-5">
   <th>
-    <button (click)="displayDialog()" class="btn btn-primary ml-5" style="margin-left: 20%;">
-      <i class="pi pi-pencil" style="font-size: 0.8rem"></i>
-    </button>
-  </th>
-  <th>
-    <button class="btn btn-primary">
+    <button (click)="deleteBox(rowData.customerId)" class="btn btn-primary" style="margin-left: 20%;">
       <i class="pi pi-trash" style="font-size: 0.8rem"></i>
     </button>
   </th>
+  <th>
+    <button (click)="displayDialog(rowData.customerId)" class="btn btn-primary ml-5" >
+      <i class="pi pi-pencil" style="font-size: 0.8rem"></i>
+    </button>
+  </th>
+
   <td>{{ rowData.customerId }}</td>
   <td>{{ rowData.accountData.openingDate }}</td>
   <td>{{ rowData.accountData.accountNumber }}</td>
@@ -109,53 +110,88 @@ header="Add New Account"
 [closable]="true"
 >
 
-<div class="col-12 px-3">
+<div class="col-12 px-3 sc">
 
 <div class="mt-2 border-bottom">
-    <h5>Account Assignment</h5>
+    <h5>Bank Details</h5>
 </div>
-<div class="row mb-5 mt-2 ">
+<div class="row mb-2 mt-2 ">
 
     <div  class="col-12 col-sm-4">
-          <label class="form-label">Networks</label>
-          <p-dropdown placeholder="Choose Your Network" style="width: 100%;"
+          <label class="form-label">Branch</label>
+          <p-dropdown class="w-100 full-width-dropdown" optionValue="branchName" [options]="formbranches"
+           [(ngModel)]="formaccount.branch" optionLabel="location" placeholder="Choose Bank Branch" 
             appendTo="body" [resetFilterOnHide]="true" [filter]="true"> </p-dropdown>
     </div>
+    <div  class="col-12 col-sm-4">
+      <label>Opening Agent/Employee ID</label>
+      <input [(ngModel)]="formaccount.accountData.createdBy" class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+</div>
 </div>
 
-<div class="mt-5 border-bottom">
+<div class="mt-2 border-bottom">
     <h5>Account Information</h5>
 </div>
-<div class="row mb-5 mt-2">
+<div class="row mb-2 mt-2">
     <div  class="col-12 col-sm-4">
-          <label>Company profile</label>
-          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+          <label>Account Number</label>
+          <input [disabled]="!newAccount" [(ngModel)]="formaccount.accountData.accountNumber" class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+
+    <div  class="col-12 col-sm-4">
+            <label>Current Balance</label>
+            <input [(ngModel)]="formaccount.accountData.balance" class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
     </div>
     <div  class="col-12 col-sm-4">
-            <label>Company website</label>
-            <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+      <label>Customer Id</label>
+      <input [disabled]="!newAccount"  [(ngModel)]="formaccount.customerId" class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
     </div>
-    <div  class="col-12 col-sm-4">
-            <label>Country</label>
-            <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
-    </div>
+
+
+
+ 
 </div>
-<div class="row mb-5 mt-2">
-    <div  class="col-12 col-sm-4">
-          <label>Account Name</label>
-          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
-    </div>
+<div class="row mb-2">
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Account Type</label>
+          <p-dropdown optionValue="value" [options]="formAccountTypeList"  optionLabel="name"
+          [(ngModel)]="formaccount.accountData.accountType" class="w-100 full-width-dropdown"  placeholder="Choose Account Type" 
+          appendTo="body" [resetFilterOnHide]="true" [filter]="true"> </p-dropdown>
+  </div>
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Status</label>
+    <p-dropdown class="w-100 full-width-dropdown" optionValue="value" [options]="formstatus" [(ngModel)]="formaccount.accountData.status" optionLabel="name" placeholder="Select a Account Type"
+    [filter]="true">
+    </p-dropdown>
+  </div>
+
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Opening Date</label>
+    <p-calendar 
+    class="w-100 full-width-dropdown"
+    [disabled]="!newAccount"
+    [(ngModel)]="formaccount.accountData.openingDate"
+    [showIcon]="true"
+    placeholder="Choose a date"
+    dateFormat="yy-mm-dd">
+  </p-calendar>
+  
+  </div>
+
 </div>
 
 
-<div class="mt-5 border-bottom">
-    <h5>Ad account User invitation</h5>
+<div class="mt-2 border-bottom">
+    <h5>Card details</h5>
 </div>
 <div class="row mb-5 mt-2">
-    <div  class="col-12 col-sm-4">
-          <label>Invitation E-mail</label>
-          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
-    </div>
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Card Allotement</label>
+    <p-dropdown class="w-100 full-width-dropdown" optionValue="value" [options]="bool" 
+    [(ngModel)]="formaccount.cardAlloted" optionLabel="name" placeholder="Select a Account Type"
+    [filter]="true">
+    </p-dropdown>
+  </div>
 </div>
 
 
@@ -173,5 +209,23 @@ header="Add New Account"
 
 </p-dialog>
 
+<p-dialog 
+header="Delete Account" 
+[(visible)]="deleteDisplay" 
+[modal]="true" 
+[style]="{width: '25vw'}  " 
+[breakpoints]="{'960px': '95vw'}"
+[closable]="true"
+>
+<div class="col-12 mb-4">
+  <p style="font-size: larger;">Are you sure you want to delete this Account ? </p>
+  <p style="font-size: larger;">Customer ID : <span style="font-weight: 600;">{{deletionAccountID}}</span> </p>
+</div>
+<div class="d-flex gap-3 mt-3">
+  <button pButton (click)="deleteDisplay = false; deletionAccountID = null "  type="button" label="Cancel" class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
+  <button pButton (click)="delete()" type="button" label="Delete" class="p-button w-50 primary " ></button>
+</div>
+
+</p-dialog>
 
 
