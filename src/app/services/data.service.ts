@@ -2044,7 +2044,7 @@ export class DataService {
         blocked: true,
       },
       {
-        employeeId: 'EMP020',
+        employeeId: 'EMP021',
         name: 'Arvind Mehta',
         position: 'Legal Advisor',
         department: 'Legal',
@@ -2056,7 +2056,21 @@ export class DataService {
         salary: '₹9,00,000',
         blocked: true,
       }
-    ]
+    ],
+
+    selectedEmployee : {
+      employeeId: '',
+      name: '',
+      position: '',
+      department: '',
+      dateOfJoining: '',
+      contactNumber: '',
+      email: '',
+      branch: '',
+      employmentStatus: '',
+      salary: '₹00',
+      blocked: false,
+    },
     }
 
     this.funds = {

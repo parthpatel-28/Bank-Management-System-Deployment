@@ -12,7 +12,7 @@
           </p-dropdown>
 
           <div>
-              <input id="accountNumber" type="text" placeholder="Search For Employee Name" [(ngModel)]="accountNumber" class="form-control" />
+              <input id="accountNumber" type="text" placeholder="Search For Employee Name" [(ngModel)]="search" class="form-control" />
             </div>
         
         <button class="btn btn-success btn-light-success waves-effect waves-light" (click)="Click_Search($event)">
@@ -28,7 +28,7 @@
 
 
 <p-tabView (onChange)="onTabChange($event)"
-[(activeIndex)]="selectedBranch">
+[(activeIndex)]="selectedTab">
   <p-tabPanel *ngFor="let city of cityTabs" [header]="city.label"  >
  </p-tabPanel>
   </p-tabView>
@@ -37,7 +37,7 @@
   <div class="d-flex justify-content-around flex-wrap">
   
     <ng-container *ngFor="let item of employeesData">
-    <div *ngIf="block==1 ? item.blocked : !item.blocked"  class="p-card shadow rounded-3 p-4 mb-5" style="min-width :450px;;  max-width: 600px;">
+    <div *ngIf="block=== 1 ? item.blocked : !item.blocked"  class="p-card shadow rounded-3 p-4 mb-5" style="min-width :450px;;  max-width: 600px;">
       <div class="d-flex align-items-center mb-3">
         
         <!-- Avatar -->
@@ -55,8 +55,8 @@
     
       <!-- Action Buttons -->
       <div class="d-flex gap-3 mt-3">
-        <button pButton type="button" label="Block" class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
-        <button pButton type="button" label="Details" class="p-button w-50 primary " ></button>
+        <button pButton type="button" (click)="employeeBlock(item.employeeId)"  [label]="block == 1 ? 'UnBlock' : 'Block'"  class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
+        <button pButton type="button" (click)="employeeDetails(item.employeeId)" label="Details" class="p-button w-50 primary " ></button>
       </div>
     </div>
   </ng-container>
@@ -64,3 +64,55 @@
   </div>
 </div>
 
+
+
+<p-dialog 
+header="Employee Details "  
+[(visible)]="display" 
+[modal]="true" 
+[style]="{width: '55vw', height : '80vw' }"   
+[breakpoints]="{'960px': '95vw'}"
+[closable]="true"
+
+>
+
+<h5>{{selectedEmployee.employeeId}}</h5>
+
+<h5>{{selectedEmployee.name}}</h5>
+
+<h5>{{selectedEmployee.position}}</h5>
+
+<h5>{{selectedEmployee.department}}</h5>
+
+<h5>{{selectedEmployee.dateOfJoining}}</h5>
+
+<h5>{{selectedEmployee.contactNumber}}</h5>
+
+<h5>{{selectedEmployee.email}}</h5>
+
+<h5>{{selectedEmployee.branch}}</h5>
+
+<h5>{{selectedEmployee.employmentStatus}}</h5>
+
+<h5>{{selectedEmployee.salary}}</h5>
+
+<h5>{{selectedEmployee.blocked}}</h5>
+</p-dialog>
+
+
+<p-dialog 
+header="Delete Account" 
+[(visible)]="deleteDisplay" 
+[modal]="true" 
+[style]="{width: '25vw'}  " 
+[breakpoints]="{'960px': '95vw'}"
+[closable]="true"
+>
+<div class="col-12 mb-4">
+  <p style="font-size: larger;">Are you sure you want to {{ block == 1 ? 'unblock' : 'block' }} this Account ? </p>
+  <p style="font-size: larger;">Employee Name : {{selectedEmployee.name}}<span style="font-weight: 600;"></span> </p>
+</div>
+<div class="d-flex gap-3 mt-3">
+  <button pButton (click)="deleteDisplay = false;"  type="button" label="No" class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
+  <button pButton (click)="delete()" label = "Yes"  type="button"   class="p-button w-50 primary " ></button>
+</div>
