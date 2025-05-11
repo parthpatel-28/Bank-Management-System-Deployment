@@ -20,6 +20,8 @@ export class ComplaintsComponent implements OnInit {
   supportTeam : any = 1;
   supportTeamList : any[];
   display : any;
+  selectedComplaint : any;
+  selectedComplaintStatus : any;
   constructor(
     private DataService: DataService,
   ) { 
@@ -69,6 +71,21 @@ export class ComplaintsComponent implements OnInit {
 
   displayInfo(value :any){
     this.display = true
+    const complain = this.complaintsData.filter(account => account.complaintId == value);
+    console.log(complain[0]);
+    this.selectedComplaint = complain[0];
+    this.selectedComplaintStatus = this.selectedComplaint.complaintStatus
+  }
+
+  statusChange(status: any,complaintId: any){
+  console.log(status,complaintId);
+
+  const complaint = this.complaintsData.find(c => c.complaintId === complaintId);
+  this.selectedComplaintStatus = status;
+  if (complaint) {
+    complaint.complaintStatus = status;
+  }
+  console.log(this.complaintsData)
   }
 
 }
