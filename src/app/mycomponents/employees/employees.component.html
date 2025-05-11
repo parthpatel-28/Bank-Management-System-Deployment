@@ -70,33 +70,86 @@
 header="Employee Details "  
 [(visible)]="display" 
 [modal]="true" 
-[style]="{width: '55vw', height : '80vw' }"   
+[style]="{width: '50vw' }"   
 [breakpoints]="{'960px': '95vw'}"
 [closable]="true"
 
 >
+<div class="col-12 ml-5"> 
 
-<h5>{{selectedEmployee.employeeId}}</h5>
+<div class="d-flex ml-5 ">
 
-<h5>{{selectedEmployee.name}}</h5>
+  <div class="me-3 d-flex flex-column align-items-center col-5 px-5 mt-3 gap-5">
+    <div class=" profile " style="border: solid 5px; border-radius: 50%; padding: 15%;">
+      <i class="pi pi-user fs-1" style="font-size: 40vh; "></i>
+    </div>
+  
+    <h5>Employee ID : {{selectedEmployee.employeeId}}</h5>
+    
+    <button *ngIf="selectedEmployee" pButton type="button"  (click)="employeeBlock(selectedEmployee.employeeId)" 
+       class="p-button-outlined p-button-primary w-50 " 
+      style="border-color:  #0d1763 ; color:  #0d1763;padding-left: 2.7rem; padding-right: 1.5rem;">{{blockbutton}}</button>
+  </div>
 
-<h5>{{selectedEmployee.position}}</h5>
+  <div class="col-7 d-flex flex-column justify-content-center align-items-end ml-5 gap-2">
+   
+  <div class="col-12 px-3">
+    <div class="p-card">
+    <div class="p-card-body box-style mt-3">
+     <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Name : 
+      <span style="font-weight: 700;color: #001845;"> {{selectedEmployee.name}}</span></h5>
+    </div>
+    </div>       
+</div>
+<div class="col-12 px-3">
+  <div class="p-card">
+  <div class="p-card-body box-style mt-3">
+    <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Date of Joining : 
+      <span style="font-weight: 700;color: #001845;"> {{selectedEmployee.dateOfJoining}}</span></h5>
+  </div>
+  </div>       
+</div>    
+  <div class="col-12 px-3">
+  <div class="p-card">
+  <div class="p-card-body box-style mt-3">
+    <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Department : 
+      <span style="font-weight: 700;color: #001845;"> {{selectedEmployee.department}}</span></h5>
+  </div>
+  </div>       
+</div> 
+ <div class="col-12 px-3">
+  <div class="p-card">
+  <div class="p-card-body box-style mt-3">
+    <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Contact Number : 
+      <span style="font-weight: 700;color: #001845;"> {{selectedEmployee.contactNumber}}</span></h5>
+  </div>
+  </div>       
+</div>   
+ <div class="col-12 px-3">
+  <div class="p-card">
+  <div class="p-card-body box-style mt-3">
+    <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Branch : 
+      <span style="font-weight: 700;color: #001845;"> {{selectedEmployee.branch}}</span></h5>
+  </div>
+  </div>       
+</div>
+<div class="col-12 px-3">
+  <div class="p-card">
+  <div class="p-card-body box-style mt-3">
+    <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Email : 
+      <span style="font-weight: 700;color: #001845;"> {{selectedEmployee.email}}</span></h5>
+  </div>
+  </div>       
+</div>
+  </div>
 
-<h5>{{selectedEmployee.department}}</h5>
+ 
+  
+</div>
 
-<h5>{{selectedEmployee.dateOfJoining}}</h5>
 
-<h5>{{selectedEmployee.contactNumber}}</h5>
+</div>
 
-<h5>{{selectedEmployee.email}}</h5>
-
-<h5>{{selectedEmployee.branch}}</h5>
-
-<h5>{{selectedEmployee.employmentStatus}}</h5>
-
-<h5>{{selectedEmployee.salary}}</h5>
-
-<h5>{{selectedEmployee.blocked}}</h5>
 </p-dialog>
 
 
