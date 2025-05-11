@@ -19,6 +19,7 @@ export class ComplaintsComponent implements OnInit {
   priority :any = 1;
   supportTeam : any = 1;
   supportTeamList : any[];
+  display : any;
   constructor(
     private DataService: DataService,
   ) { 
@@ -64,6 +65,10 @@ export class ComplaintsComponent implements OnInit {
     this.complaintsData = this.complaintsDataMain;
     this.priority = 1;
     this.supportTeam = 1;
+  }
+
+  displayInfo(value :any){
+    this.display = true
   }
 
 }
