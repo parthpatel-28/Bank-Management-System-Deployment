@@ -211,33 +211,84 @@
       [closable]="true"
       
       >
+
       <ng-container *ngIf="selectedComplaint">
-        <button type="button"
-       (click)="statusChange('Pending',selectedComplaint.complaintId)"  pButton
-        class="btn " [ngStyle]="{ 'background-color': selectedComplaintStatus === 'Pending' ? 'red' : '#0d1763','color': 'white'}"
-        style="margin-right: 0.1rem;">Pending</button> 
+        <h3 class="py-2 mb-3 " style="text-align: center;" [ngStyle]="getColor(selectedComplaint.priority)">{{selectedComplaint.priority}} Priority</h3>
+       
+        <div class="d-flex justify-content-between pr- mt-1 mb-5">
+            <div >
+              <h5 style="margin-left: 0.6rem;" >Complaint Id : {{selectedComplaint.complaintId}}</h5>
+            </div>
+            <div> 
+              <button type="button"
+            (click)="statusChange('Pending',selectedComplaint.complaintId)"  
+              class="btn " [ngStyle]="selectedComplaintStatus === 'Pending' ? 
+              {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
+              {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
+              style="width:24vh ; text-align: center;border: 1px solid #0d1763; ; border-radius: 15px 0px 0px 15px;">
+              {{selectedComplaintStatus == "Pending" ? 'Pending' : 'Move to Pending'}}</button> 
 
-       <button type="button"
-       (click)="statusChange('Under Investigation',selectedComplaint.complaintId)"  pButton
-        class="btn " [ngStyle]="{ 'background-color': selectedComplaintStatus === 'Under Investigation' ? 'red' : 'black','color': 'white'}"
-        style="margin-right: 0.1rem;">Under Investigation</button> 
+            <button type="button"
+            (click)="statusChange('Under Investigation',selectedComplaint.complaintId)"  
+              class="btn " [ngStyle]="selectedComplaintStatus === 'Under Investigation' ? 
+              {'background-color': '#0d1763','color': 'white', 'fontWeight':'700'} :
+              {'background-color': 'white','color': '#0d1763' ,'fontWeight':'550'}"
+              style="width:24vh ; text-align: center;border: 1px solid #0d1763; border-radius: 0px;"
+              >{{selectedComplaintStatus == "Under Investigation" ? 'Under Investigation' : 'Move to Investigation'}}</button> 
 
-        <button type="button"
-        (click)="statusChange('Resolved',selectedComplaint.complaintId)" pButton
-        class="btn " [ngStyle]="{ 'background-color': selectedComplaintStatus === 'Resolved' ? 'red' : '#0d1763','color': 'white'}"
-        style="margin-right: 0.1rem;">Resolved</button> 
+              <button type="button"
+              (click)="statusChange('Resolved',selectedComplaint.complaintId)" 
+              class="btn " [ngStyle]="selectedComplaintStatus === 'Resolved' ?
+              {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
+              {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
+              style="width:24vh ; text-align: center;border: 1px solid #0d1763;border-radius: 0px 15px 15px 0px;"
+              >{{selectedComplaintStatus == "Resolved" ? 'Resolved' : 'Move to Resolved'}}</button> 
+            </div>
+        </div> 
+   
+        <div class="d-flex" >
+          <div class="col-6 px-3">
+            <div class="p-card">
+            <div class="p-card-body box-style mt-3">
+              <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Customer Name : 
+                <span style="font-weight: 700;color: #001845;"> {{selectedComplaint.customerName}}</span></h5>
+            </div>
+            </div>       
+          </div> 
+           <div class="col-6 px-3">
+            <div class="p-card">
+            <div class="p-card-body box-style mt-3">
+              <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Complain Type : 
+                <span style="font-weight: 700;color: #001845;"> {{selectedComplaint.complaintType}}</span></h5>
+            </div>
+            </div>       
+          </div>   
+        </div>
 
-        <h5>complaintId : {{selectedComplaint.complaintId}}</h5>
-        <h5>customerName :{{selectedComplaint.customerName}}</h5>
-        <h5>complaintType :{{selectedComplaint.complaintType}}</h5>
+        <div class="d-flex">
+          <div class="col-6 px-3">
+            <div class="p-card">
+            <div class="p-card-body box-style mt-3">
+              <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Complain Date : 
+                <span style="font-weight: 700;color: #001845;"> {{selectedComplaint.complaintDate}}</span></h5>
+            </div>
+            </div>       
+          </div>
+          <div class="col-6 px-3">
+            <div class="p-card">
+            <div class="p-card-body box-style mt-3">
+              <h5 style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Assigned To : 
+                <span style="font-weight: 700;color: #001845;"> {{selectedComplaint.assignedTo}}</span></h5>
+            </div>
+            </div>       
+          </div>
+        </div>
+      
+       <!--
         <h5>complaintDescription :{{selectedComplaint.complaintDescription}}</h5>
-        <h5>complaintDate :{{selectedComplaint.complaintDate}}</h5>
-        <h5>resolutionDetails :{{selectedComplaint.resolutionDetails}}</h5>
-        <h5>resolutionDate :{{selectedComplaint.resolutionDate}}</h5>
-        <h5>assignedTo :{{selectedComplaint.assignedTo}}</h5>
-        <h5>priority :{{selectedComplaint.priority}}</h5>
-        <h5>followUpDate :{{selectedComplaint.followUpDate}}</h5>
 
+        <h5>followUpDate :{{selectedComplaint.followUpDate}}</h5>
+-->
 
 
 

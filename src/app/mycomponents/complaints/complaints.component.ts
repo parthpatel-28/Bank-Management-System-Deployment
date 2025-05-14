@@ -88,4 +88,16 @@ export class ComplaintsComponent implements OnInit {
   console.log(this.complaintsData)
   }
 
+  getColor(value: any) {
+    switch (value) {
+    case 'High':        // Rejected
+      return { color: '#FF4D4F', backgroundColor: '#FFF1F0' };
+    case 'Low':       // Approved
+      return { color: '#28C76F', backgroundColor: '#F2FBF5' };
+    case 'Medium': // In Review
+     return { color: '#E5A800', backgroundColor: '#FFFBE6' };
+    default:
+      return { color: '#6C757D', backgroundColor: '#F8F9FA' }; // N/A / Unknown
+  }
+  }
 }
