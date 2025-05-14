@@ -185,14 +185,17 @@ export class AccountsComponent implements OnInit {
 
 
 
-  getColor(percentage: any) {
-    if (percentage === "Active") {
-      return '#5cb89e'; // Gentle green
-    } else if (percentage === "Frozen") {
-      return '#dda45a'; // Warm orange
-    } else {
-      return '#d46b6b'; // Muted red
-    }
+  getColor(value: any) {
+    switch (value) {
+    case 'Closed':        // Rejected
+      return { color: '#FF4D4F', backgroundColor: '#FFF1F0' };
+    case 'Active':       // Approved
+      return { color: '#28C76F', backgroundColor: '#F2FBF5' };
+    case 'Frozen': // In Review
+     return { color: '#E5A800', backgroundColor: '#FFFBE6' };
+    default:
+      return { color: '#6C757D', backgroundColor: '#F8F9FA' }; // N/A / Unknown
+  }
   }
 
   DateConversion(value: any): string {
