@@ -108,9 +108,7 @@
           <td>
             <span 
               class="status-pill"
-              [ngStyle]="{
-                'background-color': getColor(rowData.transactionStatus)
-              }">
+              [ngStyle]="getColor(rowData.transactionStatus)">
               {{ rowData.transactionStatus }}
             </span>
           </td>

@@ -58,8 +58,8 @@ export class TransactionsComponent implements OnInit {
       datasets: [
         {
           data: Object.values(regionCounts),
-          backgroundColor: ['#E07A5F', '#F4F1BB', '#81B29A', '#D9BF77'], // Warm muted reds, yellows, and greens
-          hoverBackgroundColor: ['#F2A98C', '#D7D6A1', '#A7C6B5', '#E8D06B'] // Hover colors
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#678D99', '#3B6978'], // Warm muted reds, yellows, and greens
+          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#4C6B74', '#2A4D56'] // Hover colors
         }
       ]
     };
@@ -78,8 +78,8 @@ export class TransactionsComponent implements OnInit {
       datasets: [
         {
           data: Object.values(modeCounts),
-          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#F2A65A'], // Muted blues, beige, and warm tones
-          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#E39D3B'] // Hover colors
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#678D99', '#3B6978'], // Warm muted reds, yellows, and greens
+          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#4C6B74', '#2A4D56'] // Hover colors
         }
       ]
     };
@@ -132,16 +132,14 @@ export class TransactionsComponent implements OnInit {
 
       getColor(status: any) {
         switch (status) {
-          case "Completed":
-            return '#5cb89e'; // Gentle green
-          case "Pending":
-            return '#dda45a'; // Warm amber
-          case "Closed":
-            return '#a1a1a1'; // Soft neutral gray
-          case "Failed":
-            return '#d46b6b'; // Muted red
+          case 'Failed':        // Rejected
+            return { color: '#FF4D4F', backgroundColor: '#FFF1F0' };
+          case 'Completed':       // Approved
+            return { color: '#28C76F', backgroundColor: '#F2FBF5' };
+          case 'Pending': // In Review
+           return { color: '#E5A800', backgroundColor: '#FFFBE6' };
           default:
-            return '#cccccc'; // Fallback gray
+            return { color: '#6C757D', backgroundColor: '#F8F9FA' }; // N/A / Unknown
         }
     }
 
