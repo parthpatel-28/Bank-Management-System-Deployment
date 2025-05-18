@@ -24,6 +24,7 @@ export class ComplaintsComponent implements OnInit {
   display : any;
   selectedComplaint : any;
   selectedComplaintStatus : any;
+  DescEdit : boolean = false;
   constructor(
     private messageService: MessageService,
     private DataService: DataService,
@@ -84,6 +85,7 @@ export class ComplaintsComponent implements OnInit {
 
   displayInfo(value :any){
     this.display = true
+    this.DescEdit = false;
     const complain = this.complaintsData.filter(account => account.complaintId == value);
     console.log(complain[0]);
     this.selectedComplaint = complain[0];
@@ -100,6 +102,15 @@ export class ComplaintsComponent implements OnInit {
     this.showSuccess("Complaint moved to " +status + " Section")
   }
   console.log(this.complaintsData)
+  }
+
+  EditDesc(value : boolean){
+  this.DescEdit = value;
+  }
+
+  SaveDesc(){
+    this.DescEdit = false;
+    console.log(this.selectedComplaint.complaintDescription);
   }
 
   getColor(value: any) {

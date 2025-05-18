@@ -447,7 +447,7 @@ export class BranchesComponent implements OnInit {
           label: 'Yearly Performance',
           data: this.branch.yearlyPerformance,
           fill: false,
-          borderColor: '#42A5F5',
+          borderColor: '#3B6978',
           tension: 0.4
         }
       ]

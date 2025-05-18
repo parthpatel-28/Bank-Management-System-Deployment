@@ -65,28 +65,31 @@ export class DashboardComponent implements OnInit {
         position: 'Branch Manager',
         performanceRating: 95,
         branch: 'Chennai Branch',
-        region: 'Southern'
+        region: 'Southern',
       },
       {
         employeeId: 'E060',
         name: 'Vikas Kulkarni',
         position: 'Senior Manager',
         branch: 'Pune Branch',
-        performanceRating: 92
+        performanceRating: 92,
+        region: 'Western'
       },
       {
         employeeId: 'E075',
         name: 'Ravi Chandrasekhar',
         position: 'Branch Manager',
         branch: 'Bangalore Branch',
-        performanceRating: 97
+        performanceRating: 97,
+        region: 'Southern'
       },
       {
         employeeId: 'E090',
         name: 'Shravan Kumar',
         position: 'Senior Manager',
         branch: 'Hyderabad Branch',
-        performanceRating: 95
+        performanceRating: 95,
+        region: 'Southern'
       }
     ];
     

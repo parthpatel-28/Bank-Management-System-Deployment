@@ -1,8 +1,8 @@
 /* layout.component.css */
 
 .main-wrapper {
-  margin-left: 11rem; /* same as sidebar width */
-  min-height: 80rem;
+  margin-left: 13rem; /* same as sidebar width */
+
   display: flex;
   flex-direction: column;
   background-color: #f6f6f6;
@@ -11,5 +11,6 @@
 .main-content {
   flex-grow: 1;
   padding: 1.5rem;
+  padding-top: 0.5rem;
   overflow-y: auto;
 }
