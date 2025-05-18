@@ -42,9 +42,9 @@
                 <li class="list-group-item d-flex fw-bold "
                 style="position: sticky; top: 0; background-color: white; z-index: 1;">
               <div class="d-flex w-100">
-                <div class="text-end pr-3" style="width: 30%;">ComplaintID</div>
-                <div class="text-center pr-3" style="width: 55%;">Customer Name</div>
-                <div class="d-flex align-items-end justify-content-center" style="width: 15%;">Priority</div>
+                <div class="text-center pr-3" style="width: 30%;font-size: 80%;">ComplaintID</div>
+                <div class="text-center pr-3" style="width: 55%;font-size: 80%;">Customer Name</div>
+                <div class="d-flex align-items-end justify-content-center" style="width: 15%;font-size: 80%;">Priority</div>
               </div>
             </li>
               <!--No Data-->
@@ -59,18 +59,18 @@
               <ng-container *ngFor="let item of complaintsData">
                 <li *ngIf="item.complaintStatus === 'Pending'" class="list-group-item d-flex">
                   <div class="d-flex w-100">
-                    <div class="text-center d-flex align-items-center justify-content-start" style="width: 30%;">
+                    <div class="text-center d-flex align-items-center justify-content-start" style="width: 35%;font-size: 80%;">
                       <button type="button"
                              (click)="displayInfo(item.complaintId)"
                               pButton
                               icon="pi pi-pencil"
-                              class="btn btn-primary btn-sm" style="margin-right: 0.8rem;"></button> 
-                      {{item.complaintId}}
+                              class="btn btn-primary btn-sm" style="font-size: 60%;"></button> 
+                      <span style="margin-left: 0.4rem;">{{item.complaintId}}</span>
                     </div>
-                    <div class="text-end d-flex align-items-start justify-content-center" style="width: 55%;">
+                    <div class="text-end d-flex align-items-start justify-content-center" style="width: 50%;font-size: 80%;">
                       {{item.customerName}}
                     </div>
-                    <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;">
+                    <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;font-size: 80%;">
                       {{item.priority}}
                     </div>
                   </div>
@@ -99,9 +99,9 @@
                     <li class="list-group-item d-flex fw-bold"
                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                   <div class="d-flex w-100">
-                    <div class="text-end pr-3" style="width: 30%;">ComplaintID</div>
-                    <div class="text-center pr-3" style="width: 55%;">Customer Name</div>
-                    <div class="d-flex align-items-end justify-content-center" style="width: 15%;">Priority</div>
+                    <div class="text-center pr-3" style="width: 30%;font-size: 80%;">ComplaintID</div>
+                    <div class="text-center pr-3" style="width: 55%;font-size: 80%;">Customer Name</div>
+                    <div class="d-flex align-items-end justify-content-center" style="width: 15%;font-size: 80%;">Priority</div>
                   </div>
                 </li>
                   <!--No Data-->
@@ -116,18 +116,18 @@
                   <ng-container *ngFor="let item of complaintsData">
                     <li *ngIf="item.complaintStatus === 'Under Investigation'" class="list-group-item d-flex">
                       <div class="d-flex w-100">
-                        <div class="text-center d-flex align-items-center justify-content-start" style="width: 30%;">
+                        <div class="text-center d-flex align-items-center justify-content-start" style="width: 35%;font-size: 80%;">
                           <button type="button"
                                  (click)="displayInfo(item.complaintId)"
                                   pButton
                                   icon="pi pi-pencil"
-                                  class="btn btn-primary btn-sm" style="margin-right: 0.8rem;"></button> 
-                          {{item.complaintId}}
+                                  class="btn btn-primary btn-sm" style="font-size: 55%;"></button> 
+                         <span style="margin-left: 0.4rem;">{{item.complaintId}}</span> 
                         </div>
-                        <div class="text-end d-flex align-items-start justify-content-center" style="width: 55%;">
+                        <div class="text-end d-flex align-items-start justify-content-center" style="width: 50%;font-size: 80%;">
                           {{item.customerName}}
                         </div>
-                        <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;">
+                        <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;font-size: 80%;">
                           {{item.priority}}
                         </div>
                       </div>
@@ -156,9 +156,9 @@
                         <li class="list-group-item d-flex fw-bold"
                         style="position: sticky; top: 0; background-color: white; z-index: 1;">
                       <div class="d-flex w-100">
-                        <div class="text-end pr-3" style="width: 30%;">ComplaintID</div>
-                        <div class="text-center pr-3" style="width: 55%;">Customer Name</div>
-                        <div class="d-flex align-items-end justify-content-center" style="width: 15%;">Priority</div>
+                        <div  class="text-center pr-3" style="width: 30%; font-size: 80%;">ComplaintID</div>
+                        <div class="text-center pr-3" style="width: 55%;font-size: 80%;">Customer Name</div>
+                        <div class="d-flex align-items-end justify-content-center" style="width: 15%;font-size: 80%;">Priority</div>
                       </div>
                     </li>
                       <!--No Data-->
@@ -173,18 +173,18 @@
                       <ng-container *ngFor="let item of complaintsData">
                         <li *ngIf="item.complaintStatus === 'Resolved'" class="list-group-item d-flex">
                           <div class="d-flex w-100">
-                            <div class="text-center d-flex align-items-center justify-content-start" style="width: 30%;height: 30%;">
+                            <div  class="text-center d-flex align-items-center justify-content-start" style="width: 35%;font-size: 80%;">
                               <button type="button"
                                      (click)="displayInfo(item.complaintId)"
                                       pButton
                                       icon="pi pi-pencil"
-                                      class="btn btn-primary btn-sm" style="margin-right: 0.8rem;"></button> 
-                              {{item.complaintId}}
+                                      class="btn btn-primary btn-sm" style="font-size: 60%;"></button> 
+                             <span class="ml-2" style="margin-left: 0.4rem;">{{item.complaintId}}</span>
                             </div>
-                            <div class="text-end d-flex align-items-start justify-content-center" style="width: 55%;">
+                            <div class="text-end d-flex align-items-start justify-content-center" style="width: 50%;font-size: 80%;">
                               {{item.customerName}}
                             </div>
-                            <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;">
+                            <div class="text-end d-flex align-items-start justify-content-center" style="width: 15%;font-size: 80%;">
                               {{item.priority}}
                             </div>
                           </div>
