@@ -44,7 +44,7 @@
   <div class="col-md-2 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 ">  
     <div *ngFor="let card of cards2" class="col-12 p-card">
       <div class="p-card-body box-style">
-       <h5 style="color: #001845; text-align: center;">{{ card }}</h5>
+       <p style="color: #001845; text-align: center;">{{ card }}</p>
     </div>
    </div>
   </div>
@@ -62,7 +62,7 @@
   <div class="col-md-2 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 ">  
     <div *ngFor="let card of cards2" class="col-12 p-card">
       <div class="p-card-body box-style">
-       <h5 style="color: #001845; text-align: center;">{{ card }}</h5>
+       <p style="color: #001845; text-align: center;">{{ card }}</p>
     </div>
    </div>
   </div>
@@ -100,7 +100,7 @@
       <ng-template pTemplate="body" let-rowData>
         <tr class="ml-5">
           <th>
-            <button class="btn btn-primary " style="margin-left: 20%;">
+            <button class="btn btn-primary " (click)="copyToClipboard(rowData.transactionId)" style="margin-left: 20%;">
               <i class="pi pi-copy" style="font-size: 0.8rem"></i>
             </button>
           </th>

@@ -92,9 +92,10 @@ header="Employee Details "
   
     <p class="col- pl-3" style="font-size: 100% ;">Employee ID : {{selectedEmployee.employeeId}}</p>
     
-    <button *ngIf="selectedEmployee" pButton type="button"  (click)="employeeBlock(selectedEmployee.employeeId)" 
-       class="p-button-outlined p-button-primary w-50 " 
-      style="border-color:  #0d1763 ; color:  #0d1763;padding-left: 2.7rem; padding-right: 1.5rem;">{{blockbutton}}</button>
+    <button *ngIf="selectedEmployee" type="button"  (click)="employeeBlock(selectedEmployee.employeeId)" 
+       class="btn w-50 " label=""
+      style="border-color:  #0d1763 ; color:  #0d1763; display: flex; justify-content: center;width:100%;">
+      {{blockbutton}}</button>
   </div>
 
   <div class="col-7 d-flex flex-column justify-content-center align-items-end ml-5 gap-2">
@@ -168,7 +169,7 @@ header="Delete Account"
 [closable]="true"
 >
 <div class="col-12 mb-4">
-  <p style="font-size: larger;">Are you sure you want to {{ block == 1 ? 'unblock' : 'block' }} this Account ? </p>
+  <p style="font-size: larger;">Are you sure you want to {{ block == 1 ? 'unblock' : 'block' }} this Account? </p>
   <p style="font-size: larger;">Employee Name : {{selectedEmployee.name}}<span style="font-weight: 600;"></span> </p>
 </div>
 <div class="d-flex gap-3 mt-3">

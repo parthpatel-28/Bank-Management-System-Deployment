@@ -144,7 +144,9 @@ export class TransactionsComponent implements OnInit {
     }
 
 
+    copyToClipboard(Id : any){
 
+    }
 
 
 }

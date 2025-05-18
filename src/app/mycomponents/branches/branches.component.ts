@@ -539,4 +539,8 @@ export class BranchesComponent implements OnInit {
   this.prepareCharts();
   
   }
+
+  copyToClipboard(Id : any){
+
+  }
 }

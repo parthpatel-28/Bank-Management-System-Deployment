@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -27,7 +28,9 @@ export class DashboardComponent implements OnInit {
 
   ];
 
-  constructor() { 
+  constructor(
+    private dataservice : DataService, 
+  ) { 
 
   
     this.transactionTypeData = {
@@ -41,57 +44,7 @@ export class DashboardComponent implements OnInit {
       ]
     };
     
-
-     this.topEmployees = [
-      {
-        employeeId: 'E001',
-        name: 'Amit Sharma',
-        position: 'Branch Manager',
-        performanceRating: 92,
-        branch: 'Mumbai Main Branch',
-        region: 'Western'
-      },
-      {
-        employeeId: 'E021',
-        name: 'Ritika Chopra',
-        position: 'Senior Manager',
-        performanceRating: 94,
-        branch: 'Delhi Branch',
-        region: 'Northern'
-      },
-      {
-        employeeId: 'E045',
-        name: 'Ananya Krishnan',
-        position: 'Branch Manager',
-        performanceRating: 95,
-        branch: 'Chennai Branch',
-        region: 'Southern',
-      },
-      {
-        employeeId: 'E060',
-        name: 'Vikas Kulkarni',
-        position: 'Senior Manager',
-        branch: 'Pune Branch',
-        performanceRating: 92,
-        region: 'Western'
-      },
-      {
-        employeeId: 'E075',
-        name: 'Ravi Chandrasekhar',
-        position: 'Branch Manager',
-        branch: 'Bangalore Branch',
-        performanceRating: 97,
-        region: 'Southern'
-      },
-      {
-        employeeId: 'E090',
-        name: 'Shravan Kumar',
-        position: 'Senior Manager',
-        branch: 'Hyderabad Branch',
-        performanceRating: 95,
-        region: 'Southern'
-      }
-    ];
+     this.topEmployees = dataservice.dashboard.topEmployees;
     
     
     
@@ -159,6 +112,8 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  
+  copyToClipboard(Id : any){
+
+  }
 
 }
