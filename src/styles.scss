@@ -58,6 +58,7 @@ label.form-label {
 .box-style {
   position: relative;
   overflow: hidden;
+  min-height: 3rem;
 }
 
 
@@ -169,6 +170,7 @@ h6{
     color: #0d1763;
   }
 
+  p{margin-bottom: 0rem;}
   
   a {
     text-decoration: none;
