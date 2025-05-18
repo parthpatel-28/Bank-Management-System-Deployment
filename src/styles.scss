@@ -97,9 +97,6 @@ label.form-label {
   border-radius: 6px !important;
 
 }
-
-
-
 /* Main multiselect box */
 .p-multiselect {
   border-radius: 6px !important;
@@ -110,6 +107,55 @@ label.form-label {
 }
 
 
+/* ---------- PrimeNG Toast Custom Styling ---------- */
+
+/* Success Toast Appearance */
+.p-toast .p-toast-message-success {
+  background-color: #e6f4ea !important;     /* Soft green */
+  border-left: 6px solid #34a853 !important; /* Accent green bar */
+  border-radius: 10px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  color: #1e4620 !important;
+  padding: 0.75rem 1rem !important;
+  min-height: unset !important;
+}
+
+/* Content padding fix */
+.p-toast .p-toast-message-content {
+  padding: 0 !important;
+}
+
+/* Title styling */
+.p-toast .p-toast-summary {
+  font-weight: 600 !important;
+  color: #188038 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Detail styling */
+.p-toast .p-toast-detail {
+  color: #5f6368 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Success icon color */
+.p-toast-icon-success {
+  color: #188038 !important;
+}
+
+/* Hide close button */
+.p-toast .p-toast-icon-close {
+  display: none !important;
+}
+
+/* Center the toast at top of screen */
+.p-toast.p-toast-top-center {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 
 
@@ -240,6 +286,8 @@ h6{
     background-color: #2566c7 !important;
     border-color: #2566c7 !important;
   }
+
+
   
   .status-pill {
     display: inline-block;

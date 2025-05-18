@@ -30,6 +30,8 @@ import { CardsComponent } from './cards/cards.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { TabViewModule } from 'primeng/tabview';
 import { CalendarModule } from 'primeng/calendar';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { CalendarModule } from 'primeng/calendar';
     AccountsComponent,
     CardsComponent,
     EmployeesComponent,
+    
     
   ],
   imports: [
@@ -64,9 +67,11 @@ import { CalendarModule } from 'primeng/calendar';
     InputSwitchModule,
     InputTextModule,
     TabViewModule,
-    CalendarModule
+    CalendarModule,
+    ToastModule
     
   ],
+  providers: [MessageService],
 
   exports: [
     SidebarComponent, // This line is crucial!

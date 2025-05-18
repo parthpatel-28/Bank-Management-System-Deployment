@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.scss']
+  styleUrls: ['./employees.component.scss'],
+  providers: [MessageService] 
 })
 export class EmployeesComponent implements OnInit {
 
@@ -30,6 +34,7 @@ export class EmployeesComponent implements OnInit {
 
   constructor(
     private DataService: DataService,
+    private messageService: MessageService
   ) {
     this.branches = DataService.global.branches;
     this.employeesData = DataService.employees.employeesData;
@@ -47,6 +52,16 @@ onTabChange(value :any){
   this.block = value.index
   console.log("block " , this.block);
 }
+showSuccess(value : any) {
+  this.messageService.add({
+    key: 'success',
+    severity: 'success',
+    summary: 'Done!',
+    detail:  this.selectedEmployee.name +" is "+ value+"ed"
+  });
+}
+
+ 
 
 Click_Search(value : any){
   this.employeesData = this.employeesDataMain
@@ -99,7 +114,7 @@ delete(){
     this.employeesData[this.blockemployeeIndex].blocked = false
      }
      this.blockbutton = this.blockbutton == "Unblock" ? "Block" : "Unblock";
-
+this.showSuccess(this.blockbutton== "Unblock" ? "Block" : "Unblock" )
     this.display = false;
 }
 

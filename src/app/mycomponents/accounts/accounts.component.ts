@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { DataService } from 'src/app/services/data.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
-  styleUrls: ['./accounts.component.scss']
+  styleUrls: ['./accounts.component.scss'],
+  providers: [MessageService] 
 })
 export class AccountsComponent implements OnInit {
 
@@ -39,6 +41,7 @@ export class AccountsComponent implements OnInit {
 
   constructor(
     private DataService : DataService,
+    private messageService: MessageService
   ) {   
        
       }
@@ -48,6 +51,24 @@ export class AccountsComponent implements OnInit {
   ngOnInit(): void {
     this.getData();
   }
+  showSuccess(value : string) {
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail: value,
+      life: 3000, 
+    });
+  }
+  showDelete(){
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail:  "Account successfully deleted",
+      life: 3000, 
+    });
+  } 
 
  getData(){
   //Branches 
@@ -140,6 +161,7 @@ export class AccountsComponent implements OnInit {
   this.getData();
   this.deletionAccountID = null;
   this.deleteDisplay = false;
+  this.showDelete()
   }
 
   deleteBox(value:any){
@@ -169,6 +191,7 @@ export class AccountsComponent implements OnInit {
       this.DataService.editAccount(this.selectedAccountID , this.formaccount );
       this.getData();
       this.display = false;
+      this.showSuccess("Account successfully Updated ");
       
     }else{
       this.formaccount.accountData.openingDate = this.DateConversion(this.formaccount.accountData.openingDate);
@@ -177,7 +200,7 @@ export class AccountsComponent implements OnInit {
       this.getData();
       console.log(this.accountData);
       this.display = false;
-
+      this.showSuccess("New Accounted successfully Created");
 
     } 
 

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-complaints',
   templateUrl: './complaints.component.html',
-  styleUrls: ['./complaints.component.scss']
+  styleUrls: ['./complaints.component.scss'],
+  providers: [MessageService] 
 })
 export class ComplaintsComponent implements OnInit {
 
@@ -23,6 +25,7 @@ export class ComplaintsComponent implements OnInit {
   selectedComplaint : any;
   selectedComplaintStatus : any;
   constructor(
+    private messageService: MessageService,
     private DataService: DataService,
   ) { 
 
@@ -41,6 +44,16 @@ export class ComplaintsComponent implements OnInit {
   ngOnInit(): void {
   
 
+  }
+
+  showSuccess(value : string) {
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail: value,
+      life: 3000, 
+    });
   }
 
   Click_Search(value : any){
@@ -84,6 +97,7 @@ export class ComplaintsComponent implements OnInit {
   this.selectedComplaintStatus = status;
   if (complaint) {
     complaint.complaintStatus = status;
+    this.showSuccess("Complaint moved to " +status + " Section")
   }
   console.log(this.complaintsData)
   }

@@ -513,7 +513,7 @@ export class BranchesComponent implements OnInit {
       responsive: true,
       plugins: {
         legend: {
-          position: 'top',
+          position: 'bottom',
           display: true
         }
       }
@@ -523,7 +523,7 @@ export class BranchesComponent implements OnInit {
       responsive: true,
       plugins: {
         legend: {
-          position: 'top',
+          position: 'bottom',
           display: true
         }
       }
