@@ -64,6 +64,7 @@
                       <button type="button"
                              (click)="displayInfo(item.complaintId)"
                               pButton
+                              pTooltip="Edit" tooltipPosition="left"
                               icon="pi pi-pencil"
                               class="btn btn-primary btn-sm" style="font-size: 60%;"></button> 
                       <span style="margin-left: 0.4rem;">{{item.complaintId}}</span>
@@ -121,6 +122,7 @@
                           <button type="button"
                                  (click)="displayInfo(item.complaintId)"
                                   pButton
+                                  pTooltip="Edit" tooltipPosition="left"
                                   icon="pi pi-pencil"
                                   class="btn btn-primary btn-sm" style="font-size: 55%;"></button> 
                          <span style="margin-left: 0.4rem;">{{item.complaintId}}</span> 
@@ -178,6 +180,7 @@
                               <button type="button"
                                      (click)="displayInfo(item.complaintId)"
                                       pButton
+                                      pTooltip="Edit" tooltipPosition="left"
                                       icon="pi pi-pencil"
                                       class="btn btn-primary btn-sm" style="font-size: 60%;"></button> 
                              <span class="ml-2" style="margin-left: 0.4rem;">{{item.complaintId}}</span>
@@ -227,7 +230,7 @@
               class="btn h-100 w-33" [ngStyle]="selectedComplaintStatus === 'Pending' ? 
               {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
               {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
-              style=" text-align: center;border: 1px solid #0d1763; ; border-radius: 15px 0px 0px 15px;">
+              style=" text-align: center;border: 2px solid #0d1763; ; border-radius: 15px 0px 0px 15px;">
               {{selectedComplaintStatus == "Pending" ? 'Pending' : 'Move to Pending'}}</button> 
 
             <button type="button"
@@ -235,7 +238,7 @@
               class="btn h-100 w-34" [ngStyle]="selectedComplaintStatus === 'Under Investigation' ? 
               {'background-color': '#0d1763','color': 'white', 'fontWeight':'700'} :
               {'background-color': 'white','color': '#0d1763' ,'fontWeight':'550'}"
-              style=" text-align: center;border: 1px solid #0d1763; border-radius: 0px;"
+              style=" text-align: center;border: 2px solid #0d1763; border-radius: 0px;"
               >{{selectedComplaintStatus == "Under Investigation" ? 'Under Investigation' : 'Move to Investigation'}}</button> 
 
               <button type="button"
@@ -243,13 +246,13 @@
               class="btn h-100 w-33" [ngStyle]="selectedComplaintStatus === 'Resolved' ?
               {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
               {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
-              style=" text-align: center;border: 1px solid #0d1763;border-radius: 0px 15px 15px 0px;"
+              style=" text-align: center;border: 2px solid #0d1763;border-radius: 0px 15px 15px 0px;"
               >{{selectedComplaintStatus == "Resolved" ? 'Resolved' : 'Move to Resolved'}}</button> 
             </div>
         </div> 
         
         <div class="d-flex justify-content-end mb-3 mr-5" style="margin-right: 1%;color: #0d1763;">
-       <p>(You can change the Status of Complaint using above tabs.)</p>
+       <!-- <p>(You can change the Status of Complaint using above tabs.)</p> -->
         </div>
         
         <div class="d-flex" >
@@ -294,7 +297,8 @@
           <div class="col-12 px-3">
             <div class="form-group mt-4">
               <label style="font-size: 1.2rem;  color: rgb(69, 67, 67);" for="commentBox">
-                Compalint Desciption <i *ngIf="!DescEdit" style="color: #0d1763; cursor: pointer;margin-left: 0.4rem; font-size: 1.3rem;" 
+                Compalint Desciption <i *ngIf="!DescEdit"  pTooltip="Edit Description" tooltipPosition="top"
+                style="color: #0d1763; cursor: pointer;margin-left: 0.4rem; font-size: 1.3rem;" 
                 class="pi pi-pencil" (click)="EditDesc(true)"></i>
               </label>
               <div class="p-card">

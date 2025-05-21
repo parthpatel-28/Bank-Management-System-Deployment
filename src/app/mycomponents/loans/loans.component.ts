@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { DataService } from 'src/app/services/data.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-loans',
   templateUrl: './loans.component.html',
-  styleUrls: ['./loans.component.scss']
+  styleUrls: ['./loans.component.scss'],
+  providers: [MessageService] 
 })
 export class LoansComponent implements OnInit {
 
@@ -28,6 +30,7 @@ export class LoansComponent implements OnInit {
 
   constructor(
     private DataService : DataService,
+    private messageService: MessageService
   ) { 
  
     this.branches = DataService.global.branches;
@@ -77,6 +80,15 @@ export class LoansComponent implements OnInit {
 
   }
 
+  showSuccess(value : string) {
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail: value,
+      life: 3000, 
+    });
+  }
   saveAccount() {
     console.log('Account Saved', this.account);
     this.display = false;
@@ -129,6 +141,8 @@ export class LoansComponent implements OnInit {
       });
     
       saveAs(data, 'Loans Data.xlsx');
+
+      this.showSuccess("Data Converted to Excelsheet successfully");
     }
   
 

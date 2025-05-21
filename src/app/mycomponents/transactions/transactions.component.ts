@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { DataService } from 'src/app/services/data.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.scss']
+  styleUrls: ['./transactions.component.scss'],
+  providers: [MessageService] 
 })
 export class TransactionsComponent implements OnInit {
 
@@ -25,6 +27,7 @@ export class TransactionsComponent implements OnInit {
 
   constructor(
     private DataService : DataService,
+    private messageService: MessageService
   ) { 
 
     this.status = DataService.transactions.status
@@ -45,6 +48,15 @@ export class TransactionsComponent implements OnInit {
     this.processTransactionModeData();
   }
 
+  showSuccess(value : string) {
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail: value,
+      life: 3000, 
+    });
+  }
 
   processRegionData() {
     const regionCounts = this.transactionData.reduce((acc, curr) => {
@@ -127,6 +139,8 @@ export class TransactionsComponent implements OnInit {
         });
       
         saveAs(data, 'AccountData.xlsx');
+
+        this.showSuccess("Data Converted to Excelsheet successfully");
       }
 
 

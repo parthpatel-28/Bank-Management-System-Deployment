@@ -32,6 +32,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { CalendarModule } from 'primeng/calendar';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { Tooltip } from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +71,8 @@ import { MessageService } from 'primeng/api';
     InputTextModule,
     TabViewModule,
     CalendarModule,
-    ToastModule
+    ToastModule,
+    TooltipModule
     
   ],
   providers: [MessageService],

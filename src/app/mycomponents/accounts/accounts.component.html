@@ -39,8 +39,8 @@
   <i class="pi pi-plus mr-2"></i> Add New Account
 </button>
 
-<button class="excel-btn" (click)="exportToExcel()" style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
-  <i class="pi pi-file-excel"></i>
+<button class="excel-btn" (click)="exportToExcel()" style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+ pTooltip="Convert to ExcelSheet" tooltipPosition="top">  <i class="pi pi-file-excel"></i>
   <span>EXCEL</span>
 </button>
 
@@ -68,12 +68,14 @@
 <ng-template pTemplate="body" let-rowData>
 <tr class="ml-5">
   <th>
-    <button (click)="deleteBox(rowData.customerId)" class="btn btn-primary" style="margin-left: 20%;">
+    <button (click)="deleteBox(rowData.customerId)" class="btn btn-primary" style="margin-left: 20%;"    
+    pTooltip="Delete Account Info" tooltipPosition="top">
       <i class="pi pi-trash" style="font-size: 0.8rem"></i>
     </button>
   </th>
   <th>
-    <button (click)="displayDialog(rowData.customerId)" class="btn btn-primary ml-5" >
+    <button (click)="displayDialog(rowData.customerId)" class="btn btn-primary ml-5" 
+     pTooltip="Edit Account Info" tooltipPosition="top">
       <i class="pi pi-pencil" style="font-size: 0.8rem"></i>
     </button>
   </th>

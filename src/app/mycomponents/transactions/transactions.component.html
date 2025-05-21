@@ -73,8 +73,8 @@
 
 <div class="row mt-4 mb-1 ">
   <div class="col-12 d-flex justify-content-start gap-2">
-    <button class="excel-btn" (click)='exportToExcel()'  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
-      <i class="pi pi-file-excel"></i>
+    <button class="excel-btn" (click)='exportToExcel()'  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+    pTooltip="Convert to Excelsheet " tooltipPosition="top">  <i class="pi pi-file-excel"></i>
       <span>EXCEL</span>
     </button>
   </div>
@@ -100,7 +100,8 @@
       <ng-template pTemplate="body" let-rowData>
         <tr class="ml-5">
           <th>
-            <button class="btn btn-primary " (click)="copyToClipboard(rowData.transactionId)" style="margin-left: 20%;">
+            <button pTooltip="Copy Transaction ID" tooltipPosition="left" class="btn btn-primary " 
+            (click)="copyToClipboard(rowData.transactionId)" style="margin-left: 20%;">
               <i class="pi pi-copy" style="font-size: 0.8rem"></i>
             </button>
           </th>
