@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-branches',
   templateUrl: './branches.component.html',
-  styleUrls: ['./branches.component.scss']
+  styleUrls: ['./branches.component.scss'],
+  providers: [MessageService] 
 })
 export class BranchesComponent implements OnInit {
   branchesData: any[];
@@ -34,7 +36,9 @@ export class BranchesComponent implements OnInit {
     {label : 'Hyderabad' , value :6}
   ];
 
-  constructor() { 
+  constructor(
+    private messageService: MessageService
+  ) { 
 
     this.branchesData = [
       {
@@ -435,6 +439,15 @@ export class BranchesComponent implements OnInit {
   this.prepareCharts();
 
   }
+  showSuccess(value : string) {
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail: value,
+      life: 3000, 
+    });
+  }
 
   prepareYearlyPerformanceChart() {
     this.yearlyPerformanceChartData = {
@@ -541,6 +554,6 @@ export class BranchesComponent implements OnInit {
   }
 
   copyToClipboard(Id : any){
-
+ this.showSuccess("Transaction ID Copied successfully");
   }
 }

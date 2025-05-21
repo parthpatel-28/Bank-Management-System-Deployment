@@ -159,7 +159,7 @@ export class TransactionsComponent implements OnInit {
 
 
     copyToClipboard(Id : any){
-
+     this.showSuccess("Transaction ID Copied successfully");
     }
 
 
