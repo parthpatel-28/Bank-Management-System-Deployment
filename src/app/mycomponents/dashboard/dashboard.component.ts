@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-
+import { MessageService } from 'primeng/api';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+   providers: [MessageService] 
 })
 export class DashboardComponent implements OnInit {
 
@@ -30,6 +32,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private dataservice : DataService, 
+    private messageService: MessageService,
+    private clipboard: Clipboard
   ) { 
 
   
@@ -112,8 +116,18 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  showSuccess(value : string) {
+    this.messageService.add({
+      key: 'success',
+      severity: 'success',
+      summary: 'Done!',
+      detail: value,
+      life: 3000, 
+    });
+  }
   copyToClipboard(Id : any){
-
+   this.showSuccess("Employee ID Copied successfully");
+    this.clipboard.copy(Id);
   }
 
 }

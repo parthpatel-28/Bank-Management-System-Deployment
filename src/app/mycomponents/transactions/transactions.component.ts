@@ -3,6 +3,7 @@ import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { DataService } from 'src/app/services/data.service';
 import { MessageService } from 'primeng/api';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-transactions',
@@ -27,7 +28,8 @@ export class TransactionsComponent implements OnInit {
 
   constructor(
     private DataService : DataService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private clipboard: Clipboard
   ) { 
 
     this.status = DataService.transactions.status
@@ -159,6 +161,7 @@ export class TransactionsComponent implements OnInit {
 
 
     copyToClipboard(Id : any){
+       this.clipboard.copy(Id);
      this.showSuccess("Transaction ID Copied successfully");
     }
 

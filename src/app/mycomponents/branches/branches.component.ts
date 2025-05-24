@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-branches',
@@ -37,7 +38,8 @@ export class BranchesComponent implements OnInit {
   ];
 
   constructor(
-    private messageService: MessageService
+    private messageService: MessageService,
+    private clipboard: Clipboard
   ) { 
 
     this.branchesData = [
@@ -554,6 +556,7 @@ export class BranchesComponent implements OnInit {
   }
 
   copyToClipboard(Id : any){
- this.showSuccess("Transaction ID Copied successfully");
+     this.clipboard.copy(Id);
+     this.showSuccess("Employee ID Copied successfully");
   }
 }
