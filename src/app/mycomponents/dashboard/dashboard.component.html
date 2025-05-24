@@ -103,7 +103,8 @@
       <ng-template pTemplate="body" let-emp>
         <tr>
           <th>
-            <button class="btn btn-primary ml-5" style="margin-left: 20%;" (click)="copyToClipboard(emp.employeeId)">
+            <button class="btn btn-primary ml-5" style="margin-left: 20%;" (click)="copyToClipboard(emp.employeeId)"
+              pTooltip="Copy Employee ID" tooltipPosition="left">
               <i class="pi pi-copy" style="font-size: 0.8rem"></i>
             </button>
           </th>
