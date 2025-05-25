@@ -13,13 +13,17 @@ import { LayoutComponent } from './mycomponents/layout/layout.component';
 import { AccountsComponent } from './mycomponents/accounts/accounts.component';
 import { CardsComponent } from './mycomponents/cards/cards.component';
 import { EmployeesComponent } from './mycomponents/employees/employees.component';
+import { AuthComponent } from './mycomponents/auth/auth.component';
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent , },
       { path: 'loans', component: LoansComponent },
       { path: 'funds', component: FundsComponent },
       { path: 'branches', component: BranchesComponent },
@@ -31,7 +35,8 @@ const routes: Routes = [
       { path: 'employees', component: EmployeesComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' }// add other routes here
         ]
-  }
+  },
+   { path: 'auth', component: AuthComponent}// add other routes here
 ];
 
 

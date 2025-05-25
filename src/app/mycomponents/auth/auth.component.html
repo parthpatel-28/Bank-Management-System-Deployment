@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-end" style="height: 100vh;background-color: #001845;">
+    <div class="col-md-4 d-flex justify-content-end align-items-center w-50 h-100" style="padding-right: 2rem;" >       
+        
+        <div class="col-9 mt-3 p-5 p-card d-flex flex-column justify-content-start align-items-center" style="height: 90%;background-color: white; border-radius: 4rem;">
+
+            <h1 style="font-size: 3rem;">CrownStone</h1>
+            <br>
+
+                <div class="row mb-2 mt-2 ">
+
+                    <div  class="col-12 col-sm-12">
+                        <label class="form-label">Username</label>
+                        <input  [(ngModel)]="inputUsername" class="w-100" type="text" pInputText placeholder="Choose" />
+                    </div>
+                    <div  class="col-12 col-sm-12">
+                        <label>Password</label>
+                        <input class="w-100" [(ngModel)]="inputPassword" type="text" pInputText placeholder="Choose" />
+                </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center gap-3 mt-5">
+                <button pButton type="button" label="Login" (click)="login()" class="col-2 btn btn-light-success p-mr-2"></button>
+                </div>
+
+
+
+        </div>
+
+    </div>
+</div>
