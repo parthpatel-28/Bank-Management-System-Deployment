@@ -97,6 +97,8 @@ export class TransactionsComponent implements OnInit {
         }
       ]
     };
+
+    console.log("data: ", this.transactionModeData)
   }
 
   Click_Search(value : any){

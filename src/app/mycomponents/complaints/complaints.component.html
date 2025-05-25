@@ -227,26 +227,26 @@
             <div class="d-flex justify-content-end" style="width: 60%; height: 2.4rem"> 
               <button type="button"
             (click)="statusChange('Pending',selectedComplaint.complaintId)"  
-              class="btn h-100 w-33" [ngStyle]="selectedComplaintStatus === 'Pending' ? 
+              class="btn h-100 w-33 p-card" [ngStyle]="selectedComplaintStatus === 'Pending' ? 
               {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
               {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
-              style=" text-align: center;border: 2px solid #0d1763; ; border-radius: 15px 0px 0px 15px;">
+              style=" text-align: center;border: 1px solid #0d1763; ; border-radius: 15px 0px 0px 15px;">
               {{selectedComplaintStatus == "Pending" ? 'Pending' : 'Move to Pending'}}</button> 
 
             <button type="button"
             (click)="statusChange('Under Investigation',selectedComplaint.complaintId)"  
-              class="btn h-100 w-34" [ngStyle]="selectedComplaintStatus === 'Under Investigation' ? 
+              class="btn h-100 w-34 p-card" [ngStyle]="selectedComplaintStatus === 'Under Investigation' ? 
               {'background-color': '#0d1763','color': 'white', 'fontWeight':'700'} :
               {'background-color': 'white','color': '#0d1763' ,'fontWeight':'550'}"
-              style=" text-align: center;border: 2px solid #0d1763; border-radius: 0px;"
+              style=" text-align: center;border: 1px solid #0d1763; border-radius: 0px;"
               >{{selectedComplaintStatus == "Under Investigation" ? 'Under Investigation' : 'Move to Investigation'}}</button> 
 
               <button type="button"
               (click)="statusChange('Resolved',selectedComplaint.complaintId)" 
-              class="btn h-100 w-33" [ngStyle]="selectedComplaintStatus === 'Resolved' ?
+              class="btn h-100 w-33 p-card" [ngStyle]="selectedComplaintStatus === 'Resolved' ?
               {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
               {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
-              style=" text-align: center;border: 2px solid #0d1763;border-radius: 0px 15px 15px 0px;"
+              style=" text-align: center;border: 1px solid #0d1763;border-radius: 0px 15px 15px 0px;"
               >{{selectedComplaintStatus == "Resolved" ? 'Resolved' : 'Move to Resolved'}}</button> 
             </div>
         </div> 

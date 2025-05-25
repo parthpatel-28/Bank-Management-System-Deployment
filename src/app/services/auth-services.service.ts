@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthServicesService {
 
+  loggedIn : boolean = false;
   constructor() {}
 
   isLoggedIn(): boolean {
@@ -13,6 +14,7 @@ export class AuthServicesService {
 
   login() {
     localStorage.setItem('auth', 'true');  // Set a token or flag
+   this.loggedIn = true;
   }
 
   logout() {

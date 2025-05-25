@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-  <div class="col-12 mb-4">
+  <div class="col-12 mb-2">
       <div class="filters-container">      
 
       <p-dropdown  [options]="riskList" [(ngModel)]="risk" optionLabel="name" placeholder="Select Fund Risk Level"
@@ -69,7 +69,7 @@
                       (click)="displayData(item.id ,item.fund)"
                       pButton
                       icon="pi pi-eye"
-                       pTooltip="View Detail" tooltipPosition="top"
+                       pTooltip="View Details" tooltipPosition="left"
                       class="btn btn-primary btn-sm" style="margin-right: 1rem ;"></button> 
               {{item.fundName}}
             </div>
@@ -120,7 +120,7 @@
                   <button type="button"
                           (click)="displayData(item.id , item.fund)"
                           pButton
-                           pTooltip="View Detail" tooltipPosition="top"
+                           pTooltip="View Details" tooltipPosition="left"
                           icon="pi pi-eye"
                           class="btn btn-primary btn-sm" style="margin-right: 1rem ;"></button> 
                   {{item.fundName}}
@@ -174,7 +174,7 @@
                       <button type="button"
                               (click)="displayData(item.id , item.fund)"
                               pButton
-                               pTooltip="View Detail" tooltipPosition="top"
+                               pTooltip="View Details" tooltipPosition="left"
                               icon="pi pi-eye"
                               class="btn btn-primary btn-sm" style="margin-right: 1rem ;"></button> 
                       {{item.fundName}}
