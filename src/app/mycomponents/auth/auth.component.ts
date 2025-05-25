@@ -13,6 +13,7 @@ export class AuthComponent implements OnInit {
   password: any = "Password@123";
   inputUsername: any = "";
   inputPassword: any = "";
+  loginFailed : boolean = false;
 
   constructor(private router: Router, private authService: AuthServicesService) {}
 
@@ -29,6 +30,7 @@ export class AuthComponent implements OnInit {
       this.router.navigate(["dashboard"]);
     } else {
       console.log("Wrong Credentials");
+      this.loginFailed = true;
     }
   }
 }

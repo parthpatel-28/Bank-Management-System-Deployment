@@ -1,0 +1,27 @@
+.bg-login {
+  height: 100vh;
+  background-image: url('../../../assets/main\ 2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-input{
+ 
+    height: 3rem;
+    border: 1px solid #b4bbc1;
+    border-radius: 2rem;
+    padding-inline: 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.btn-gradient-blue {
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* adjust as needed */
+  border: none;
+  transition: background 0.3s ease;
+  border-radius: 2rem;
+}
+
+.btn-gradient-blue:hover {
+  background: linear-gradient(to right, #16335f, #244a89);
+}

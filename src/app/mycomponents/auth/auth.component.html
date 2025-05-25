@@ -1,27 +1,51 @@
-<div class="d-flex justify-content-end" style="height: 100vh;background-color: #001845;">
-    <div class="col-md-4 d-flex justify-content-end align-items-center w-50 h-100" style="padding-right: 2rem;" >       
+<div class="d-flex justify-content-end bg-login" style="height: 100vh; ">
+
+    <div class="col-md-6 d-flex flex-column justify-content-start align-items-center ml-5" >
+
+        <div class="d-flex flex-column justify-content-center align-items-center" style="padding-top: 30%; padding-left: 25%;">
+        <p style="font-size: 3rem;font-weight: 500; color: aliceblue;">Welcome To Crownstone</p>
+        <p style="font-size: 1.2rem;font-weight: 500; color: aliceblue;">you can sign in to access with your existing account</p>
+
+        </div>
         
+    </div>
+
+
+    <div class="col-md-6 d-flex justify-content-end align-items-center h-100" style="padding-right: 2rem;" >       
         <div class="col-9 mt-3 p-5 p-card d-flex flex-column justify-content-start align-items-center" style="height: 90%;background-color: white; border-radius: 4rem;">
-
             <h1 style="font-size: 3rem;">CrownStone</h1>
-            <br>
 
-                <div class="row mb-2 mt-2 ">
+            <div class="w-100 d-flex flex-column justify-content-start mt-5" style="height: 80%;">
 
+
+                <div class="w-100" style="border-bottom: 1px solid #b4bbc1;">
+                    <h3 style="color: #0d1763; font-weight: 500;"> Sign In</h3>
+                </div>
+
+
+                <div class="row mb-2 mt-4 ">
                     <div  class="col-12 col-sm-12">
                         <label class="form-label">Username</label>
-                        <input  [(ngModel)]="inputUsername" class="w-100" type="text" pInputText placeholder="Choose" />
+                        <input  [(ngModel)]="inputUsername" class="login-input w-100" type="text" pInputText placeholder="Choose" />
                     </div>
-                    <div  class="col-12 col-sm-12">
+                    <div  class="col-12 col-sm-12 mt-4">
                         <label>Password</label>
-                        <input class="w-100" [(ngModel)]="inputPassword" type="text" pInputText placeholder="Choose" />
+                        <input class=" login-input w-100" [(ngModel)]="inputPassword" type="text" pInputText placeholder="Choose" />
                 </div>
                 </div>
 
                 <div class="col-12 d-flex justify-content-center gap-3 mt-5">
-                <button pButton type="button" label="Login" (click)="login()" class="col-2 btn btn-light-success p-mr-2"></button>
+                <button (click)="login()" class="btn btn-gradient-blue text-white px-4 py-2 w-50" 
+                style="font-size: 120%; font-weight: 400;">Login</button>
                 </div>
 
+                <div *ngIf="loginFailed" class="card d-flex justify-content-center align-items-center mt-4" 
+                style="border: 1px solid #e43134 ; background-color: #FFF1F0; height: 4rem; border-radius: 1rem;">
+ 
+                <p style="color: #e43134;">Invalid Username or Password</p>
+                </div>
+
+            </div>
 
 
         </div>
