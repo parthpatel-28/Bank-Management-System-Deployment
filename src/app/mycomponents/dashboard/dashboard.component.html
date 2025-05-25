@@ -6,15 +6,44 @@
 </div>
 
 
-<div class="row col-12 mt-5">
+<div class="row col-12 mt-4">
 
-  <div *ngFor="let card of stats" class="col-3 ">
-    <div class="p-card ">
-    <div class="p-card-body box-style">
-     <p style="color: #001845; text-align: center;">Loans {{card.name}} : <span style="font-weight: 600;">{{card.value}}</span></p>
-  </div>
-</div>
- </div>
+      <div class="col-3 ">
+      <div class="p-card ">
+        <div class="p-card-body box-style">
+          <p style="font-size: 100%; text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Total Revenue:
+          <span style="font-weight: 700;color: #001845;">{{stats.totalRevenue/10000000 | currency:'INR':'symbol':'1.0-0'}} Cr</span></p>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="col-3 ">
+      <div class="p-card ">
+        <div class="p-card-body box-style">
+          <p style="font-size: 100%; text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Net Profit  :
+          <span style="font-weight: 700;color: #001845;">{{stats.netProfit/10000000 | currency:'INR':'symbol':'1.0-0'}} Cr</span></p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-3 ">
+      <div class="p-card ">
+        <div class="p-card-body box-style">
+          <p style="font-size: 100%; text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Total Assests  :
+         <span style="font-weight: 700;color: #001845;">{{stats.totalAssets/10000000 | currency:'INR':'symbol':'1.0-0'}} Cr</span></p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-3 ">
+      <div class="p-card ">
+        <div class="p-card-body box-style">
+          <p style="font-size: 100%; text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Customer Base :
+         <span style="font-weight: 700;color: #001845;">{{stats.customerBase}}</span></p>
+        </div>
+      </div>
+      </div>
 
 </div>
 
@@ -59,14 +88,24 @@
         </div>
 
       
-          <div *ngFor="let card of cards1" class="col-12 px-3">
+          <div  class="col-12 px-3">
             <div class="p-card">
-            <div class="p-card-body box-style mt-3">
-             <p style="color: #001845; text-align: center;">{{ card }}</p>
-            </div>
+              <div class="p-card-body box-style mt-3">
+                <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> GrowthRate :
+                  <span style="font-weight: 700;color: #001845;">{{stats.growthRate}} %</span> </p>
+              </div>
             </div>       
-        </div>
+           </div>
         
+           
+          <div  class="col-12 px-3">
+            <div class="p-card">
+              <div class="p-card-body box-style mt-3">
+                <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> NPA : 
+                  <span style="font-weight: 700;color: #001845;">{{stats.npa}} %</span></p>
+              </div>
+            </div>       
+           </div>
     
     
       </div>

@@ -934,6 +934,7 @@ export class DataService {
         branchName: 'Mumbai Main Branch',
         location: 'Mumbai',
         region: 'Western',
+        growth: {revenue: 102.3, profit: 17.9, npa: 2.5},
         yearlyPerformance: [30, 42, 43, 39, 40, 36, 35, 32, 43, 50, 67, 65],
         transactionCategoryDistribution: {
           deposits: 40,
@@ -998,6 +999,7 @@ export class DataService {
         branchName: 'Delhi Branch',
         location: 'Delhi',
         region: 'Northern',
+        growth: {revenue: 105.0, profit: 18.5, npa: 2.1},
         yearlyPerformance: [42, 50, 60, 65, 65, 70, 53, 65, 54, 40, 30, 35],
         transactionCategoryDistribution: {
           deposits: 50,
@@ -1061,6 +1063,7 @@ export class DataService {
         branchName: 'Chennai Branch',
         location: 'Chennai',
         region: 'Southern',
+        growth: {revenue: 89.7, profit: 15.0, npa: 2.0 },
         yearlyPerformance: [20, 32, 45, 57, 60, 63, 65, 77, 80, 82, 93, 95],
         transactionCategoryDistribution: {
           deposits: 45,
@@ -1124,6 +1127,7 @@ export class DataService {
         branchName: 'Pune Branch',
         location: 'Pune',
         region: 'Western',
+        growth : {revenue: 84.1, profit: 13.9, npa: 2.2 },
         yearlyPerformance: [65, 67, 50, 43, 32, 35, 36, 40, 39, 43, 42, 30],
         transactionCategoryDistribution: {
           deposits: 40,
@@ -1187,6 +1191,7 @@ export class DataService {
         branchName: 'Bangalore Branch',
         location: 'Bangalore',
         region: 'Southern',
+        growth: { revenue: 95.6, profit: 16.2, npa: 1.8},
         yearlyPerformance: [72, 74, 76, 78, 80, 83, 86, 88, 90, 92, 95, 97],
         transactionCategoryDistribution: {
           deposits: 45,
@@ -1250,6 +1255,7 @@ export class DataService {
         branchName: 'Hyderabad Branch',
         location: 'Hyderabad',
         region: 'Southern',
+        growth: {revenue: 76.2, profit: 12.4, npa: 2.6},
         yearlyPerformance: [40, 78, 80, 50, 90, 94, 55, 34, 45, 60, 50, 40],
         transactionCategoryDistribution: {
           deposits: 50,
@@ -1731,6 +1737,23 @@ export class DataService {
     }
 
     this.dashboard = {
+      montlyTransactions : [102000, 118500, 125000, 113000, 140000, 138500, 145000, 149000, 135000, 142000, 100000, 68000],
+      transactions : {Completed : 1375192 , Failed : 105214 , Pending :45594},
+      transactionModes: {UPI: 540400,NEFT: 375569, RTGS: 211200,IMPS: 293462,  Cash: 105370},
+
+        overallStats: {
+        totalRevenue: 1850000000, // ₹185 Cr
+        netProfit: 375000000,      // ₹37.5 Cr
+        npa: 2.8,                 // 2.8% Non-Performing Assets
+        customerBase: 1250000,    // 12.5 lakh customers
+        totalAssets: 9500000000,   // ₹950 Cr
+        totalDeposits: 6200000000, // ₹620 Cr
+        totalLoansDisbursed: 4100000000, // ₹410 Cr
+        creditToDepositRatio: 66.1,     // %
+        capitalAdequacyRatio: 13.2,     // %
+        operatingExpenses: 220000000,
+        growthRate: 6.9      // ₹22 Cr
+      },
       topEmployees : [
         {
           employeeId: 'E001',

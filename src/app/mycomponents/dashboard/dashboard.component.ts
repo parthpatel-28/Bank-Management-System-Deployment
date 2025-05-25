@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   selectedCity: any;
   selectedCities: any[] = [];
-  data: any[] =[];
+  data: any;
   pieChartData :any;
   pieChartData2 :any;
   lineChartData : any;
@@ -22,13 +22,7 @@ export class DashboardComponent implements OnInit {
   lineChartOptions : any;
   topEmployees :any[];
   cards1 = ['Card 1', 'Card 2',];
-  stats = [
-    {name : "Card" , value : 90 },
-    {name : "Card" , value : 90 },
-    {name : "Card" , value : 90 },
-    {name : "Card" , value : 90 },
-
-  ];
+  stats : any;
 
   constructor(
     private dataservice : DataService, 
@@ -37,20 +31,13 @@ export class DashboardComponent implements OnInit {
   ) { 
 
   
-    this.transactionTypeData = {
-      labels: ['UPI', 'NEFT', 'RTGS', 'IMPS', 'Cash'],
-      datasets: [
-        {
-          data: [460, 320, 180, 250, 90],
-          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#678D99', '#3B6978'],
-          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#4C6B74', '#2A4D56']
-        }
-      ]
-    };
+   
     
      this.topEmployees = dataservice.dashboard.topEmployees;
-    
-    
+     this.stats = dataservice.dashboard.overallStats;
+     this.data = dataservice.dashboard;
+     this.transactionStatusChart = dataservice.dashboard.transactions;
+     this.transactionTypeData = dataservice.dashboard.transactionModes;
     
     
     
@@ -61,13 +48,23 @@ export class DashboardComponent implements OnInit {
 
   
   ngOnInit(): void {
+     this.transactionTypeData = {
+      labels: Object.keys(this.transactionTypeData),
+      datasets: [
+        {
+          data:  Object.values(this.transactionTypeData),
+          backgroundColor: ['#3B6978', '#204051', '#D9E4E6', '#678D99', '#3B6978'],
+          hoverBackgroundColor: ['#2A4D56', '#1A2A35', '#D9E4E6', '#4C6B74', '#2A4D56']
+        }
+      ]
+    };
 
     this.lineChartData = {
       labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
         {
           label: 'Monthly Transactions',
-          data: [10200, 11850, 12500, 11300, 14000, 13850, 14500, 14900, 13500, 14200, 10000, 6800],
+          data: this.data.montlyTransactions,
           fill: false,
           borderColor: '#3B6978',
           tension: 0.4
@@ -96,11 +93,11 @@ export class DashboardComponent implements OnInit {
 
 
     this.transactionStatusChart = {
-      labels: ['Completed', 'Failed', 'Pending'],
+      labels: Object.keys(this.transactionStatusChart),
       datasets: [
         {
           label: 'Transaction Count',
-          data: [150000, 30000, 9000], // Example transaction counts
+          data: Object.values(this.transactionStatusChart),// Example transaction counts
           backgroundColor: ['#3B6978', '#204051', '#D9E4E6']
         }
       ],

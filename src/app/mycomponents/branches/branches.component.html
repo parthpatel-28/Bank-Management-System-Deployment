@@ -19,13 +19,13 @@
 
 <div class="mt-2 col-12">
           <div class="w-100" style="border-bottom: 2px solid #001845; width: 200%;">
-        <h3 class="mt-2" style="text-align: start;"> Branch Annual Performance</h3>
+        <p style="font-size: 1.2rem; font-weight: 600;"> Branch Annual Performance</p>
         </div>
   <div class="row">
     <div class="d-flex flex-row justify-content-between w-100">
       <!-- Line Chart on the Left -->
        <div class="col-md-7 ">
-        <div class="p-card p-4 mt-2">
+        <div class="p-card p-4 mt-3">
           <p-chart 
           type="line" 
           [data]="yearlyPerformanceChartData" 
@@ -37,11 +37,29 @@
 
       <!-- Cards on the Right -->
       <div class="col-md-5 py-4 d-flex flex-wrap justify-content-center align-content-md-center gap-5  mt-2 mx-4">
-         <div *ngFor="let card of cards2" class="col-10 p-card">
-            <div class="p-card-body box-style">
-             <p style="color: #001845; text-align: center;">{{ card }}</p>
-            </div>
-         </div>
+          <div class="col-10 p-card">
+           <div class="p-card-body box-style">
+              <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Revenue :  
+                <span style="font-weight: 700;color: #001845;">
+                  {{branch.growth.revenue| currency:'INR':'symbol':'1.0-0'}} Cr</span> </p>
+           </div>
+          </div>
+
+          <div class="col-10 p-card">
+           <div class="p-card-body box-style">
+              <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Profits :  
+                <span style="font-weight: 700;color: #001845;">
+                  {{branch.growth.profit | currency:'INR':'symbol':'1.0-0'}} Cr</span> </p>
+           </div>
+          </div>
+
+          <div class="col-10 p-card">
+           <div class="p-card-body box-style">
+              <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">NPA : 
+                <span style="font-weight: 700;color: #001845;">
+                  {{branch.growth.npa}} %</span> </p>
+           </div>
+          </div>
       </div>
 
     </div>
@@ -124,7 +142,7 @@
       <div class="p-card-body box-style">
        <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">{{card}} : 
         <span style="font-weight: 700;color: #001845;">
-           {{ loanRepaymentStatusChartData.datasets[0].data[i] }}</span> </p>
+           {{ loanRepaymentStatusChartData.datasets[0].data[i] }} %</span> </p>
     </div>
    </div>
   </div>
