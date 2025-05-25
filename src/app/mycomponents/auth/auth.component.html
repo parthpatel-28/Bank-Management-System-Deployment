@@ -3,8 +3,8 @@
     <div class="col-md-6 d-flex flex-column justify-content-start align-items-center ml-5" >
 
         <div class="d-flex flex-column justify-content-center align-items-center" style="padding-top: 30%; padding-left: 25%;">
-        <p style="font-size: 3rem;font-weight: 500; color: aliceblue;">Welcome To Crownstone</p>
-        <p style="font-size: 1.2rem;font-weight: 500; color: aliceblue;">you can sign in to access with your existing account</p>
+        <p style="font-size: 2.6rem;font-weight: 500; color: aliceblue;">Welcome To CrownStone</p>
+        <p style="font-size: 1rem;font-weight: 500; color: aliceblue;">you can sign in to access with your existing account</p>
 
         </div>
         
@@ -13,7 +13,8 @@
 
     <div class="col-md-6 d-flex justify-content-end align-items-center h-100" style="padding-right: 2rem;" >       
         <div class="col-9 mt-3 p-5 p-card d-flex flex-column justify-content-start align-items-center" style="height: 90%;background-color: white; border-radius: 4rem;">
-            <h1 style="font-size: 3rem;">CrownStone</h1>
+            
+           <img src="../../../assets/crownstone logo final.png" alt="CrownStone" style="height: 4rem;" />
 
             <div class="w-100 d-flex flex-column justify-content-start mt-5" style="height: 80%;">
 
@@ -23,7 +24,7 @@
                 </div>
 
 
-                <div class="row mb-2 mt-4 ">
+                <div class="row mb-2 mt-3 ">
                     <div  class="col-12 col-sm-12">
                         <label class="form-label">Username</label>
                         <input  [(ngModel)]="inputUsername" class="login-input w-100" type="text" pInputText placeholder="Choose" />
@@ -52,3 +53,45 @@
 
     </div>
 </div>
+
+
+<p-dialog 
+header=""  
+[(visible)]="displayInstructions" 
+[modal]="true" 
+[style]="{width: '50rem', height : '35rem' }"   
+[breakpoints]="{'960px': '95vw'}"
+[closable]="true"
+[contentStyle]="{ 'border-radius': '1rem' }"
+[ngClass]="'PHEADER'"
+
+>
+<div class="col-12 mt-5">
+
+    <div class="col-12 d-flex justify-content-center">
+      <p style="font-size: 1.5rem;font-weight: 500; color: #0d1763 ;">IMPORTANT INSTRUCTIONS</p>
+    </div>
+
+    <div class="mt-4">
+        <ul>
+            <li>This is a Frontend Bank Management System prototype majorly built using the following techologies :
+                <ul style=" font-size: 90%;">
+                    <li style="color: #0d1763;margin-bottom: 0.5rem;">Angular 12.2.0</li>
+                    <li style="color: #0d1763;margin-bottom: 0.5rem;">Bootstrap 5.3.5</li>
+                    <li style="color: #0d1763;margin-bottom: 0.5rem;">PrimeNg Library 12.2.0</li>
+                </ul>
+            </li>
+            <li>For Laptop screen users we recommend to keep the browser zoom percentage at 75%. </li>
+            <li>The Login username and password fields are already pre-filled for the user.</li>
+            <li>The current Prototype is only a frontend Prototype built for gitpage deployment but still has all the Functionalities.</li>
+        </ul>
+    </div>
+ 
+      <div class="col-12 d-flex justify-content-center gap-3 mt-5">
+        <button (click)="proceed()" class="btn btn-gradient-blue text-white px-4 py-2 w-50" 
+        style="font-size: 120%; font-weight: 400;">Proceed</button>
+      </div>
+
+</div>
+
+</p-dialog>

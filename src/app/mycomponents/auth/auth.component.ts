@@ -1,3 +1,4 @@
+import { flatten } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServicesService } from 'src/app/services/auth-services.service';
@@ -14,6 +15,7 @@ export class AuthComponent implements OnInit {
   inputUsername: any = "";
   inputPassword: any = "";
   loginFailed : boolean = false;
+  displayInstructions : boolean = true;
 
   constructor(private router: Router, private authService: AuthServicesService) {}
 
@@ -23,6 +25,9 @@ export class AuthComponent implements OnInit {
         this.inputUsername = "admin"
   }
 
+  proceed(){
+    this.displayInstructions = false;
+  }
   login() {
     if (this.inputPassword === this.password && this.inputUsername === this.username) {
       this.authService.login();

@@ -25,3 +25,14 @@
 .btn-gradient-blue:hover {
   background: linear-gradient(to right, #16335f, #244a89);
 }
+
+li{
+  font-size: 110%;
+  color: #6c757d;
+  margin-bottom: 1.3rem;
+  font-weight: 500;
+}
+
+.PHEADER ::ng-deep .p-dialog .p-dialog-header {
+  display: none;
+}
