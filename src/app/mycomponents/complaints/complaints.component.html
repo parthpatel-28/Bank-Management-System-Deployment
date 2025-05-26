@@ -12,7 +12,7 @@
             [filter]="true">
           </p-dropdown>
   
-          <p-dropdown class="filters" [options]="supportTeamList" [(ngModel)]="supportTeam" optionLabel="name" placeholder="Select Priority"
+          <p-dropdown class="filters" [options]="supportTeamList" [(ngModel)]="supportTeam" optionLabel="name" placeholder="Select Team"
             [filter]="true">
           </p-dropdown>
           
@@ -228,7 +228,7 @@
               <button type="button"
             (click)="statusChange('Pending',selectedComplaint.complaintId)"  
               class="btn h-100 w-33 p-card" [ngStyle]="selectedComplaintStatus === 'Pending' ? 
-              {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
+              {'background': 'linear-gradient(to right, #001845, #1e3c72)','color': 'white','fontWeight':'700'} : 
               {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
               style=" text-align: center;border: 1px solid #0d1763; ; border-radius: 15px 0px 0px 15px;">
               {{selectedComplaintStatus == "Pending" ? 'Pending' : 'Move to Pending'}}</button> 
@@ -236,7 +236,7 @@
             <button type="button"
             (click)="statusChange('Under Investigation',selectedComplaint.complaintId)"  
               class="btn h-100 w-34 p-card" [ngStyle]="selectedComplaintStatus === 'Under Investigation' ? 
-              {'background-color': '#0d1763','color': 'white', 'fontWeight':'700'} :
+              {'background': 'linear-gradient(to right, #001845, #1e3c72)','color': 'white', 'fontWeight':'700'} :
               {'background-color': 'white','color': '#0d1763' ,'fontWeight':'550'}"
               style=" text-align: center;border: 1px solid #0d1763; border-radius: 0px;"
               >{{selectedComplaintStatus == "Under Investigation" ? 'Under Investigation' : 'Move to Investigation'}}</button> 
@@ -244,7 +244,7 @@
               <button type="button"
               (click)="statusChange('Resolved',selectedComplaint.complaintId)" 
               class="btn h-100 w-33 p-card" [ngStyle]="selectedComplaintStatus === 'Resolved' ?
-              {'background-color': '#0d1763','color': 'white','fontWeight':'700'} : 
+              {'background': 'linear-gradient(to right, #001845, #1e3c72)','color': 'white','fontWeight':'700'} : 
               {'background-color': 'white','color': '#0d1763','fontWeight':'550'}"
               style=" text-align: center;border: 1px solid #0d1763;border-radius: 0px 15px 15px 0px;"
               >{{selectedComplaintStatus == "Resolved" ? 'Resolved' : 'Move to Resolved'}}</button> 
