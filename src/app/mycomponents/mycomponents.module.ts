@@ -35,6 +35,7 @@ import { MessageService } from 'primeng/api';
 import { Tooltip } from 'primeng/tooltip';
 import { TooltipModule } from 'primeng/tooltip';
 import { AuthComponent } from './auth/auth.component';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { AuthComponent } from './auth/auth.component';
     CardsComponent,
     EmployeesComponent,
     AuthComponent,
+
     
     
   ],
@@ -74,7 +76,8 @@ import { AuthComponent } from './auth/auth.component';
     TabViewModule,
     CalendarModule,
     ToastModule,
-    TooltipModule
+    TooltipModule,
+    SidebarModule
     
   ],
   providers: [MessageService],

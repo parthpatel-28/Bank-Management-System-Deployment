@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
   menu : boolean = true;
+  assistance : boolean = false;
 
   hidemenu(){
    this.menu = !this.menu;
   }
-
+  showassistance(){
+   this.assistance = !this.assistance; 
+  }
   constructor() { }
 
   ngOnInit(): void {

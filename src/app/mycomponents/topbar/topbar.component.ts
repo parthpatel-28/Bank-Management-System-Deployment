@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input , Output , EventEmitter } from '@angular/core';
 import { AuthServicesService } from 'src/app/services/auth-services.service';
 import { Router } from '@angular/router';
 
@@ -9,12 +9,20 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent implements OnInit {
 
+  @Input() assistance! : boolean
+  @Output() clickassistance = new EventEmitter<void>();
+
   constructor(private auth : AuthServicesService,
     private router : Router
   ) { }
 
   ngOnInit(): void {
   }
+
+  getassistance(){
+    this.clickassistance.emit();
+  }
+
   logout(){
     console.log("loggedOut");
    this.auth.logout()

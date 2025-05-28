@@ -2,8 +2,8 @@
 <div>
   <app-sidebar (clickmenu)="hidemenu()" [menu]="menu" ></app-sidebar>
 
-  <div class="main-wrapper" [ngStyle]="menu ?{'margin-left': '15rem'} : {'margin-left': '4rem'}">
-    <app-topbar></app-topbar>
+  <div class="main-wrapper" [ngStyle]="menu ?{'margin-left': '14rem'} : {'margin-left': '4rem'}">
+    <app-topbar (clickassistance)="showassistance()" [assistance]="assistance"></app-topbar>
 
     <div class="main-content">
       <div class="row">
@@ -15,3 +15,8 @@
 
   </div>
 </div>
+
+<p-sidebar [(visible)]="assistance" position="right" [baseZIndex]="10000">
+  <h2>My Sidebar</h2>
+  <!-- Your content here -->
+</p-sidebar>
