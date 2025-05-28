@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
   menu : boolean = true;
 
+  hidemenu(){
+   this.menu = !this.menu;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

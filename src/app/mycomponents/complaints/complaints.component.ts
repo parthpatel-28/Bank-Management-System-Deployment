@@ -110,6 +110,7 @@ export class ComplaintsComponent implements OnInit {
 
   SaveDesc(){
     this.DescEdit = false;
+    this.showSuccess("Complaint Desc Changed Successfully");
     console.log(this.selectedComplaint.complaintDescription);
   }
 

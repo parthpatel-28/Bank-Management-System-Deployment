@@ -1,37 +1,20 @@
-.sidebar {
-  
-  background-color: #001845;
-  color: white;
-
+.main-sidebar{
   position: fixed;
-  width: 16.66666667%; /* ✅ This is exactly 2/12 columns (col-2) */
-}
-
-.sidebar-title {
-  margin-bottom: 30px;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.nav-link {
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.nav-link:hover {
-  background-color: #001845;
-  text-decoration: none;
-}
-:host {
-  position: fixed;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 15rem;
-   background: linear-gradient(to right, #000b20, #001845);
+  background: linear-gradient(to right, #000b20, #001845);
   color: white;
   overflow-y: auto;
   z-index: 1000;
+}
+
+.small-sidebar{
+   position: fixed;
+  height: 100%;
+  width: 4rem;
+  background: linear-gradient(to right, #000b20, #001845);
+  color: white;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: 3s;
 }

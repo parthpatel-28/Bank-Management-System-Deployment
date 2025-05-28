@@ -1,7 +1,12 @@
 <!-- sidebar.component.html -->
-<div class="main-theme text-white" style="width: 15rem;">
-   <img class="mt-3" src="../../../assets/crownstone white logo.png" alt="CrownStone" style="height: 2rem; margin-left: 0.5rem;margin-bottom: 2rem;" />
- <br>
+<ng-container *ngIf="menu" >
+<div class="main-theme text-white main-sidebar" >
+  <div class="d-flex mt-3" style="margin-left: 0.5rem;margin-bottom: 1rem;">
+   <img class="" src="../../../assets/crownstone white logo.png" alt="CrownStone" style="height: 2rem; " />
+   <i class="pi pi-bars mt-2"  (click)="menuclick()"
+   style="font-size: 1.2rem;margin-left: 1.5rem; cursor: pointer;" ></i>
+  </div>
+   <br>
 
   <ul class="ml-3 list-unstyled" style="width: 15rem;margin-left: 1.5rem;">
     <li class="mb-3 ml-2">
@@ -58,3 +63,69 @@
 
   </ul>
 </div>
+</ng-container>
+
+<ng-container *ngIf="!menu">
+  <div class="main-theme text-white small-sidebar">
+  <div class="d-flex flex-column mt-3" style="margin-left: 0.5rem;margin-bottom: 1rem;">
+   <i class="pi pi-bars mt-2"  (click)="menuclick()"
+   style="font-size: 1.2rem;margin-left: 1rem; cursor: pointer;" ></i>
+  </div>
+   <br>
+
+  <ul class="ml-3 list-unstyled" style="width: 15rem;margin-left: 1.5rem;">
+    <li class="mb-3 ml-2">
+      <a routerLink="/dashboard" class="text-white">
+        <i class="pi pi-home me-2"></i> 
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/accounts" class="text-white">
+        <i class="pi pi-user me-2"></i> 
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/funds" class="text-white">
+        <i class="pi pi-dollar me-2"></i>
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/employees" class="text-white">
+        <i class="pi pi-briefcase me-2"></i> 
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/complaints" class="text-white">
+        <i class="pi pi-book me-2"></i> 
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/branches" class="text-white">
+        <i class="pi pi-map-marker me-2"></i> 
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/transactions" class="text-white">
+        <i class="pi pi-wallet me-2"></i>
+      </a>
+    </li>
+    <li class="mb-3">
+      <a routerLink="/loans" class="text-white">
+        <i class="pi pi-money-bill me-2"></i>
+      </a>
+    </li> 
+  
+   <!-- <li class="mb-3">
+      <a routerLink="/cards" class="text-white">
+        <i class="pi pi-credit-card me-2"></i> Cards
+      </a>
+    </li>-->
+ 
+
+
+
+    
+
+  </ul>
+</div>
+</ng-container>
