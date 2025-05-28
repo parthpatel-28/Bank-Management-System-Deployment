@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent implements OnInit {
 
-  @Input() assistance! : boolean
   @Output() clickassistance = new EventEmitter<void>();
 
   constructor(private auth : AuthServicesService,

@@ -14,3 +14,7 @@
   padding-top: 0.5rem;
   overflow-y: auto;
 }
+
+::ng-deep .custom-sidebar {
+  width: 30rem !important;
+}
