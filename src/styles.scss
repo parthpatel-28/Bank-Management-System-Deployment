@@ -232,7 +232,7 @@ h6{
   
 
   .excel-btn {
-     background: linear-gradient(to right, #0c554e, #1abc9c) !important; // teal-ish Excel color
+    background: linear-gradient(to right, #0c554e, #1abc9c) !important; // teal-ish Excel color
     color: #fff;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -252,6 +252,13 @@ h6{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
+  .search-btn{
+    background: linear-gradient(135deg, #0c554e, #1abc9c);font-weight: 600;
+   }
+
+   .reset-btn{
+    background: linear-gradient(135deg, #474f56, #939da7)
+   }
   
 
 

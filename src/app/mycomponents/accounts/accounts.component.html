@@ -19,12 +19,12 @@
           <p-dropdown  [options]="accountTypeList" [(ngModel)]="accountType" optionLabel="name" placeholder="Select a Account Type"
           [filter]="true">
           </p-dropdown>
-        <button class="btn btn-success btn-light-success waves-effect waves-light" (click)="Click_Search($event)">
-          <i class="pi pi-search" style="font-size: 0.8rem"></i>
+        <button class="btn btn-success btn-light-success waves-effect waves-light search-btn" (click)="Click_Search($event)">
+          <i class="pi pi-search" style="font-size: 0.8rem;font-weight: 600;"></i>
         </button>
 
-        <button class="btn btn-secondary waves-effect ml-1" (click)="Click_Reset()">
-          <i class="pi pi-replay" style="font-size: 0.8rem"></i>
+        <button class="btn btn-secondary waves-effect reset-btn ml-1" (click)="Click_Reset()">
+          <i class="pi pi-replay" style="font-size: 0.8rem ; font-weight: 600;"></i>
         </button>
       </div>
   </div>

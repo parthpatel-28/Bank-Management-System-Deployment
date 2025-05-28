@@ -1,8 +1,8 @@
 <p-toast></p-toast>
 <div>
-  <app-sidebar></app-sidebar>
+  <app-sidebar *ngIf="menu"></app-sidebar>
 
-  <div class="main-wrapper">
+  <div class="main-wrapper" [ngStyle]="menu ?{'margin-left': '15rem'} : {'margin-left': '4rem'}">
     <app-topbar></app-topbar>
 
     <div class="main-content">

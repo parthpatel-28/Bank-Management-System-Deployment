@@ -17,12 +17,12 @@
               <input id="accountNumber" type="text" placeholder="Search For Employee Name" [(ngModel)]="search" class="form-control" />
             </div>
         
-        <button class="btn btn-success btn-light-success waves-effect waves-light" style="background: linear-gradient(to right, #0c554e, #1abc9c);font-weight: 600;" (click)="Click_Search($event)">
+        <button class="btn btn-success btn-light-success waves-effect waves-light search-btn" (click)="Click_Search($event)">
           <i class="pi pi-search" style="font-size: 0.8rem;font-weight: 600;"></i>
         </button>
 
-        <button class="btn btn-secondary waves-effect ml-1" (click)="Click_Reset()">
-          <i class="pi pi-replay" style="font-size: 0.8rem"></i>
+        <button  class="btn btn-secondary reset-btn ml-1" (click)="Click_Reset()" >
+          <i class="pi pi-replay" style="font-size: 0.8rem; font-weight: 600;"></i>
         </button>
       </div>
   </div>
