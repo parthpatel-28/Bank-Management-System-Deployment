@@ -1,20 +1,20 @@
 <p-toast position="top-center" key="success" [baseZIndex]="50000"></p-toast>
 
-<div class="col-12">
+<div class="col-md-12">
   <div class="title py-2">
      <h4>Employees</h4>
   </div>
 </div>
 
 <div class="row mb-5">
-  <div class="col-12 ">
+  <div class="col-md-12 d-flex justify-content-between ">
       <div class="filters-container">      
           <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
             [filter]="true">
           </p-dropdown>
 
           <div>
-              <input id="accountNumber" type="text" placeholder="Search For Employee Name" [(ngModel)]="search" class="form-control" />
+              <input id="accountNumber" type="text" placeholder="Search Employee Name" [(ngModel)]="search" class="form-control" />
             </div>
         
         <button class="btn btn-success btn-light-success waves-effect waves-light search-btn" (click)="Click_Search($event)">
@@ -24,6 +24,11 @@
         <button  class="btn btn-secondary reset-btn ml-1" (click)="Click_Reset()" >
           <i class="pi pi-replay" style="font-size: 0.8rem; font-weight: 600;"></i>
         </button>
+      </div>
+      <div class="filters-container d-flex justify-content-end pr-5">
+       <button pButton type="button" 
+       (click)="addEmployee()"  label="Add New Employee" class="btn primary " 
+       style="margin-right: 1.5rem;border-radius: 0.5rem;"></button>
       </div>
   </div>
 </div>
@@ -40,7 +45,7 @@
   
     <ng-container  *ngFor="let item of employeesData">
      
-    <div *ngIf="block=== 1 ? item.blocked : !item.blocked"  class="col-4 p-3 " >
+    <div *ngIf="block=== 1 ? item.blocked : !item.blocked"  class="col-md-4 col-sm-10 p-3 " >
     <div class="p-card shadow rounded-3 p-4 mb-5">
       <div class="d-flex align-items-center mb-3">
         
@@ -81,16 +86,16 @@ header="Employee Details "
 [closable]="true"
 
 >
-<div class="col-12 ml-5"> 
+<div class="col-md-12 ml-5"> 
 
 <div class="d-flex ml-5 ">
 
-  <div class="me-3 d-flex flex-column align-items-center col-5 mt-3 gap-5">
+  <div class="me-3 d-flex flex-column align-items-center col-md-5 col-sm-12 mt-3 gap-5">
     <div class=" profile " style="border: solid 5px; border-radius: 50%; padding: 15%;">
       <i class="pi pi-user fs-1" style="font-size: 40vh; "></i>
     </div>
   
-    <p class="col- pl-3" style="font-size: 100% ;">Employee ID : {{selectedEmployee.employeeId}}</p>
+    <p class=" pl-3" style="font-size: 100% ;">Employee ID : {{selectedEmployee.employeeId}}</p>
     
     <button *ngIf="selectedEmployee" type="button"  (click)="employeeBlock(selectedEmployee.employeeId)" 
        class="btn w-50 " label=""
@@ -98,9 +103,9 @@ header="Employee Details "
       {{blockbutton}}</button>
   </div>
 
-  <div class="col-7 d-flex flex-column justify-content-center align-items-end ml-5 gap-2">
+  <div class="col-md-7 col-sm-12 d-flex flex-column justify-content-center align-items-end ml-5 gap-2">
    
-  <div class="col-12 px-3">
+  <div class="col-md-12 px-3">
     <div class="p-card">
     <div class="p-card-body box-style mt-3">
      <p style="font-size: 100% ; text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Name : 
@@ -108,7 +113,7 @@ header="Employee Details "
     </div>
     </div>       
 </div>
-<div class="col-12 px-3">
+<div class="col-md-12 px-3">
   <div class="p-card">
   <div class="p-card-body box-style mt-3">
     <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Date of Joining : 
@@ -116,7 +121,7 @@ header="Employee Details "
   </div>
   </div>       
 </div>    
-  <div class="col-12 px-3">
+  <div class="col-md-12 px-3">
   <div class="p-card">
   <div class="p-card-body box-style mt-3">
     <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Department : 
@@ -124,7 +129,7 @@ header="Employee Details "
   </div>
   </div>       
 </div> 
- <div class="col-12 px-3">
+ <div class="col-md-12 px-3">
   <div class="p-card">
   <div class="p-card-body box-style mt-3">
     <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Contact Number : 
@@ -132,7 +137,7 @@ header="Employee Details "
   </div>
   </div>       
 </div>   
- <div class="col-12 px-3">
+ <div class="col-md-12 px-3">
   <div class="p-card">
   <div class="p-card-body box-style mt-3">
     <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Branch : 
@@ -140,7 +145,7 @@ header="Employee Details "
   </div>
   </div>       
 </div>
-<div class="col-12 px-3">
+<div class="col-md-12 px-3">
   <div class="p-card">
   <div class="p-card-body box-style mt-3">
     <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Email : 
@@ -168,7 +173,7 @@ header="Delete Account"
 [breakpoints]="{'960px': '95vw'}"
 [closable]="true"
 >
-<div class="col-12 mb-4">
+<div class="col-md-12 mb-4">
   <p style="font-size: larger;">Are you sure you want to {{ block == 1 ? 'unblock' : 'block' }} this Account? </p>
   <p style="font-size: larger;">Employee Name : {{selectedEmployee.name}}<span style="font-weight: 600;"></span> </p>
 </div>
@@ -176,3 +181,115 @@ header="Delete Account"
   <button pButton (click)="deleteDisplay = false;"  type="button" label="No" class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
   <button pButton (click)="delete()" label = "Yes"  type="button"   class="p-button w-50 primary " ></button>
 </div>
+</p-dialog>
+
+<p-dialog 
+header="Add New Employee" 
+[(visible)]="employeeDisplay" 
+[modal]="true" 
+[style]="{width: '85vw'}  " 
+[contentStyle]="{'overflow': 'scroll'}" 
+[breakpoints]="{'960px': '95vw'}"
+[closable]="true"
+>
+
+<div class="col-12 px-3 sc">
+
+<div class="mt-2 border-bottom">
+    <h5>Bank Details</h5>
+</div>
+<div class="row mb-2 mt-2 ">
+
+    <div  class="col-12 col-sm-4">
+          <label class="form-label">Branch</label>
+          <p-dropdown class="w-100 full-width-dropdown" optionValue="branchName" [options]="branches"
+           optionLabel="location" placeholder="Choose Bank Branch" 
+            appendTo="body" [resetFilterOnHide]="true" [filter]="true"> </p-dropdown>
+    </div>
+    <div  class="col-12 col-sm-4">
+      <label class="form-label">Employee ID</label>
+      <input class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+        <div  class="col-12 col-sm-4">
+      <label class="form-label">Name</label>
+      <input class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+</div>
+
+<div class="mt-2 border-bottom">
+    <h5>Account Information</h5>
+</div>
+<div class="row mb-2 mt-2">
+    <div  class="col-12 col-sm-4">
+          <label class="form-label">Position</label>
+          <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+
+    <div  class="col-12 col-sm-4">
+            <label class="form-label">Department</label>
+            <input class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+    <div  class="col-12 col-sm-4">
+      <label class="form-label">Contact Number</label>
+      <input  class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+
+
+
+ 
+</div>
+<div class="row mb-2">
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Employment Status</label>
+    <p-dropdown class="w-100 full-width-dropdown" optionValue="value"  optionLabel="name" placeholder="Select a Account Type"
+    [filter]="true">
+    </p-dropdown>
+  </div>
+
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Date of Joining</label>
+    <p-calendar 
+    class="w-100 full-width-dropdown"
+    [showIcon]="true"
+    placeholder="Choose a date"
+    dateFormat="yy-mm-dd">
+  </p-calendar>
+  
+  </div>
+
+</div>
+
+
+<div class="mt-2 border-bottom">
+    <h5>Card details</h5>
+</div>
+<div class="row mb-5 mt-2">
+  <div  class="col-12 col-sm-4">
+    <label class="form-label">Email</label>
+    <p-dropdown class="w-100 full-width-dropdown" optionValue="value" 
+     optionLabel="name" placeholder="Select a Account Type"
+    [filter]="true">
+    </p-dropdown>
+  </div>
+      <div  class="col-12 col-sm-4">
+      <label class="form-label">Salary</label>
+      <input class="p-inputtext-sm custom-input blue-focus-input w-100" type="text" pInputText placeholder="Choose" />
+    </div>
+
+</div>
+
+
+
+
+ 
+
+</div>
+
+<div class="col-12 d-flex justify-content-center gap-3 mt-5">
+<button pButton type="button" label="Save" class="col-2 p-button primary p-mr-2"></button>
+<button pButton type="button" label="Cancel" class="col-2 p-button-outlined p-button-primary" 
+style="border-color:  #0d1763 ; color:  #0d1763;" ></button>
+</div>
+
+
+</p-dialog>

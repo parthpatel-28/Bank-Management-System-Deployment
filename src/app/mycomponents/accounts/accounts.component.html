@@ -1,12 +1,12 @@
 <p-toast position="top-center" key="success" [baseZIndex]="50000"></p-toast>
-<div class="col-12">
+<div class="col-md-12">
   <div class="title py-2">
      <h4>Accounts</h4>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12 ">
+  <div class="col-md-12 ">
       <div class="filters-container">      
           <p-dropdown  [options]="branches" [(ngModel)]="selectedBranch" optionLabel="location" placeholder="Select a Branch"
             [filter]="true">
@@ -33,7 +33,7 @@
 
 
 <div class="row mt-5 mb-1">
-<div class="col-12 d-flex justify-content-start gap-2">
+<div class="col-md-12 d-flex justify-content-start gap-2">
 
 <button (click)="displayDialog2()" class="btn btn-primary waves-effect ml-1"  style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
   <i class="pi pi-plus mr-2"></i> Add New Account
@@ -49,7 +49,7 @@
 </div>
 
 
-<div class="col-12 mt-1">
+<div class="col-md-12 mt-1">
 <div class="card">
 <p-table [value]="accountData" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'">
 <ng-template pTemplate="header" styleClass="p-datatable-striped" class="p-table-striped">
@@ -111,7 +111,7 @@ header="Add New Account"
 [closable]="true"
 >
 
-<div class="col-12 px-3 sc">
+<div class="col-md-12 px-3 sc">
 
 <div class="mt-2 border-bottom">
     <h5>Bank Details</h5>

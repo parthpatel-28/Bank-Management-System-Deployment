@@ -1,13 +1,13 @@
 <p-toast position="top-center" key="success" [baseZIndex]="50000"></p-toast>
 
-<div class="col-12">
+<div class="col-md-12">
   <div class="title py-2">
      <h4>Funds</h4>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12 mb-2">
+  <div class="col-md-12 mb-2">
       <div class="filters-container">      
 
       <p-dropdown  [options]="riskList" [(ngModel)]="risk" optionLabel="name" placeholder="Select Fund Risk Profile"
@@ -33,7 +33,7 @@
 
 
 <div  class="row mt-5">
-  <div class="col-4 mb-4 ">
+  <div class="col-md-4 col-sm-12 mb-4 ">
     <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
       <div class="p-card-header d-flex align-items-center">
         <h5 class="p-card-title mb-2">
@@ -54,7 +54,7 @@
             </li>
               <!--No Data-->
               <li *ngIf="!Bonds?.length">
-                <div class="col-12 text-center align-items-center my-4">
+                <div class="col-md-12 text-center align-items-center my-4">
                 <div>
                   <strong style="font-size: 1.05rem;">No data found</strong>
                 </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <div class="col-4 mb-4 ">
+      <div class="col-md-4 col-sm-12 mb-4 ">
         <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
           <div class="p-card-header d-flex align-items-center">
             <h5 class="p-card-title mb-2">
@@ -106,7 +106,7 @@
                 </li>
                   <!--No Data-->
                   <li *ngIf="!mutualFunds?.length">
-                    <div class="col-12 text-center align-items-center my-4">
+                    <div class="col-md-12 text-center align-items-center my-4">
                     <div>
                       <strong style="font-size: 1.05rem;">No data found</strong>
                     </div>
@@ -138,7 +138,7 @@
           </div>
 
           
-          <div class="col-4 mb-4 ">
+          <div class="col-md-4 col-sm-12 mb-4 ">
             <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
               <div class="p-card-header d-flex align-items-center">
                 <h5 class="p-card-title mb-2">
@@ -160,7 +160,7 @@
                     
                     <!--No Data-->
                     <li *ngIf="!SipFunds?.length">
-                      <div class="col-12 text-center align-items-center my-4">
+                      <div class="col-md-12 text-center align-items-center my-4">
                       <div>
                         <strong style="font-size: 1.05rem;">No data found</strong>
                       </div>
@@ -210,17 +210,17 @@
          
       <div class="col-md-12 p-card">
         <div class="row">
-      <div class="col-8 mt-4 ">
+      <div class="col-md-8 col-sm-12 mt-4 ">
  <!--       <h5 style="text-align: center; font-weight: 600;">Recent Growth</h5>-->
           <p-chart 
             type="line" [data]="lineChartData"   [options]="lineChartOptions">
           </p-chart>
       
       </div>
-      <div class="col-4 mt-5 pr-2">
+      <div class="col-md-4 col-sm-12 mt-5 pr-2">
 
         <div class="d-flex flex-column">
-          <div class="col-12 px-3">
+          <div class="col-md-12 px-3">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p style=" font-size: 80%; text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> Aum : 
@@ -228,7 +228,7 @@
             </div>
             </div>       
           </div>
-          <div class="col-12 px-3">
+          <div class="col-md-12 px-3">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p  style=" font-size: 80% ;text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> Overrall Growth : 
@@ -236,7 +236,7 @@
             </div>
             </div>       
           </div>
-          <div class="col-12 px-3">
+          <div class="col-md-12 px-3">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p  style=" font-size: 80% ;text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> Launch Date : 
@@ -253,10 +253,10 @@
 
       <div class="col-md-12 p-card">
         <div class="row">
-          <div class="col-4 mt-5 pr-2">
+          <div class="col-md-4 col-sm-12 mt-5 pr-2">
 
             <div class="d-flex flex-column">
-              <div class="col-12 px-3">
+              <div class="col-md-12 px-3">
                 <div class="p-card">
                 <div class="p-card-body box-style mt-3">
                   <p style=" font-size: 80%; text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> Risk Profile : 
@@ -264,7 +264,7 @@
                 </div>
                 </div>       
               </div>
-              <div class="col-12 px-3">
+              <div class="col-md-12 px-3">
                 <div class="p-card">
                 <div class="p-card-body box-style mt-3">
                   <p  style=" font-size: 80% ;text-align: center; font-weight: 700; color: rgb(69, 67, 67);"> Fund Type : 
@@ -276,7 +276,7 @@
     
     
           </div>
-      <div class="col-8 mt-4 ">
+      <div class="col-md-8 col-sm-12 mt-4 ">
  <!--       <h5 style="text-align: center; font-weight: 600;">Recent Growth</h5>-->
         <p-chart 
         type="bar" [data]="barChartData" [options]="barChartOptions" styleClass="w-full" style="height:400px;">

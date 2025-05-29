@@ -1,12 +1,12 @@
 <p-toast position="top-center" key="success" [baseZIndex]="50000"></p-toast>
-<div class="col-12">
+<div class="col-md-12">
   <div class="title py-2">
      <h4>Complaints</h4>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12 ">
+  <div class="col-md-12 ">
       <div class="filters-container">      
           <p-dropdown class="filters" [options]="priorityList" [(ngModel)]="priority" optionLabel="name" placeholder="Select Priority"
             [filter]="true">
@@ -28,7 +28,7 @@
 </div>
 
 <div  class="row mt-5">
-  <div class="col-4 mb-4 ">
+  <div class="col-md-4 col-12 mb-4 ">
     <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
       <div class="p-card-header d-flex align-items-center">
         <h5 class="p-card-title mb-2">
@@ -50,7 +50,7 @@
             </li>
               <!--No Data-->
               <li *ngIf="!complaintsData?.length">
-                <div class="col-12 text-center align-items-center my-4">
+                <div class="col-md-12 text-center align-items-center my-4">
                 <div>
                   <strong style="font-size: 1.05rem;">No data found</strong>
                 </div>
@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <div class="col-4 mb-4 ">
+      <div class="col-md-4 col-sm-12 mb-4 ">
         <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
           <div class="p-card-header d-flex align-items-center">
             <h5 class="p-card-title mb-2">
@@ -108,7 +108,7 @@
                 </li>
                   <!--No Data-->
                   <li *ngIf="!complaintsData?.length">
-                    <div class="col-12 text-center align-items-center my-4">
+                    <div class="col-md-12 text-center align-items-center my-4">
                     <div>
                       <strong style="font-size: 1.05rem;">No data found</strong>
                     </div>
@@ -144,7 +144,7 @@
             </div>
           </div>
 
-          <div class="col-4 mb-4 ">
+          <div class="col-md-4 col-sm-12 mb-4 ">
             <div class="p-grid p-grid-responsive p-grid-responsive-md p-grid-responsive-lg">
               <div class="p-card-header d-flex align-items-center">
                 <h5 class="p-card-title mb-2">
@@ -166,7 +166,7 @@
                     </li>
                       <!--No Data-->
                       <li *ngIf="!complaintsData?.length">
-                        <div class="col-12 text-center align-items-center my-4">
+                        <div class="col-md-12 text-center align-items-center my-4">
                         <div>
                           <strong style="font-size: 1.05rem;">No data found</strong>
                         </div>
@@ -219,7 +219,7 @@
       <ng-container *ngIf="selectedComplaint">
         <h3 class="py-2 mb-3 " style="text-align: center;" [ngStyle]="getColor(selectedComplaint.priority)">{{selectedComplaint.priority}} Priority</h3>
        
-        <div class="d-flex justify-content-between pr- mt-1 mb-1">
+        <div class="d-flex justify-content-between pr- mt-1 mb-1 ">
             <div style="width: 40%;" >
               <p style="margin-left: 0.6rem;font-size: 120%; font-weight: 600 ;  color: rgb(69, 67, 67);">
                 Complaint Id : {{selectedComplaint.complaintId}}</p>
@@ -255,8 +255,8 @@
        <!-- <p>(You can change the Status of Complaint using above tabs.)</p> -->
         </div>
         
-        <div class="d-flex" >
-          <div class="col-6 px-3">
+        <div class="d-flex flex-wrap" >
+          <div class="col-md-6 col-sm-12 px-3">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p style=" font-size: 100% ;text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Customer Name : 
@@ -264,7 +264,7 @@
             </div>
             </div>       
           </div> 
-           <div class="col-6 px-3">
+           <div class="col-md-6 col-sm-12 px-3 ">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p style=" font-size: 100% ;text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Complain Type : 
@@ -274,8 +274,8 @@
           </div>   
         </div>
 
-        <div class="d-flex">
-          <div class="col-6 px-3">
+        <div class="d-flex flex-wrap">
+          <div class="col-md-6 col-sm-12 px-3">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p style="font-size: 100% ;text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Complain Date : 
@@ -283,7 +283,7 @@
             </div>
             </div>       
           </div>
-          <div class="col-6 px-3">
+          <div class="col-md-6 col-sm-12 px-3">
             <div class="p-card">
             <div class="p-card-body box-style mt-3">
               <p style="font-size: 100% ; text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Assigned To : 
@@ -294,7 +294,7 @@
         </div>
 
         <div class="d-flex flex-column">
-          <div class="col-12 px-3">
+          <div class="col-md-12 px-3">
             <div class="form-group mt-4">
               <label style="font-size: 1.2rem;  color: rgb(69, 67, 67);" for="commentBox">
                 Compalint Desciption <i *ngIf="!DescEdit"  pTooltip="Edit Description" tooltipPosition="top"
@@ -308,8 +308,8 @@
             </div>     
             </div>
             </div>
-            <div *ngIf="DescEdit" class="col-12 d-flex justify-content-end mt-2" style="padding-right: 1rem;">
-              <div class="col-4 d-flex gap-2">
+            <div *ngIf="DescEdit" class="col-md-12 d-flex justify-content-end mt-2" style="padding-right: 1rem;">
+              <div class="col-md-4 d-flex gap-2">
               <button pButton (click)="EditDesc(false)"  type="button" label="Cancel" class="p-button-outlined p-button-primary w-50" style="border-color:  #0d1763 ; color:  #0d1763;"></button>
               <button pButton (click)="SaveDesc()" label = "Save"  type="button"   class="p-button w-50 primary " ></button>
             </div>

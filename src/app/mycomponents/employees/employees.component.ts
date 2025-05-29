@@ -30,6 +30,7 @@ export class EmployeesComponent implements OnInit {
     { label: 'Employees', value: 0 },
     { label: 'Blocked Employees', value: 1 }
   ];
+  employeeDisplay : boolean = false;
 
 
   constructor(
@@ -61,6 +62,9 @@ showSuccess(value : any) {
   });
 }
 
+addEmployee(){
+this.employeeDisplay = true;
+}
  
 
 Click_Search(value : any){
