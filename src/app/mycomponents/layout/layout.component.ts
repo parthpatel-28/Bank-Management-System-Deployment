@@ -49,8 +49,11 @@ export class LayoutComponent implements OnInit {
     });
   }
 
-  hidemenu(){
+  clickmenu(){
    this.menu = !this.menu;
+  }
+  hidemenu(value : boolean){
+    this.menu = value;
   }
   showassistance(){
    this.assistance = !this.assistance; 

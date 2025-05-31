@@ -1,16 +1,16 @@
 <!-- sidebar.component.html -->
 <ng-container *ngIf="menu" >
-<div class="main-theme text-white main-sidebar" >
+<div class="main-theme text-white main-sidebar" style="overflow: hidden;">
   <div class="d-flex mt-3" style="margin-left: 0.5rem;margin-bottom: 1rem;">
-   <img class="" src="assets/crownstone-white-logo.png" alt="CrownStone" style="height: 2rem; " />
+   <img class="" src="assets/crownstone-white-logo.png" alt="CrownStone" style="height: 2.3rem; " />
    <i class="pi pi-bars mt-2"  (click)="menuclick()"
-   style="font-size: 1.2rem;margin-left: 1rem; cursor: pointer;" ></i>
+   style="font-size: 1.4rem;margin-left: 1.4rem; cursor: pointer;" ></i>
   </div>
    <br>
 
   <ul class="ml-3 list-unstyled" style="width: 15rem;margin-left: 1.5rem;">
     <li class="mb-3 ml-2">
-      <a routerLink="/dashboard" class="text-white">
+      <a  routerLink="/dashboard" class="text-white">
         <i class="pi pi-home me-2"></i><span>Dashboard</span> 
       </a>
     </li>
@@ -66,7 +66,7 @@
 </ng-container>
 
 <ng-container *ngIf="!menu">
-  <div class="main-theme text-white small-sidebar">
+  <div class="main-theme text-white small-sidebar" style="overflow: hidden;">
   <div class="d-flex flex-column mt-3" style="margin-left: 0.5rem;margin-bottom: 1rem;">
    <i class="pi pi-bars mt-2"  (click)="menuclick()"
    style="font-size: 1.2rem;margin-left: 1rem; cursor: pointer;" ></i>

@@ -1,7 +1,7 @@
 <p-toast position="top-center" key="success" [baseZIndex]="50000"></p-toast><div>
-  <app-sidebar (clickmenu)="hidemenu()" [menu]="menu" ></app-sidebar>
+  <app-sidebar (clickmenu)="clickmenu()" (hidemenu)="hidemenu($event)" [menu]="menu" ></app-sidebar>
 
-  <div class="main-wrapper" [ngStyle]="menu ?{'margin-left': '14rem'} : {'margin-left': '4rem'}">
+  <div class="main-wrapper" [ngStyle]="menu ?{'margin-left': '16rem'} : {'margin-left': '4rem'}">
     <app-topbar (clickassistance)="showassistance()" ></app-topbar>
 
     <div class="main-content">
