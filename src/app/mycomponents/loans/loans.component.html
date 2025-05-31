@@ -27,9 +27,9 @@
   </div>
 </div>
 
-<div class="row col-md-12 mt-5">
+<div class="row col-md-12 mt-3">
 
-  <div *ngFor="let card of stats" class="col-md-3 col-sm-12 ">
+  <div *ngFor="let card of stats" class="col-lg-3 col-md-6 mt-2  col-sm-12 ">
     <div class="p-card ">
     <div class="p-card-body box-style">
      <p style=" text-align: center; font-weight: 700; color: rgb(69, 67, 67);">Loans {{card.name}} : <span style="font-weight: 700;color: #001845;">{{card.value}}</span></p>
@@ -58,7 +58,7 @@
 
 
 
-<div class="col-md-12 mt-1">
+<div class="col-12 mt-1">
   <div class="card">
   <p-table [value]="loanData" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'">
   <ng-template pTemplate="header" styleClass="p-datatable-striped" class="p-table-striped">
