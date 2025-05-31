@@ -16,7 +16,7 @@ export class AuthComponent implements OnInit {
   inputPassword: any = "";
   loginFailed : boolean = false;
   displayInstructions : boolean = true;
-
+  screenWidth: number = window.innerWidth;
   constructor(private router: Router, private authService: AuthServicesService) {}
 
   ngOnInit(
