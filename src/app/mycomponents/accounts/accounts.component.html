@@ -203,7 +203,7 @@ header="Add New Account"
 </div>
 
 <div class="col-12 d-flex justify-content-center gap-3 mt-5">
-<button pButton type="button" label="Save" class="col-2 p-button primary p-mr-2" (click)="saveAccount()"></button>
+<button pButton type="button" label="Save"  [disabled]="!isFormValid()" class="col-2 p-button primary p-mr-2" (click)="saveAccount()"></button>
 <button pButton type="button" label="Cancel" class="col-2 p-button-outlined p-button-primary" 
 style="border-color:  #0d1763 ; color:  #0d1763;" (click)="display = false"></button>
 </div>

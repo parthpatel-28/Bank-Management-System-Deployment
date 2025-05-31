@@ -39,6 +39,8 @@ export class AccountsComponent implements OnInit {
   formbranches: any[]= [];
   formAccountTypeList : any[]= [];
 
+ 
+
   constructor(
     private DataService : DataService,
     private messageService: MessageService
@@ -222,6 +224,7 @@ export class AccountsComponent implements OnInit {
   }
   }
 
+
   DateConversion(value: any): string {
     const date = new Date(value);
     const year = date.getFullYear();
@@ -232,7 +235,21 @@ export class AccountsComponent implements OnInit {
     return formatted;
   }
   
-  
+   isFormValid(): boolean {
+  const a = this.formaccount;
+
+  return !!(
+    a.branch &&
+    a.accountData?.createdBy &&
+    a.accountData?.accountNumber &&
+    a.accountData?.balance &&
+    a.customerId &&
+    a.accountData?.accountType &&
+    a.accountData?.status &&
+    a.accountData?.openingDate &&
+    a.cardAlloted
+  );
+}
   
   
 
