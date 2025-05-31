@@ -2097,6 +2097,45 @@ export class DataService {
       salary: '₹00',
       blocked: false,
     },
+
+    departments: [
+    { name: "Operations", value: "Operations" },
+    { name: "Customer Service", value: "Customer Service" },
+    { name: "Loans and Mortgages", value: "Loans and Mortgages" },
+    { name: "Risk Management", value: "Risk Management" },
+    { name: "Sales", value: "Sales" },
+    { name: "IT", value: "IT" },
+    { name: "Human Resources", value: "Human Resources" },
+    { name: "Compliance", value: "Compliance" },
+    { name: "Finance", value: "Finance" },
+    { name: "Marketing", value: "Marketing" },
+    { name: "Legal", value: "Legal" }
+     ],
+
+     positions: [
+    { name: "Branch Manager", value: "Branch Manager" },
+    { name: "Assistant Manager", value: "Assistant Manager" },
+    { name: "Senior Loan Officer", value: "Senior Loan Officer" },
+    { name: "Operations Manager", value: "Operations Manager" },
+    { name: "Risk Analyst", value: "Risk Analyst" },
+    { name: "Relationship Manager", value: "Relationship Manager" },
+    { name: "Branch Assistant", value: "Branch Assistant" },
+    { name: "IT Support Specialist", value: "IT Support Specialist" },
+    { name: "HR Manager", value: "HR Manager" },
+    { name: "Branch Head", value: "Branch Head" },
+    { name: "Loan Officer", value: "Loan Officer" },
+    { name: "Senior Analyst", value: "Senior Analyst" },
+    { name: "Chief Financial Officer", value: "Chief Financial Officer" },
+    { name: "Customer Support Executive", value: "Customer Support Executive" },
+    { name: "Marketing Manager", value: "Marketing Manager" },
+    { name: "Banking Associate", value: "Banking Associate" },
+    { name: "Legal Advisor", value: "Legal Advisor" },
+    { name: "Teller", value: "Teller" },
+    { name: "Branch Supervisor", value: "Branch Supervisor" }
+            ]
+
+
+
     }
 
     this.funds = {

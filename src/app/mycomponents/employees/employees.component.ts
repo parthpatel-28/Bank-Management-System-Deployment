@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,6 +15,8 @@ export class EmployeesComponent implements OnInit {
 
   employeesData : any[];
   employeesDataMain : any[];
+  departmentList : any[];
+  positionList : any[];
   selectedEmployee : any;
   blockemployeeIndex : any;
   branches : any[];
@@ -31,22 +34,39 @@ export class EmployeesComponent implements OnInit {
     { label: 'Blocked Employees', value: 1 }
   ];
   employeeDisplay : boolean = false;
-
+  newEmployee : FormGroup;
 
   constructor(
     private DataService: DataService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private fb: FormBuilder
   ) {
     this.branches = DataService.global.branches;
     this.employeesData = DataService.employees.employeesData;
     this.employeesDataMain = this.employeesData;
     this.selectedEmployee = DataService.employees.selectedEmployee
-    
+    this.positionList = DataService.employees.positions;
+    this.departmentList = DataService.employees.departments;
+    this.newEmployee = this.fb.group({
+       employeeId: [null, Validators.required],
+       name: [null, Validators.required,],
+       position: [null, Validators.required],
+       department: [null, Validators.required],
+       dateOfJoining: [null, Validators.required],
+       contactNumber: [null, Validators.required],
+       email: [null, Validators.required],
+       branch: [null, Validators.required],
+       employmentStatus: ["Active"],
+       salary: [null, Validators.required],
+       blocked: [false]
+    })
+
 
 
    }
 
   ngOnInit(): void {
+    console.log("position", this.positionList);
   }
 onTabChange(value :any){
   console.log(value);
@@ -64,6 +84,24 @@ showSuccess(value : any) {
 
 addEmployee(){
 this.employeeDisplay = true;
+
+}
+
+saveNewEmployee(){
+  this.employeeDisplay = false;
+console.log(this.newEmployee.value);
+console.log("full", this.newEmployee);
+
+
+const Employee = this.newEmployee.value;
+
+this.employeesDataMain.push(Employee); 
+this.employeesData = this.employeesDataMain;
+
+this.newEmployee.reset();
+this.newEmployee.value.employmentStatus = " Active";
+this.newEmployee.value.blocked = false;
+
 }
  
 

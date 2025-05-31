@@ -36,6 +36,7 @@ import { Tooltip } from 'primeng/tooltip';
 import { TooltipModule } from 'primeng/tooltip';
 import { AuthComponent } from './auth/auth.component';
 import { SidebarModule } from 'primeng/sidebar';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { SidebarModule } from 'primeng/sidebar';
     CalendarModule,
     ToastModule,
     TooltipModule,
-    SidebarModule
+    SidebarModule,
+    ReactiveFormsModule
     
   ],
   providers: [MessageService],
